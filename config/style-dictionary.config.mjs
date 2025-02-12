@@ -3,7 +3,7 @@ import StyleDictionary from "style-dictionary";
 // Custom format for DTCG JSON output
 StyleDictionary.registerFormat({
   name: "dtcg/json",
-  formatter: function ({ dictionary }) {
+  format: function ({ dictionary }) {
     const transformTokens = (tokens) => {
       const result = {};
 
@@ -45,7 +45,7 @@ export default {
       ],
     },
     dtcg: {
-      transforms: ["attribute/cti", "name/cti/kebab", "color/hex"],
+      transformGroup: "css",
       buildPath: "build/dtcg/",
       files: [
         {
