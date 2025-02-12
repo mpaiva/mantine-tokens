@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "style-dictionary build --config config/style-dictionary.config.mjs"
+    "build": "style-dictionary build --config config/style-dictionary.config.mjs --verbose"
   },
   "keywords": [],
   "author": "",

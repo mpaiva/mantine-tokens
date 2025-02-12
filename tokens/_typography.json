@@ -1,34 +1,34 @@
 {
-    "typography": {
-      "fontFamily": {
-        "value": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
-        "type": "font",
-        "description": "The default sans-serif font family for the application."
-      },
-      "fontFamilyMonospace": {
-        "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
-        "type": "font",
-        "description": "Monospace font family for code and technical content."
-      },
-      "fontFamilyHeadings": {
-        "value": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
-        "type": "font",
-        "description": "Font family specifically used for headings."
-      },
-      "headingFontWeight": {
-        "value": "700",
-        "type": "number",
-        "description": "Font weight applied to headings."
-      },
-      "headingTextWrap": {
-        "value": "wrap",
-        "type": "string",
-        "description": "Determines whether heading text wraps."
-      },
-      "lineHeight": {
-        "value": "1.55",
-        "type": "number",
-        "description": "Default line height for body text."
-      }
+  "typography": {
+    "fontFamily": {
+      "value": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      "type": "fontFamily",
+      "description": "The default sans-serif font family for the application."
+    },
+    "fontFamilyMonospace": {
+      "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
+      "type": "typography",
+      "description": "Monospace font family for code and technical content."
+    },
+    "fontFamilyHeadings": {
+      "value": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
+      "type": "typography",
+      "description": "Font family specifically used for headings."
+    },
+    "headingFontWeight": {
+      "value": "700",
+      "type": "number",
+      "description": "Font weight applied to headings."
+    },
+    "headingTextWrap": {
+      "value": "wrap",
+      "type": "string",
+      "description": "Determines whether heading text wraps."
+    },
+    "lineHeight": {
+      "value": "1.55",
+      "type": "number",
+      "description": "Default line height for body text."
     }
-  } 
+  }
+}

@@ -1,29 +1,29 @@
 {
-    "spacing": {
-      "xs": {
-        "value": "0.625rem",
-        "type": "size",
-        "description": "Extra small spacing for margins and padding."
-      },
-      "sm": {
-        "value": "0.75rem",
-        "type": "size",
-        "description": "Small spacing value."
-      },
-      "md": {
-        "value": "1rem",
-        "type": "size",
-        "description": "Medium spacing value."
-      },
-      "lg": {
-        "value": "1.25rem",
-        "type": "size",
-        "description": "Large spacing value."
-      },
-      "xl": {
-        "value": "2rem",
-        "type": "size",
-        "description": "Extra large spacing value."
-      }
+  "spacing": {
+    "xs": {
+      "value": "0.625rem",
+      "type": "dimension",
+      "description": "Extra small spacing for margins and padding."
+    },
+    "sm": {
+      "value": "0.75rem",
+      "type": "dimension",
+      "description": "Small spacing value."
+    },
+    "md": {
+      "value": "1rem",
+      "type": "dimension",
+      "description": "Medium spacing value."
+    },
+    "lg": {
+      "value": "1.25rem",
+      "type": "dimension",
+      "description": "Large spacing value."
+    },
+    "xl": {
+      "value": "2rem",
+      "type": "dimension",
+      "description": "Extra large spacing value."
     }
   }
+}
