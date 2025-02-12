@@ -1,0 +1,41 @@
+{
+    "secondaryColors": {
+      "filled": {
+        "value": "{colors.red.6.value}",
+        "type": "color",
+        "description": "Secondary filled color used on actionable elements."
+      },
+      "filledHover": {
+        "value": "{colors.red.7.value}",
+        "type": "color",
+        "description": "Hover state for the secondary filled color."
+      },
+      "light": {
+        "value": "{colors.red.0.value}",
+        "type": "color",
+        "description": "Secondary light variant for alternative styling."
+      },
+      "lightHover": {
+        "value": "{colors.red.1.value}",
+        "type": "color",
+        "description": "Hover state for the secondary light variant."
+      },
+      "lightColor": {
+        "value": "{colors.red.8.value}",
+        "type": "color",
+        "description": "Text color used on the secondary light background."
+      },
+      "palette": {
+        "0": { "value": "{colors.red.0.value}", "type": "color", "description": "Secondary palette shade 0." },
+        "1": { "value": "{colors.red.1.value}", "type": "color", "description": "Secondary palette shade 1." },
+        "2": { "value": "{colors.red.2.value}", "type": "color", "description": "Secondary palette shade 2." },
+        "3": { "value": "{colors.red.3.value}", "type": "color", "description": "Secondary palette shade 3." },
+        "4": { "value": "{colors.red.4.value}", "type": "color", "description": "Secondary palette shade 4." },
+        "5": { "value": "{colors.red.5.value}", "type": "color", "description": "Secondary palette shade 5." },
+        "6": { "value": "{colors.red.6.value}", "type": "color", "description": "Secondary palette shade 6." },
+        "7": { "value": "{colors.red.7.value}", "type": "color", "description": "Secondary palette shade 7." },
+        "8": { "value": "{colors.red.8.value}", "type": "color", "description": "Secondary palette shade 8." },
+        "9": { "value": "{colors.red.9.value}", "type": "color", "description": "Secondary palette shade 9." }
+      }
+    }
+  }

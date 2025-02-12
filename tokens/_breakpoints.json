@@ -1,0 +1,29 @@
+{
+    "breakpoints": {
+      "xs": {
+        "value": "36em",
+        "type": "size",
+        "description": "Breakpoint for extra-small screens."
+      },
+      "sm": {
+        "value": "48em",
+        "type": "size",
+        "description": "Breakpoint for small screens."
+      },
+      "md": {
+        "value": "62em",
+        "type": "size",
+        "description": "Breakpoint for medium screens."
+      },
+      "lg": {
+        "value": "75em",
+        "type": "size",
+        "description": "Breakpoint for large screens."
+      },
+      "xl": {
+        "value": "88em",
+        "type": "size",
+        "description": "Breakpoint for extra-large screens."
+      }
+    }
+  }

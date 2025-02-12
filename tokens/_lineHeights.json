@@ -1,0 +1,29 @@
+{
+    "lineHeights": {
+      "xs": {
+        "value": "1.4",
+        "type": "number",
+        "description": "Line height for extra small text."
+      },
+      "sm": {
+        "value": "1.45",
+        "type": "number",
+        "description": "Line height for small text."
+      },
+      "md": {
+        "value": "1.55",
+        "type": "number",
+        "description": "Line height for medium text."
+      },
+      "lg": {
+        "value": "1.6",
+        "type": "number",
+        "description": "Line height for large text."
+      },
+      "xl": {
+        "value": "1.65",
+        "type": "number",
+        "description": "Line height for extra large text."
+      }
+    }
+  }

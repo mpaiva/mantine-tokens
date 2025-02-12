@@ -1,0 +1,266 @@
+{
+    "theme": {
+      "name": "dark",
+      "primary": {
+        "contrast": {
+          "value": "{colors.white.value}",
+          "type": "color",
+          "description": "Contrast color used with primary elements in dark theme."
+        },
+        "filled": {
+          "value": "{colors.blue.6.value}",
+          "type": "color",
+          "description": "Primary filled color for dark theme."
+        },
+        "filledHover": {
+          "value": "{colors.blue.7.value}",
+          "type": "color",
+          "description": "Hover state for primary filled color in dark theme."
+        },
+        "light": {
+          "value": "{colors.blue.0.value}",
+          "type": "color",
+          "description": "Primary light variant in dark theme."
+        },
+        "lightHover": {
+          "value": "{colors.blue.1.value}",
+          "type": "color",
+          "description": "Hover state for primary light variant in dark theme."
+        },
+        "lightColor": {
+          "value": "{colors.blue.8.value}",
+          "type": "color",
+          "description": "Text color for primary light variant in dark theme."
+        },
+        "palette": {
+          "0": {
+            "value": "{colors.blue.0.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 0."
+          },
+          "1": {
+            "value": "{colors.blue.1.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 1."
+          },
+          "2": {
+            "value": "{colors.blue.2.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 2."
+          },
+          "3": {
+            "value": "{colors.blue.3.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 3."
+          },
+          "4": {
+            "value": "{colors.blue.4.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 4."
+          },
+          "5": {
+            "value": "{colors.blue.5.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 5."
+          },
+          "6": {
+            "value": "{colors.blue.6.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 6."
+          },
+          "7": {
+            "value": "{colors.blue.7.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 7."
+          },
+          "8": {
+            "value": "{colors.blue.8.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 8."
+          },
+          "9": {
+            "value": "{colors.blue.9.value}",
+            "type": "color",
+            "description": "Dark theme primary palette shade 9."
+          }
+        }
+      },
+      "colors": {
+        "bright": {
+          "value": "{colors.white.value}",
+          "type": "color",
+          "description": "Accent color used for brightness in dark theme."
+        },
+        "text": {
+          "value": "{colors.dark.0.value}",
+          "type": "color",
+          "description": "Primary text color for dark theme."
+        },
+        "body": {
+          "value": "{colors.dark.7.value}",
+          "type": "color",
+          "description": "Background color for the body in dark theme."
+        },
+        "error": {
+          "value": "{colors.red.8.value}",
+          "type": "color",
+          "description": "Error color in dark theme."
+        },
+        "placeholder": {
+          "value": "{colors.dark.3.value}",
+          "type": "color",
+          "description": "Placeholder text color in dark theme."
+        },
+        "anchor": {
+          "value": "{colors.blue.4.value}",
+          "type": "color",
+          "description": "Link color in dark theme."
+        },
+        "default": {
+          "value": "{colors.dark.6.value}",
+          "type": "color",
+          "description": "Default background color for dark theme."
+        },
+        "defaultHover": {
+          "value": "{colors.dark.5.value}",
+          "type": "color",
+          "description": "Hover state for the default background in dark theme."
+        },
+        "defaultColor": {
+          "value": "{colors.white.value}",
+          "type": "color",
+          "description": "Text color on the default background in dark theme."
+        },
+        "defaultBorder": {
+          "value": "{colors.dark.4.value}",
+          "type": "color",
+          "description": "Border color for default elements in dark theme."
+        },
+        "dimmed": {
+          "value": "{colors.dark.2.value}",
+          "type": "color",
+          "description": "Dimmed color for less prominent elements in dark theme."
+        },
+        "darkText": {
+          "value": "{colors.dark.4.value}",
+          "type": "color",
+          "description": "Text color for dark-variant elements in dark theme."
+        },
+        "darkFilled": {
+          "value": "{colors.dark.8.value}",
+          "type": "color",
+          "description": "Dark filled color for elements in dark theme."
+        },
+        "darkFilledHover": {
+          "value": "{colors.dark.9.value}",
+          "type": "color",
+          "description": "Hover state for dark filled elements in dark theme."
+        },
+        "darkLight": {
+          "value": "rgba(46, 46, 46, 0.15)",
+          "type": "color",
+          "description": "Light variant of dark color for subtle accents in dark theme."
+        },
+        "darkLightHover": {
+          "value": "rgba(46, 46, 46, 0.2)",
+          "type": "color",
+          "description": "Hover state for the light variant of dark colors in dark theme."
+        },
+        "darkLightColor": {
+          "value": "{colors.dark.3.value}",
+          "type": "color",
+          "description": "Text color for the light variant of dark colors in dark theme."
+        },
+        "darkOutline": {
+          "value": "{colors.dark.4.value}",
+          "type": "color",
+          "description": "Outline color for dark-variant elements in dark theme."
+        },
+        "darkOutlineHover": {
+          "value": "rgba(66, 66, 66, 0.05)",
+          "type": "color",
+          "description": "Hover state for dark element outlines in dark theme."
+        },
+        "grayText": {
+          "value": "{colors.gray.4.value}",
+          "type": "color",
+          "description": "Gray text color for dark theme."
+        },
+        "grayFilled": {
+          "value": "{colors.gray.8.value}",
+          "type": "color",
+          "description": "Filled gray color used in dark theme."
+        },
+        "grayFilledHover": {
+          "value": "{colors.gray.9.value}",
+          "type": "color",
+          "description": "Hover state for filled gray elements in dark theme."
+        },
+        "grayLight": {
+          "value": "rgba(134, 142, 150, 0.15)",
+          "type": "color",
+          "description": "Light gray used for subtle accents in dark theme."
+        },
+        "grayLightHover": {
+          "value": "rgba(134, 142, 150, 0.2)",
+          "type": "color",
+          "description": "Hover state for light gray accents in dark theme."
+        },
+        "grayLightColor": {
+          "value": "{colors.gray.3.value}",
+          "type": "color",
+          "description": "Text color for light gray elements in dark theme."
+        },
+        "grayOutline": {
+          "value": "{colors.gray.4.value}",
+          "type": "color",
+          "description": "Outline color for gray elements in dark theme."
+        },
+        "grayOutlineHover": {
+          "value": "rgba(206, 212, 218, 0.05)",
+          "type": "color",
+          "description": "Hover state for gray outlines in dark theme."
+        },
+        "redText": {
+          "value": "{colors.red.4.value}",
+          "type": "color",
+          "description": "Text color for red elements in dark theme."
+        },
+        "redFilled": {
+          "value": "{colors.red.8.value}",
+          "type": "color",
+          "description": "Filled red color for dark theme."
+        },
+        "redFilledHover": {
+          "value": "{colors.red.9.value}",
+          "type": "color",
+          "description": "Hover state for filled red elements in dark theme."
+        },
+        "redLight": {
+          "value": "rgba(250, 82, 82, 0.15)",
+          "type": "color",
+          "description": "Light red variant used for accents in dark theme."
+        },
+        "redLightHover": {
+          "value": "rgba(250, 82, 82, 0.2)",
+          "type": "color",
+          "description": "Hover state for the light red variant in dark theme."
+        },
+        "redLightColor": {
+          "value": "{colors.red.3.value}",
+          "type": "color",
+          "description": "Text color for light red elements in dark theme."
+        },
+        "redOutline": {
+          "value": "{colors.red.4.value}",
+          "type": "color",
+          "description": "Outline color for red elements in dark theme."
+        },
+        "redOutlineHover": {
+          "value": "rgba(255, 135, 135, 0.05)",
+          "type": "color",
+          "description": "Hover state for red outlines in dark theme."
+        }
+      }
+    }
+  }

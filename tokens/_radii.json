@@ -1,0 +1,34 @@
+{
+    "radii": {
+      "default": {
+        "value": "0.25rem",
+        "type": "size",
+        "description": "Default border radius for UI elements."
+      },
+      "xs": {
+        "value": "0.125rem",
+        "type": "size",
+        "description": "Extra small border radius."
+      },
+      "sm": {
+        "value": "0.25rem",
+        "type": "size",
+        "description": "Small border radius."
+      },
+      "md": {
+        "value": "0.5rem",
+        "type": "size",
+        "description": "Medium border radius."
+      },
+      "lg": {
+        "value": "1rem",
+        "type": "size",
+        "description": "Large border radius."
+      },
+      "xl": {
+        "value": "2rem",
+        "type": "size",
+        "description": "Extra large border radius."
+      }
+    }
+  }
