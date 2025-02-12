@@ -1,5 +1,14 @@
 import StyleDictionary from "style-dictionary";
 
+// Register a custom name transform to add mantine prefix
+StyleDictionary.registerTransform({
+  name: "name/prefix/mantine",
+  type: "name",
+  transform: function (token) {
+    return `mantine-${token.path.join("-")}`.toLowerCase();
+  },
+});
+
 // Custom format for DTCG JSON output
 StyleDictionary.registerFormat({
   name: "dtcg/json",
@@ -31,11 +40,17 @@ StyleDictionary.registerFormat({
   },
 });
 
+// Register a custom transform group
+StyleDictionary.registerTransformGroup({
+  name: "custom/mantine",
+  transforms: ["name/prefix/mantine", "color/hex", "size/rem"],
+});
+
 export default {
   source: ["tokens/**/*.json"],
   platforms: {
     css: {
-      transformGroup: "css",
+      transformGroup: "custom/mantine",
       buildPath: "build/css/",
       files: [
         {
@@ -45,7 +60,7 @@ export default {
       ],
     },
     dtcg: {
-      transformGroup: "css",
+      transformGroup: "custom/mantine",
       buildPath: "build/dtcg/",
       files: [
         {
