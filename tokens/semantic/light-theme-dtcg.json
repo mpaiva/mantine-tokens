@@ -1,0 +1,181 @@
+{
+  "theme": {
+    "$description": "Light theme semantic tokens",
+    "color": {
+      "background": {
+        "default": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Default page background"
+        },
+        "subtle": {
+          "$value": "{color.gray.50}",
+          "$type": "color",
+          "$description": "Subtle background for sections"
+        },
+        "muted": {
+          "$value": "{color.gray.100}",
+          "$type": "color",
+          "$description": "Muted background for disabled states"
+        }
+      },
+      "surface": {
+        "default": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Default surface color for cards, modals"
+        },
+        "subtle": {
+          "$value": "{color.gray.50}",
+          "$type": "color",
+          "$description": "Subtle surface variation"
+        },
+        "hover": {
+          "$value": "{color.gray.100}",
+          "$type": "color",
+          "$description": "Surface hover state"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "{color.gray.300}",
+          "$type": "color",
+          "$description": "Default border color"
+        },
+        "subtle": {
+          "$value": "{color.gray.200}",
+          "$type": "color",
+          "$description": "Subtle border color"
+        },
+        "strong": {
+          "$value": "{color.gray.400}",
+          "$type": "color",
+          "$description": "Strong border color"
+        }
+      },
+      "text": {
+        "default": {
+          "$value": "{color.black}",
+          "$type": "color",
+          "$description": "Default text color"
+        },
+        "subtle": {
+          "$value": "{color.gray.700}",
+          "$type": "color",
+          "$description": "Subtle text color"
+        },
+        "muted": {
+          "$value": "{color.gray.600}",
+          "$type": "color",
+          "$description": "Muted text color"
+        },
+        "disabled": {
+          "$value": "{color.gray.400}",
+          "$type": "color",
+          "$description": "Disabled text color"
+        },
+        "inverse": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Inverse text color"
+        }
+      },
+      "primary": {
+        "default": {
+          "$value": "{color.blue.600}",
+          "$type": "color",
+          "$description": "Primary brand color"
+        },
+        "hover": {
+          "$value": "{color.blue.700}",
+          "$type": "color",
+          "$description": "Primary hover state"
+        },
+        "active": {
+          "$value": "{color.blue.800}",
+          "$type": "color",
+          "$description": "Primary active/pressed state"
+        },
+        "subtle": {
+          "$value": "{color.blue.50}",
+          "$type": "color",
+          "$description": "Primary subtle background"
+        },
+        "subtleHover": {
+          "$value": "{color.blue.100}",
+          "$type": "color",
+          "$description": "Primary subtle hover"
+        },
+        "contrast": {
+          "$value": "{color.white}",
+          "$type": "color",
+          "$description": "Contrast color on primary"
+        }
+      },
+      "success": {
+        "default": {
+          "$value": "{color.green.600}",
+          "$type": "color",
+          "$description": "Success state color"
+        },
+        "subtle": {
+          "$value": "{color.green.50}",
+          "$type": "color",
+          "$description": "Success subtle background"
+        },
+        "contrast": {
+          "$value": "{color.white}",
+          "$type": "color"
+        }
+      },
+      "warning": {
+        "default": {
+          "$value": "{color.yellow.600}",
+          "$type": "color",
+          "$description": "Warning state color"
+        },
+        "subtle": {
+          "$value": "{color.yellow.50}",
+          "$type": "color",
+          "$description": "Warning subtle background"
+        },
+        "contrast": {
+          "$value": "{color.black}",
+          "$type": "color"
+        }
+      },
+      "error": {
+        "default": {
+          "$value": "{color.red.600}",
+          "$type": "color",
+          "$description": "Error state color"
+        },
+        "subtle": {
+          "$value": "{color.red.50}",
+          "$type": "color",
+          "$description": "Error subtle background"
+        },
+        "contrast": {
+          "$value": "{color.white}",
+          "$type": "color"
+        }
+      },
+      "info": {
+        "default": {
+          "$value": "{color.blue.600}",
+          "$type": "color",
+          "$description": "Info state color"
+        },
+        "subtle": {
+          "$value": "{color.blue.50}",
+          "$type": "color",
+          "$description": "Info subtle background"
+        },
+        "contrast": {
+          "$value": "{color.white}",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

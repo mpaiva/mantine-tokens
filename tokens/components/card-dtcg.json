@@ -1,0 +1,49 @@
+{
+  "card": {
+    "$description": "Card component design tokens",
+    "padding": {
+      "default": {
+        "$value": "{spacing.lg}",
+        "$type": "dimension"
+      },
+      "compact": {
+        "$value": "{spacing.md}",
+        "$type": "dimension"
+      },
+      "spacious": {
+        "$value": "{spacing.xl}",
+        "$type": "dimension"
+      }
+    },
+    "radius": {
+      "default": {
+        "$value": "{radius.md}",
+        "$type": "dimension"
+      }
+    },
+    "shadow": {
+      "default": {
+        "$value": "{shadow.sm}",
+        "$type": "shadow"
+      },
+      "hover": {
+        "$value": "{shadow.md}",
+        "$type": "shadow"
+      },
+      "elevated": {
+        "$value": "{shadow.lg}",
+        "$type": "shadow"
+      }
+    },
+    "border": {
+      "width": {
+        "$value": "1px",
+        "$type": "dimension"
+      },
+      "style": {
+        "$value": "solid",
+        "$type": "string"
+      }
+    }
+  }
+}

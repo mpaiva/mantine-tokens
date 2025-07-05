@@ -1,0 +1,34 @@
+[data-mantine-color-scheme="dark"] {
+  --clearco-theme-color-background-default: var(--clearco-color-dark-900);
+  --clearco-theme-color-background-subtle: var(--clearco-color-dark-800);
+  --clearco-theme-color-background-muted: var(--clearco-color-dark-700);
+  --clearco-theme-color-surface-default: var(--clearco-color-dark-800);
+  --clearco-theme-color-surface-subtle: var(--clearco-color-dark-700);
+  --clearco-theme-color-surface-hover: var(--clearco-color-dark-600);
+  --clearco-theme-color-border-default: var(--clearco-color-dark-600);
+  --clearco-theme-color-border-subtle: var(--clearco-color-dark-700);
+  --clearco-theme-color-border-strong: var(--clearco-color-dark-400);
+  --clearco-theme-color-text-default: var(--clearco-color-dark-50);
+  --clearco-theme-color-text-subtle: var(--clearco-color-dark-100);
+  --clearco-theme-color-text-muted: var(--clearco-color-dark-300);
+  --clearco-theme-color-text-disabled: var(--clearco-color-dark-600);
+  --clearco-theme-color-text-inverse: var(--clearco-color-black);
+  --clearco-theme-color-primary-default: var(--clearco-color-blue-500);
+  --clearco-theme-color-primary-hover: var(--clearco-color-blue-400);
+  --clearco-theme-color-primary-active: var(--clearco-color-blue-300);
+  --clearco-theme-color-primary-subtle: rgba(74, 144, 226, 0.15);
+  --clearco-theme-color-primary-subtlehover: rgba(74, 144, 226, 0.25);
+  --clearco-theme-color-primary-contrast: var(--clearco-color-white);
+  --clearco-theme-color-success-default: var(--clearco-color-green-500);
+  --clearco-theme-color-success-subtle: rgba(64, 192, 87, 0.15);
+  --clearco-theme-color-success-contrast: var(--clearco-color-white);
+  --clearco-theme-color-warning-default: var(--clearco-color-yellow-500);
+  --clearco-theme-color-warning-subtle: rgba(252, 196, 25, 0.15);
+  --clearco-theme-color-warning-contrast: var(--clearco-color-black);
+  --clearco-theme-color-error-default: var(--clearco-color-red-500);
+  --clearco-theme-color-error-subtle: rgba(250, 82, 82, 0.15);
+  --clearco-theme-color-error-contrast: var(--clearco-color-white);
+  --clearco-theme-color-info-default: var(--clearco-color-blue-500);
+  --clearco-theme-color-info-subtle: rgba(74, 144, 226, 0.15);
+  --clearco-theme-color-info-contrast: var(--clearco-color-white);
+}

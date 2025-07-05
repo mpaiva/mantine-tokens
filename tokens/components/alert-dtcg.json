@@ -1,0 +1,79 @@
+{
+  "alert": {
+    "$description": "Alert/Notification component design tokens",
+    "padding": {
+      "default": {
+        "$value": "{spacing.md} {spacing.lg}",
+        "$type": "dimension"
+      },
+      "withIcon": {
+        "$value": "{spacing.md}",
+        "$type": "dimension"
+      }
+    },
+    "gap": {
+      "default": {
+        "$value": "{spacing.md}",
+        "$type": "dimension",
+        "$description": "Gap between icon and content"
+      }
+    },
+    "radius": {
+      "default": {
+        "$value": "{radius.sm}",
+        "$type": "dimension"
+      }
+    },
+    "border": {
+      "width": {
+        "$value": "1px",
+        "$type": "dimension"
+      },
+      "style": {
+        "$value": "solid",
+        "$type": "string"
+      }
+    },
+    "icon": {
+      "size": {
+        "$value": "1.25rem",
+        "$type": "dimension",
+        "$description": "20px"
+      }
+    },
+    "title": {
+      "fontSize": {
+        "$value": "{typography.fontSize.md}",
+        "$type": "dimension"
+      },
+      "fontWeight": {
+        "$value": "{typography.fontWeight.semibold}",
+        "$type": "fontWeight"
+      },
+      "marginBottom": {
+        "$value": "{spacing.xs}",
+        "$type": "dimension"
+      }
+    },
+    "message": {
+      "fontSize": {
+        "$value": "{typography.fontSize.sm}",
+        "$type": "dimension"
+      },
+      "lineHeight": {
+        "$value": "{typography.lineHeight.normal}",
+        "$type": "number"
+      }
+    },
+    "closeButton": {
+      "size": {
+        "$value": "1rem",
+        "$type": "dimension"
+      },
+      "padding": {
+        "$value": "{spacing.xs}",
+        "$type": "dimension"
+      }
+    }
+  }
+}

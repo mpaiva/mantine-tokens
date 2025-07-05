@@ -5,8 +5,20 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "style-dictionary build --config config/style-dictionary.config.mjs --verbose"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "build": "node build.js",
+    "build:verbose": "node build.js --verbose",
+    "dev": "node build.js --watch",
+    "watch": "node build.js --watch",
+    "validate": "node scripts/validate-tokens.js",
+    "clean": "rm -rf build/",
+    "prebuild": "npm run clean",
+    "lint": "eslint . --ext .js,.mjs",
+    "lint:fix": "eslint . --ext .js,.mjs --fix",
+    "format": "prettier --write \"**/*.{js,mjs,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,mjs,json,md}\""
   },
   "keywords": [],
   "author": "",

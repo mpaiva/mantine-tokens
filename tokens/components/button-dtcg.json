@@ -1,0 +1,113 @@
+{
+  "button": {
+    "$description": "Button component design tokens",
+    "padding": {
+      "xs": {
+        "$value": "{spacing.xs} {spacing.sm}",
+        "$type": "dimension",
+        "$description": "Extra small button padding"
+      },
+      "sm": {
+        "$value": "{spacing.xs} {spacing.md}",
+        "$type": "dimension",
+        "$description": "Small button padding"
+      },
+      "md": {
+        "$value": "{spacing.sm} {spacing.lg}",
+        "$type": "dimension",
+        "$description": "Medium button padding"
+      },
+      "lg": {
+        "$value": "{spacing.md} {spacing.xl}",
+        "$type": "dimension",
+        "$description": "Large button padding"
+      },
+      "xl": {
+        "$value": "{spacing.lg} {spacing.2xl}",
+        "$type": "dimension",
+        "$description": "Extra large button padding"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "$value": "{typography.fontSize.xs}",
+        "$type": "dimension"
+      },
+      "sm": {
+        "$value": "{typography.fontSize.sm}",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "{typography.fontSize.md}",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "{typography.fontSize.lg}",
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": "{typography.fontSize.xl}",
+        "$type": "dimension"
+      }
+    },
+    "radius": {
+      "default": {
+        "$value": "{radius.sm}",
+        "$type": "dimension"
+      }
+    },
+    "fontWeight": {
+      "default": {
+        "$value": "{typography.fontWeight.medium}",
+        "$type": "fontWeight"
+      }
+    },
+    "height": {
+      "xs": {
+        "$value": "1.875rem",
+        "$type": "dimension",
+        "$description": "30px"
+      },
+      "sm": {
+        "$value": "2.25rem",
+        "$type": "dimension",
+        "$description": "36px"
+      },
+      "md": {
+        "$value": "2.625rem",
+        "$type": "dimension",
+        "$description": "42px"
+      },
+      "lg": {
+        "$value": "3.125rem",
+        "$type": "dimension",
+        "$description": "50px"
+      },
+      "xl": {
+        "$value": "3.75rem",
+        "$type": "dimension",
+        "$description": "60px"
+      }
+    },
+    "shadow": {
+      "default": {
+        "$value": "none",
+        "$type": "shadow"
+      },
+      "hover": {
+        "$value": "{shadow.sm}",
+        "$type": "shadow"
+      }
+    },
+    "transition": {
+      "duration": {
+        "$value": "150ms",
+        "$type": "duration"
+      },
+      "timingFunction": {
+        "$value": "ease",
+        "$type": "string"
+      }
+    }
+  }
+}

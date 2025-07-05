@@ -1,0 +1,8 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "prefix": {
+    "$value": "mantine",
+    "$type": "other",
+    "$description": "Prefix for all CSS custom properties"
+  }
+}

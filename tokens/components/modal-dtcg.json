@@ -1,0 +1,99 @@
+{
+  "modal": {
+    "$description": "Modal/Dialog component design tokens",
+    "width": {
+      "xs": {
+        "$value": "20rem",
+        "$type": "dimension",
+        "$description": "320px"
+      },
+      "sm": {
+        "$value": "25rem",
+        "$type": "dimension",
+        "$description": "400px"
+      },
+      "md": {
+        "$value": "35rem",
+        "$type": "dimension",
+        "$description": "560px"
+      },
+      "lg": {
+        "$value": "50rem",
+        "$type": "dimension",
+        "$description": "800px"
+      },
+      "xl": {
+        "$value": "70rem",
+        "$type": "dimension",
+        "$description": "1120px"
+      },
+      "full": {
+        "$value": "100%",
+        "$type": "dimension",
+        "$description": "Full width"
+      }
+    },
+    "padding": {
+      "default": {
+        "$value": "{spacing.lg}",
+        "$type": "dimension"
+      },
+      "header": {
+        "$value": "{spacing.lg}",
+        "$type": "dimension"
+      },
+      "body": {
+        "$value": "{spacing.lg}",
+        "$type": "dimension"
+      },
+      "footer": {
+        "$value": "{spacing.lg}",
+        "$type": "dimension"
+      }
+    },
+    "radius": {
+      "default": {
+        "$value": "{radius.md}",
+        "$type": "dimension"
+      }
+    },
+    "shadow": {
+      "default": {
+        "$value": "{shadow.xl}",
+        "$type": "shadow"
+      }
+    },
+    "overlay": {
+      "opacity": {
+        "$value": "0.75",
+        "$type": "number",
+        "$description": "Background overlay opacity"
+      },
+      "blur": {
+        "$value": "0",
+        "$type": "dimension",
+        "$description": "Background blur amount"
+      }
+    },
+    "zIndex": {
+      "overlay": {
+        "$value": "200",
+        "$type": "number"
+      },
+      "content": {
+        "$value": "201",
+        "$type": "number"
+      }
+    },
+    "transition": {
+      "duration": {
+        "$value": "200ms",
+        "$type": "duration"
+      },
+      "timingFunction": {
+        "$value": "ease-out",
+        "$type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "radius": {
+    "$description": "Border radius scale for rounded corners",
+    "none": {
+      "$value": "0",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "0.125rem",
+      "$type": "dimension",
+      "$description": "Extra small radius (2px)"
+    },
+    "sm": {
+      "$value": "0.25rem",
+      "$type": "dimension",
+      "$description": "Small radius (4px)"
+    },
+    "md": {
+      "$value": "0.5rem",
+      "$type": "dimension",
+      "$description": "Medium radius (8px)"
+    },
+    "lg": {
+      "$value": "1rem",
+      "$type": "dimension",
+      "$description": "Large radius (16px)"
+    },
+    "xl": {
+      "$value": "2rem",
+      "$type": "dimension",
+      "$description": "Extra large radius (32px)"
+    },
+    "full": {
+      "$value": "9999px",
+      "$type": "dimension",
+      "$description": "Fully rounded (pill shape)"
+    }
+  }
+}

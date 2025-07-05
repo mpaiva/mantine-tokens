@@ -1,0 +1,87 @@
+{
+  "input": {
+    "$description": "Input field component design tokens",
+    "height": {
+      "xs": {
+        "$value": "1.875rem",
+        "$type": "dimension",
+        "$description": "30px"
+      },
+      "sm": {
+        "$value": "2.25rem",
+        "$type": "dimension",
+        "$description": "36px"
+      },
+      "md": {
+        "$value": "2.625rem",
+        "$type": "dimension",
+        "$description": "42px"
+      },
+      "lg": {
+        "$value": "3.125rem",
+        "$type": "dimension",
+        "$description": "50px"
+      },
+      "xl": {
+        "$value": "3.75rem",
+        "$type": "dimension",
+        "$description": "60px"
+      }
+    },
+    "padding": {
+      "horizontal": {
+        "$value": "{spacing.md}",
+        "$type": "dimension",
+        "$description": "Horizontal padding for input fields"
+      }
+    },
+    "fontSize": {
+      "xs": {
+        "$value": "{typography.fontSize.xs}",
+        "$type": "dimension"
+      },
+      "sm": {
+        "$value": "{typography.fontSize.sm}",
+        "$type": "dimension"
+      },
+      "md": {
+        "$value": "{typography.fontSize.md}",
+        "$type": "dimension"
+      },
+      "lg": {
+        "$value": "{typography.fontSize.lg}",
+        "$type": "dimension"
+      },
+      "xl": {
+        "$value": "{typography.fontSize.xl}",
+        "$type": "dimension"
+      }
+    },
+    "radius": {
+      "default": {
+        "$value": "{radius.sm}",
+        "$type": "dimension"
+      }
+    },
+    "border": {
+      "width": {
+        "$value": "1px",
+        "$type": "dimension"
+      },
+      "style": {
+        "$value": "solid",
+        "$type": "string"
+      }
+    },
+    "transition": {
+      "duration": {
+        "$value": "100ms",
+        "$type": "duration"
+      },
+      "property": {
+        "$value": "border-color, box-shadow",
+        "$type": "string"
+      }
+    }
+  }
+}

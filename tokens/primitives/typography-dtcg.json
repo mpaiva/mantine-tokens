@@ -1,0 +1,139 @@
+{
+  "typography": {
+    "$description": "Typography tokens for consistent text styling",
+    "fontFamily": {
+      "sans": {
+        "$value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Default sans-serif font stack"
+      },
+      "mono": {
+        "$value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        "$type": "fontFamily",
+        "$description": "Monospace font stack for code"
+      },
+      "heading": {
+        "$value": "{typography.fontFamily.sans}",
+        "$type": "fontFamily",
+        "$description": "Font family for headings"
+      }
+    },
+    "fontSize": {
+      "$description": "Font size scale",
+      "xs": {
+        "$value": "0.75rem",
+        "$type": "dimension",
+        "$description": "Extra small font size (12px)"
+      },
+      "sm": {
+        "$value": "0.875rem",
+        "$type": "dimension",
+        "$description": "Small font size (14px)"
+      },
+      "md": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Medium font size (16px)"
+      },
+      "lg": {
+        "$value": "1.125rem",
+        "$type": "dimension",
+        "$description": "Large font size (18px)"
+      },
+      "xl": {
+        "$value": "1.25rem",
+        "$type": "dimension",
+        "$description": "Extra large font size (20px)"
+      },
+      "h1": {
+        "$value": "2.125rem",
+        "$type": "dimension",
+        "$description": "H1 heading size (34px)"
+      },
+      "h2": {
+        "$value": "1.625rem",
+        "$type": "dimension",
+        "$description": "H2 heading size (26px)"
+      },
+      "h3": {
+        "$value": "1.375rem",
+        "$type": "dimension",
+        "$description": "H3 heading size (22px)"
+      },
+      "h4": {
+        "$value": "1.125rem",
+        "$type": "dimension",
+        "$description": "H4 heading size (18px)"
+      },
+      "h5": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "H5 heading size (16px)"
+      },
+      "h6": {
+        "$value": "0.875rem",
+        "$type": "dimension",
+        "$description": "H6 heading size (14px)"
+      }
+    },
+    "fontWeight": {
+      "$description": "Font weight scale",
+      "normal": {
+        "$value": "400",
+        "$type": "fontWeight"
+      },
+      "medium": {
+        "$value": "500",
+        "$type": "fontWeight"
+      },
+      "semibold": {
+        "$value": "600",
+        "$type": "fontWeight"
+      },
+      "bold": {
+        "$value": "700",
+        "$type": "fontWeight"
+      },
+      "heading": {
+        "$value": "{typography.fontWeight.bold}",
+        "$type": "fontWeight",
+        "$description": "Default heading font weight"
+      }
+    },
+    "lineHeight": {
+      "$description": "Line height scale",
+      "tight": {
+        "$value": "1.25",
+        "$type": "number"
+      },
+      "normal": {
+        "$value": "1.55",
+        "$type": "number"
+      },
+      "relaxed": {
+        "$value": "1.75",
+        "$type": "number"
+      },
+      "heading": {
+        "$value": "1.2",
+        "$type": "number",
+        "$description": "Line height for headings"
+      }
+    },
+    "letterSpacing": {
+      "$description": "Letter spacing scale",
+      "tight": {
+        "$value": "-0.025em",
+        "$type": "dimension"
+      },
+      "normal": {
+        "$value": "0",
+        "$type": "dimension"
+      },
+      "wide": {
+        "$value": "0.025em",
+        "$type": "dimension"
+      }
+    }
+  }
+}

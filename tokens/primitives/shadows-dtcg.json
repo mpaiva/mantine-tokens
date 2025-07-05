@@ -1,0 +1,126 @@
+{
+  "shadow": {
+    "$description": "Elevation shadows for depth perception",
+    "xs": {
+      "$value": [
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "3px",
+          "spread": "0"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Extra small shadow for minimal elevation"
+    },
+    "sm": {
+      "$value": [
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "3px",
+          "spread": "0"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "10px",
+          "blur": "15px",
+          "spread": "-5px"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.04)",
+          "offsetX": "0",
+          "offsetY": "7px",
+          "blur": "7px",
+          "spread": "-5px"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Small shadow for subtle elevation"
+    },
+    "md": {
+      "$value": [
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "3px",
+          "spread": "0"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "20px",
+          "blur": "25px",
+          "spread": "-5px"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.04)",
+          "offsetX": "0",
+          "offsetY": "10px",
+          "blur": "10px",
+          "spread": "-5px"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Medium shadow for moderate elevation"
+    },
+    "lg": {
+      "$value": [
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "3px",
+          "spread": "0"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "28px",
+          "blur": "23px",
+          "spread": "-7px"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.04)",
+          "offsetX": "0",
+          "offsetY": "12px",
+          "blur": "12px",
+          "spread": "-7px"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Large shadow for prominent elevation"
+    },
+    "xl": {
+      "$value": [
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "3px",
+          "spread": "0"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "36px",
+          "blur": "28px",
+          "spread": "-7px"
+        },
+        {
+          "color": "rgba(0, 0, 0, 0.04)",
+          "offsetX": "0",
+          "offsetY": "17px",
+          "blur": "17px",
+          "spread": "-7px"
+        }
+      ],
+      "$type": "shadow",
+      "$description": "Extra large shadow for maximum elevation"
+    }
+  }
+}

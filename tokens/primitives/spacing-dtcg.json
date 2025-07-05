@@ -1,0 +1,44 @@
+{
+  "spacing": {
+    "$description": "Spacing scale for consistent layout",
+    "0": {
+      "$value": "0",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "0.625rem",
+      "$type": "dimension",
+      "$description": "Extra small spacing (10px)"
+    },
+    "sm": {
+      "$value": "0.75rem",
+      "$type": "dimension",
+      "$description": "Small spacing (12px)"
+    },
+    "md": {
+      "$value": "1rem",
+      "$type": "dimension",
+      "$description": "Medium spacing (16px)"
+    },
+    "lg": {
+      "$value": "1.25rem",
+      "$type": "dimension",
+      "$description": "Large spacing (20px)"
+    },
+    "xl": {
+      "$value": "2rem",
+      "$type": "dimension",
+      "$description": "Extra large spacing (32px)"
+    },
+    "2xl": {
+      "$value": "3rem",
+      "$type": "dimension",
+      "$description": "2x extra large spacing (48px)"
+    },
+    "3xl": {
+      "$value": "4rem",
+      "$type": "dimension",
+      "$description": "3x extra large spacing (64px)"
+    }
+  }
+}
