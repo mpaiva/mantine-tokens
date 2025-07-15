@@ -1,0 +1,36 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "brand": {
+    "$description": "Custom brand colors",
+    "primary": {
+      "$value": "#0066CC",
+      "$type": "color",
+      "$description": "Primary brand color"
+    },
+    "secondary": {
+      "$value": "#FF6B35",
+      "$type": "color", 
+      "$description": "Secondary brand color"
+    },
+    "accent": {
+      "$value": "#4ECDC4",
+      "$type": "color",
+      "$description": "Accent color for highlights"
+    },
+    "success": {
+      "$value": "#28A745",
+      "$type": "color",
+      "$description": "Custom success color"
+    },
+    "warning": {
+      "$value": "#FFC107",
+      "$type": "color",
+      "$description": "Custom warning color"
+    },
+    "error": {
+      "$value": "#DC3545",
+      "$type": "color",
+      "$description": "Custom error color"
+    }
+  }
+}

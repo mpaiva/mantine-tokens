@@ -1,0 +1,169 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "ovalButton": {
+    "$description": "Design tokens for oval button component",
+    "height": {
+      "xs": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Extra small oval button height (32px)"
+      },
+      "sm": {
+        "$value": "2.5rem",
+        "$type": "dimension",
+        "$description": "Small oval button height (40px)"
+      },
+      "md": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "Medium oval button height (48px)"
+      },
+      "lg": {
+        "$value": "3.5rem",
+        "$type": "dimension",
+        "$description": "Large oval button height (56px)"
+      },
+      "xl": {
+        "$value": "4rem",
+        "$type": "dimension",
+        "$description": "Extra large oval button height (64px)"
+      }
+    },
+    "padding": {
+      "horizontal": {
+        "xs": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Horizontal padding for XS oval button"
+        },
+        "sm": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Horizontal padding for SM oval button"
+        },
+        "md": {
+          "$value": "2rem",
+          "$type": "dimension",
+          "$description": "Horizontal padding for MD oval button"
+        },
+        "lg": {
+          "$value": "2.5rem",
+          "$type": "dimension",
+          "$description": "Horizontal padding for LG oval button"
+        },
+        "xl": {
+          "$value": "3rem",
+          "$type": "dimension",
+          "$description": "Horizontal padding for XL oval button"
+        }
+      }
+    },
+    "radius": {
+      "$value": "999px",
+      "$type": "dimension",
+      "$description": "Border radius for perfect oval shape"
+    },
+    "minWidth": {
+      "xs": {
+        "$value": "6rem",
+        "$type": "dimension",
+        "$description": "Minimum width for XS oval button (96px)"
+      },
+      "sm": {
+        "$value": "8rem",
+        "$type": "dimension",
+        "$description": "Minimum width for SM oval button (128px)"
+      },
+      "md": {
+        "$value": "10rem",
+        "$type": "dimension",
+        "$description": "Minimum width for MD oval button (160px)"
+      },
+      "lg": {
+        "$value": "12rem",
+        "$type": "dimension",
+        "$description": "Minimum width for LG oval button (192px)"
+      },
+      "xl": {
+        "$value": "14rem",
+        "$type": "dimension",
+        "$description": "Minimum width for XL oval button (224px)"
+      }
+    },
+    "border": {
+      "width": {
+        "$value": "2px",
+        "$type": "dimension",
+        "$description": "Border width for outlined oval buttons"
+      },
+      "style": {
+        "$value": "solid",
+        "$type": "string",
+        "$description": "Border style for outlined oval buttons"
+      }
+    },
+    "shadow": {
+      "default": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0",
+            "offsetY": "2px",
+            "blur": "8px",
+            "spread": "0"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Default shadow for oval button"
+      },
+      "hover": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.15)",
+            "offsetX": "0",
+            "offsetY": "4px",
+            "blur": "12px",
+            "spread": "0"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Hover shadow for oval button"
+      },
+      "active": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.2)",
+            "offsetX": "0",
+            "offsetY": "1px",
+            "blur": "4px",
+            "spread": "0"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Active/pressed shadow for oval button"
+      }
+    },
+    "transition": {
+      "duration": {
+        "$value": "200ms",
+        "$type": "duration",
+        "$description": "Transition duration for oval button animations"
+      },
+      "timing": {
+        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$type": "string",
+        "$description": "Easing function for smooth transitions"
+      }
+    },
+    "iconGap": {
+      "$value": "0.75rem",
+      "$type": "dimension",
+      "$description": "Gap between icon and text in oval button (12px)"
+    },
+    "loadingOpacity": {
+      "$value": "0.7",
+      "$type": "number",
+      "$description": "Opacity when oval button is in loading state"
+    }
+  }
+}

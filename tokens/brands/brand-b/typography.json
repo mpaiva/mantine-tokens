@@ -1,0 +1,28 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "typography": {
+    "$description": "Brand B typography tokens",
+    "fontFamily": {
+      "sans": {
+        "$value": "'Roboto Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Brand B sans-serif font stack"
+      },
+      "heading": {
+        "$value": "'Roboto Slab', Georgia, 'Times New Roman', serif",
+        "$type": "fontFamily",
+        "$description": "Brand B font for headings"
+      },
+      "body": {
+        "$value": "'Roboto Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Brand B font for body text and labels"
+      },
+      "mono": {
+        "$value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        "$type": "fontFamily",
+        "$description": "Monospace font stack for code"
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "brand": {
+    "$description": "Brand B color system",
+    "primary": {
+      "$description": "Primary brand color with tints and shades",
+      "50": { "$value": "#f0e6ff", "$type": "color", "$description": "Lightest tint" },
+      "100": { "$value": "#d1b3ff", "$type": "color", "$description": "Very light tint" },
+      "200": { "$value": "#b380ff", "$type": "color", "$description": "Light tint" },
+      "300": { "$value": "#944dff", "$type": "color", "$description": "Medium light tint" },
+      "400": { "$value": "#751aff", "$type": "color", "$description": "Medium tint" },
+      "500": { "$value": "#6b46c1", "$type": "color", "$description": "Base primary color" },
+      "600": { "$value": "#56389a", "$type": "color", "$description": "Medium shade" },
+      "700": { "$value": "#402a74", "$type": "color", "$description": "Dark shade" },
+      "800": { "$value": "#2b1c4d", "$type": "color", "$description": "Very dark shade" },
+      "900": { "$value": "#150e27", "$type": "color", "$description": "Darkest shade" }
+    },
+    "secondary": {
+      "$description": "Secondary brand color with tints and shades",
+      "50": { "$value": "#e6fff7", "$type": "color", "$description": "Lightest tint" },
+      "100": { "$value": "#b3ffe6", "$type": "color", "$description": "Very light tint" },
+      "200": { "$value": "#80ffd4", "$type": "color", "$description": "Light tint" },
+      "300": { "$value": "#4dffc3", "$type": "color", "$description": "Medium light tint" },
+      "400": { "$value": "#1affb1", "$type": "color", "$description": "Medium tint" },
+      "500": { "$value": "#10b981", "$type": "color", "$description": "Base secondary color" },
+      "600": { "$value": "#0d9467", "$type": "color", "$description": "Medium shade" },
+      "700": { "$value": "#0a6f4d", "$type": "color", "$description": "Dark shade" },
+      "800": { "$value": "#074a34", "$type": "color", "$description": "Very dark shade" },
+      "900": { "$value": "#03251a", "$type": "color", "$description": "Darkest shade" }
+    },
+    "accent": {
+      "$description": "Accent color with tints and shades",
+      "50": { "$value": "#fef3e6", "$type": "color", "$description": "Lightest tint" },
+      "100": { "$value": "#fddbb3", "$type": "color", "$description": "Very light tint" },
+      "200": { "$value": "#fcc380", "$type": "color", "$description": "Light tint" },
+      "300": { "$value": "#fbab4d", "$type": "color", "$description": "Medium light tint" },
+      "400": { "$value": "#fa931a", "$type": "color", "$description": "Medium tint" },
+      "500": { "$value": "#f59e0b", "$type": "color", "$description": "Base accent color" },
+      "600": { "$value": "#c47e09", "$type": "color", "$description": "Medium shade" },
+      "700": { "$value": "#935f07", "$type": "color", "$description": "Dark shade" },
+      "800": { "$value": "#623f04", "$type": "color", "$description": "Very dark shade" },
+      "900": { "$value": "#312002", "$type": "color", "$description": "Darkest shade" }
+    },
+    "neutral": {
+      "$description": "Brand-tuned neutral scale with slight purple tint",
+      "50": { "$value": "#faf9fb", "$type": "color", "$description": "Lightest neutral" },
+      "100": { "$value": "#f5f3f7", "$type": "color", "$description": "Very light neutral" },
+      "200": { "$value": "#efecf3", "$type": "color", "$description": "Light neutral" },
+      "300": { "$value": "#e6e2ed", "$type": "color", "$description": "Medium light neutral" },
+      "400": { "$value": "#dad4e2", "$type": "color", "$description": "Medium neutral" },
+      "500": { "$value": "#bdb5c9", "$type": "color", "$description": "Base neutral" },
+      "600": { "$value": "#7d758a", "$type": "color", "$description": "Medium dark neutral" },
+      "700": { "$value": "#57505f", "$type": "color", "$description": "Dark neutral" },
+      "800": { "$value": "#403a45", "$type": "color", "$description": "Very dark neutral" },
+      "900": { "$value": "#29252c", "$type": "color", "$description": "Darkest neutral" }
+    },
+    "semantic": {
+      "$description": "Semantic colors for Brand B",
+      "success": {
+        "$value": "#10b981",
+        "$type": "color",
+        "$description": "Success state color"
+      },
+      "warning": {
+        "$value": "#f59e0b",
+        "$type": "color",
+        "$description": "Warning state color"
+      },
+      "error": {
+        "$value": "#ef4444",
+        "$type": "color",
+        "$description": "Error state color"
+      },
+      "info": {
+        "$value": "{brand.primary.500}",
+        "$type": "color",
+        "$description": "Info state color"
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "semantic": {
+    "$description": "Semantic token patterns for consistent theming across brands",
+    "elevation": {
+      "$description": "Elevation levels for depth hierarchy",
+      "0": {
+        "$value": "none",
+        "$type": "shadow",
+        "$description": "No elevation"
+      },
+      "1": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Subtle elevation"
+      },
+      "2": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0",
+            "offsetY": "4px",
+            "blur": "8px",
+            "spread": "-2px"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Low elevation"
+      },
+      "3": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0",
+            "offsetY": "12px",
+            "blur": "16px",
+            "spread": "-4px"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "Medium elevation"
+      },
+      "4": {
+        "$value": [
+          {
+            "color": "rgba(0, 0, 0, 0.15)",
+            "offsetX": "0",
+            "offsetY": "20px",
+            "blur": "24px",
+            "spread": "-4px"
+          }
+        ],
+        "$type": "shadow",
+        "$description": "High elevation"
+      }
+    },
+    "motion": {
+      "$description": "Motion tokens for animations and transitions",
+      "duration": {
+        "instant": {
+          "$value": "0ms",
+          "$type": "duration",
+          "$description": "No animation"
+        },
+        "fast": {
+          "$value": "150ms",
+          "$type": "duration",
+          "$description": "Fast animations"
+        },
+        "normal": {
+          "$value": "250ms",
+          "$type": "duration",
+          "$description": "Normal animations"
+        },
+        "slow": {
+          "$value": "400ms",
+          "$type": "duration",
+          "$description": "Slow animations"
+        }
+      },
+      "easing": {
+        "default": {
+          "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "$type": "string",
+          "$description": "Default easing curve"
+        },
+        "accelerate": {
+          "$value": "cubic-bezier(0.4, 0, 1, 1)",
+          "$type": "string",
+          "$description": "Accelerate curve"
+        },
+        "decelerate": {
+          "$value": "cubic-bezier(0, 0, 0.2, 1)",
+          "$type": "string",
+          "$description": "Decelerate curve"
+        }
+      }
+    },
+    "opacity": {
+      "$description": "Opacity levels for various states",
+      "disabled": {
+        "$value": "0.38",
+        "$type": "number",
+        "$description": "Disabled element opacity"
+      },
+      "hover": {
+        "$value": "0.08",
+        "$type": "number",
+        "$description": "Hover overlay opacity"
+      },
+      "pressed": {
+        "$value": "0.12",
+        "$type": "number",
+        "$description": "Pressed overlay opacity"
+      },
+      "backdrop": {
+        "$value": "0.5",
+        "$type": "number",
+        "$description": "Modal backdrop opacity"
+      }
+    },
+    "layout": {
+      "$description": "Layout-related semantic tokens",
+      "container": {
+        "maxWidth": {
+          "$value": "1200px",
+          "$type": "dimension",
+          "$description": "Maximum container width"
+        },
+        "padding": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Container padding"
+        }
+      },
+      "grid": {
+        "gap": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Default grid gap"
+        }
+      }
+    },
+    "interaction": {
+      "$description": "Interaction state tokens",
+      "focus": {
+        "width": {
+          "$value": "2px",
+          "$type": "dimension",
+          "$description": "Focus ring width"
+        },
+        "offset": {
+          "$value": "2px",
+          "$type": "dimension",
+          "$description": "Focus ring offset"
+        }
+      },
+      "tap": {
+        "minSize": {
+          "$value": "44px",
+          "$type": "dimension",
+          "$description": "Minimum tap target size"
+        }
+      }
+    }
+  }
+}

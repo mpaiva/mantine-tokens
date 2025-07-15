@@ -186,24 +186,20 @@ async function validateTokens() {
     
     log(`Found ${files.length} token files to validate\n`, 'blue');
 
-    // Load and validate each file
+    // First pass: Load all tokens to build a complete token set
+    const allTokens = {};
+    const fileTokens = new Map();
+    
     for (const file of files) {
       const relativePath = path.relative(tokensDir, file);
-      log(`Checking ${relativePath}...`);
       
       try {
         const content = await fs.readFile(file, 'utf8');
         const tokens = JSON.parse(content);
+        fileTokens.set(file, { relativePath, tokens });
         
-        // Validate JSON structure
-        if (typeof tokens !== 'object' || tokens === null) {
-          errors.push(`${relativePath}: Root must be an object`);
-          continue;
-        }
-        
-        // Walk through and validate tokens
-        walkTokens(tokens);
-        
+        // Deep merge tokens into allTokens
+        deepMerge(allTokens, tokens);
       } catch (err) {
         if (err instanceof SyntaxError) {
           errors.push(`${relativePath}: Invalid JSON - ${err.message}`);
@@ -211,6 +207,20 @@ async function validateTokens() {
           errors.push(`${relativePath}: ${err.message}`);
         }
       }
+    }
+    
+    // Second pass: Validate each file with access to all tokens
+    for (const [file, { relativePath, tokens }] of fileTokens) {
+      log(`Checking ${relativePath}...`);
+      
+      // Validate JSON structure
+      if (typeof tokens !== 'object' || tokens === null) {
+        errors.push(`${relativePath}: Root must be an object`);
+        continue;
+      }
+      
+      // Walk through and validate tokens with access to all tokens
+      walkTokens(tokens, '', allTokens);
     }
 
     // Report results
@@ -252,6 +262,21 @@ async function findTokenFiles(dir, files = []) {
   }
   
   return files;
+}
+
+// Deep merge helper function
+function deepMerge(target, source) {
+  for (const key in source) {
+    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+      if (!target[key]) {
+        target[key] = {};
+      }
+      deepMerge(target[key], source[key]);
+    } else {
+      target[key] = source[key];
+    }
+  }
+  return target;
 }
 
 // Run validation

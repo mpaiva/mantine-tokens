@@ -22,22 +22,28 @@ describe('Token Validation', () => {
   test('should detect invalid token structure', async () => {
     const invalidTokenPath = path.join(__dirname, '..', 'tokens', 'test-invalid.json');
     
-    // Create an invalid token file
+    // Create an invalid token file - a DTCG token missing required $type
     await fs.writeFile(invalidTokenPath, JSON.stringify({
+      "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
       "invalid": {
         "token": {
-          // Missing $value and $type
-          "description": "This is invalid"
+          "$value": "#ff0000",
+          // Missing $type which is required for DTCG tokens
+          "$description": "This is invalid because it has $value but no $type"
         }
       }
     }, null, 2));
 
     try {
       const { stdout } = await execAsync('npm run validate');
+      // If we get here, the command succeeded when it shouldn't have
       expect(stdout).toContain('error');
     } catch (error) {
       // The script should exit with error code
-      expect(error.code).toBe(1);
+      // execAsync throws an error with exitCode property when the command fails
+      expect(error.code || error.exitCode).toBe(1);
+      // Also check that the error output mentions the invalid token
+      expect(error.stdout || error.message).toContain('error');
     } finally {
       // Clean up
       await fs.unlink(invalidTokenPath).catch(() => {});

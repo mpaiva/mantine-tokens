@@ -1,0 +1,31 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "spacing": {
+    "$description": "Custom spacing tokens",
+    "xxs": {
+      "$value": "0.25rem",
+      "$type": "dimension",
+      "$description": "Extra extra small spacing (4px)"
+    },
+    "4xl": {
+      "$value": "5rem",
+      "$type": "dimension",
+      "$description": "4x large spacing (80px)"
+    },
+    "5xl": {
+      "$value": "6rem",
+      "$type": "dimension",
+      "$description": "5x large spacing (96px)"
+    },
+    "section": {
+      "$value": "2.5rem",
+      "$type": "dimension",
+      "$description": "Section spacing (40px)"
+    },
+    "page": {
+      "$value": "3.5rem",
+      "$type": "dimension",
+      "$description": "Page-level spacing (56px)"
+    }
+  }
+}

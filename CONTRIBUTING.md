@@ -29,13 +29,18 @@ Thank you for your interest in contributing to this design tokens repository! Th
 
 ```
 mantine-tokens/
-├── tokens/               # Source token files
+├── tokens/              # Source token files
 │   ├── primitives/      # Base design values
 │   ├── semantic/        # Theme-specific tokens
-│   └── components/      # Component tokens
+│   ├── components/      # Component tokens
+│   ├── custom/          # Custom brand tokens
+│   └── brands/          # Brand-specific tokens
 ├── build/               # Generated output (git-ignored)
 ├── scripts/             # Build and validation scripts
-└── build.js            # Main build configuration
+├── build-standard.js    # Main Mantine build
+├── build-custom.js      # Custom tokens build
+├── build-brands.js      # Brand tokens build
+└── build-all.js         # Build all tokens
 ```
 
 ## 🎨 Token Guidelines

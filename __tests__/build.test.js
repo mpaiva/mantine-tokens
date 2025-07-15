@@ -9,6 +9,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const execAsync = promisify(exec);
 
+// Helper to get current prefix
+async function getPrefix() {
+  try {
+    const prefixPath = path.join(__dirname, '..', 'tokens', '_prefix.json');
+    const content = await fs.readFile(prefixPath, 'utf8');
+    const data = JSON.parse(content);
+    return data.prefix || 'mantine';
+  } catch {
+    return 'mantine';
+  }
+}
+
 describe('Build System', () => {
   const buildDir = path.join(__dirname, '..', 'build');
 
@@ -31,6 +43,7 @@ describe('Build System', () => {
 
   test('should generate CSS variables file', async () => {
     await execAsync('npm run build');
+    const prefix = await getPrefix();
     const cssPath = path.join(buildDir, 'css', 'variables.css');
     const exists = await fs.access(cssPath).then(() => true).catch(() => false);
     
@@ -38,12 +51,13 @@ describe('Build System', () => {
     
     const content = await fs.readFile(cssPath, 'utf8');
     expect(content).toContain(':root {');
-    expect(content).toContain('--clearco-');
+    expect(content).toContain(`--${prefix}-`);
   }, 30000);
 
   test('should generate DTCG-compliant JSON', async () => {
     await execAsync('npm run build');
-    const jsonPath = path.join(buildDir, 'json', 'clearco.tokens.json');
+    const prefix = await getPrefix();
+    const jsonPath = path.join(buildDir, 'json', `${prefix}.tokens.json`);
     const exists = await fs.access(jsonPath).then(() => true).catch(() => false);
     
     expect(exists).toBe(true);
@@ -58,14 +72,22 @@ describe('Build System', () => {
 
   test('should generate TypeScript definitions', async () => {
     await execAsync('npm run build');
+    const prefix = await getPrefix();
     const tsPath = path.join(buildDir, 'ts', 'tokens.ts');
     const exists = await fs.access(tsPath).then(() => true).catch(() => false);
     
     expect(exists).toBe(true);
     
     const content = await fs.readFile(tsPath, 'utf8');
-    expect(content).toContain('export const clearcoTokens');
-    expect(content).toContain('export type ClearcoToken');
+    const expectedTokensName = `${prefix}Tokens`;
+    const expectedTypeName = `${prefix.charAt(0).toUpperCase() + prefix.slice(1)}Token`;
+    
+    expect(content).toContain(`export const ${expectedTokensName}`);
+    expect(content).toContain(`export type ${expectedTypeName}`);
+    
+    // Also verify the content structure
+    expect(content).toContain('as const');
+    expect(content).toContain('keyof typeof');
   }, 30000);
 
   test('should generate theme-specific CSS files', async () => {

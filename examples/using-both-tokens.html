@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Both Mantine and Custom Tokens</title>
+    
+    <!-- Import both token sets -->
+    <link rel="stylesheet" href="../build/css/variables.css">
+    <link rel="stylesheet" href="../build/custom/variables.css">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--mantine-typography-fontfamily-sans);
+            color: var(--mantine-color-gray-700);
+            background-color: var(--mantine-color-gray-50);
+            line-height: var(--mantine-typography-lineheight-normal);
+        }
+        
+        /* Container using Mantine spacing */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--mantine-spacing-xl);
+        }
+        
+        /* Hero section mixing both token sets */
+        .hero {
+            background: linear-gradient(135deg, 
+                var(--clearco-brand-primary), 
+                var(--clearco-brand-secondary)
+            );
+            color: white;
+            padding: var(--clearco-spacing-section) var(--mantine-spacing-xl);
+            border-radius: var(--mantine-radius-lg);
+            margin-bottom: var(--mantine-spacing-2xl);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: var(--clearco-typography-fontfamily-display, var(--mantine-typography-fontfamily-heading));
+            font-size: var(--clearco-typography-fontsize-display);
+            margin-bottom: var(--mantine-spacing-md);
+        }
+        
+        /* Card component using Mantine tokens */
+        .card {
+            background: var(--mantine-color-white);
+            border: 1px solid var(--mantine-color-gray-200);
+            border-radius: var(--mantine-radius-md);
+            padding: var(--mantine-spacing-lg);
+            margin-bottom: var(--mantine-spacing-md);
+            box-shadow: var(--mantine-shadow-sm);
+            transition: box-shadow var(--mantine-button-transition-duration) var(--mantine-button-transition-timingfunction);
+        }
+        
+        .card:hover {
+            box-shadow: var(--mantine-shadow-md);
+        }
+        
+        /* Button mixing both token sets */
+        .btn {
+            font-family: var(--mantine-typography-fontfamily-sans);
+            font-size: var(--mantine-button-fontsize-md);
+            font-weight: var(--mantine-button-fontweight-default);
+            padding: var(--mantine-button-padding-md);
+            border: none;
+            border-radius: var(--mantine-button-radius-default);
+            cursor: pointer;
+            transition: all var(--mantine-button-transition-duration) var(--mantine-button-transition-timingfunction);
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--clearco-brand-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--clearco-brand-secondary);
+            box-shadow: var(--mantine-button-shadow-hover);
+        }
+        
+        /* Grid using Mantine spacing */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--mantine-spacing-lg);
+            margin-bottom: var(--mantine-spacing-2xl);
+        }
+        
+        /* Feature box using custom tokens */
+        .feature {
+            text-align: center;
+            padding: var(--clearco-spacing-section);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--clearco-brand-accent);
+            border-radius: var(--mantine-radius-full);
+            margin: 0 auto var(--mantine-spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        /* Status badges using semantic colors */
+        .badge {
+            display: inline-block;
+            padding: var(--mantine-badge-padding-horizontal-sm) var(--mantine-badge-padding-horizontal-md);
+            border-radius: var(--mantine-badge-radius-default);
+            font-size: var(--mantine-badge-fontsize-sm);
+            font-weight: var(--mantine-badge-fontweight-default);
+            letter-spacing: var(--mantine-badge-letterspacing-default);
+        }
+        
+        .badge-success {
+            background-color: var(--clearco-brand-success);
+            color: white;
+        }
+        
+        .badge-warning {
+            background-color: var(--clearco-brand-warning);
+            color: var(--mantine-color-gray-900);
+        }
+        
+        .badge-error {
+            background-color: var(--clearco-brand-error);
+            color: white;
+        }
+        
+        /* Typography examples */
+        .typography-demo h2 {
+            font-family: var(--clearco-typography-fontfamily-brand, var(--mantine-typography-fontfamily-heading));
+            font-size: var(--mantine-typography-fontsize-h2);
+            margin-bottom: var(--mantine-spacing-sm);
+            color: var(--mantine-color-gray-800);
+        }
+        
+        .typography-demo p {
+            margin-bottom: var(--mantine-spacing-md);
+            line-height: var(--clearco-typography-lineheight-loose);
+        }
+        
+        /* Spacing demo */
+        .spacing-demo {
+            background: var(--mantine-color-gray-100);
+            padding: var(--mantine-spacing-md);
+            border-radius: var(--mantine-radius-sm);
+        }
+        
+        .spacing-item {
+            background: var(--clearco-brand-primary);
+            color: white;
+            padding: var(--mantine-spacing-xs);
+            margin-bottom: var(--mantine-spacing-xs);
+            text-align: center;
+            border-radius: var(--mantine-radius-xs);
+        }
+        
+        /* Code display */
+        code {
+            background: var(--mantine-color-gray-100);
+            padding: 2px 6px;
+            border-radius: var(--mantine-radius-xs);
+            font-family: var(--mantine-typography-fontfamily-mono);
+            font-size: 0.9em;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: var(--clearco-spacing-page) var(--mantine-spacing-xl);
+            border-top: 1px solid var(--mantine-color-gray-200);
+            color: var(--mantine-color-gray-600);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Mantine + Custom Tokens</h1>
+            <p>This page demonstrates using both token sets together</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card">
+            <h2>Combining Token Systems</h2>
+            <p>This example shows how to use both Mantine tokens and custom tokens in the same project. The page styling mixes:</p>
+            <ul style="margin-left: var(--mantine-spacing-xl); margin-bottom: var(--mantine-spacing-md);">
+                <li>Mantine tokens for core UI elements (spacing, typography, shadows)</li>
+                <li>Custom tokens for brand colors and special sizes</li>
+            </ul>
+            <a href="#" class="btn btn-primary">Custom Brand Button</a>
+        </div>
+        
+        <!-- Feature Grid -->
+        <div class="grid">
+            <div class="card">
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Brand Colors</h3>
+                    <p>Using <code>--clearco-brand-primary</code> and other custom color tokens</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="feature">
+                    <div class="feature-icon">📏</div>
+                    <h3>Mixed Spacing</h3>
+                    <p>Mantine spacing for consistency, custom spacing for special cases</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="feature">
+                    <div class="feature-icon">🔤</div>
+                    <h3>Typography</h3>
+                    <p>Custom display fonts with Mantine's typography system</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Status Examples -->
+        <div class="card">
+            <h2>Status Indicators</h2>
+            <p>Custom semantic colors for status:</p>
+            <div style="margin-top: var(--mantine-spacing-md);">
+                <span class="badge badge-success">Success</span>
+                <span class="badge badge-warning">Warning</span>
+                <span class="badge badge-error">Error</span>
+            </div>
+        </div>
+        
+        <!-- Typography Demo -->
+        <div class="card typography-demo">
+            <h2>Typography Mix</h2>
+            <p>This heading uses custom brand font (if defined) with Mantine's size scale.</p>
+            <p>Body text uses Mantine's font stack with custom line height for better readability.</p>
+        </div>
+        
+        <!-- Spacing Demo -->
+        <div class="card">
+            <h2>Spacing Examples</h2>
+            <div class="spacing-demo">
+                <div class="spacing-item" style="margin-bottom: var(--mantine-spacing-xs);">
+                    Mantine XS spacing
+                </div>
+                <div class="spacing-item" style="margin-bottom: var(--clearco-spacing-xxs);">
+                    Custom XXS spacing
+                </div>
+                <div class="spacing-item" style="margin-bottom: var(--mantine-spacing-md);">
+                    Mantine MD spacing
+                </div>
+                <div class="spacing-item" style="margin-bottom: var(--clearco-spacing-section);">
+                    Custom section spacing
+                </div>
+            </div>
+        </div>
+        
+        <!-- Token Reference -->
+        <div class="card">
+            <h2>Token Reference</h2>
+            <p>This page uses tokens from both systems:</p>
+            <h3 style="margin-top: var(--mantine-spacing-lg);">Mantine Tokens Used:</h3>
+            <ul style="margin-left: var(--mantine-spacing-xl);">
+                <li><code>--mantine-spacing-*</code> for consistent spacing</li>
+                <li><code>--mantine-radius-*</code> for border radius</li>
+                <li><code>--mantine-shadow-*</code> for shadows</li>
+                <li><code>--mantine-color-gray-*</code> for neutral colors</li>
+            </ul>
+            
+            <h3 style="margin-top: var(--mantine-spacing-lg);">Custom Tokens Used:</h3>
+            <ul style="margin-left: var(--mantine-spacing-xl);">
+                <li><code>--clearco-brand-*</code> for brand colors</li>
+                <li><code>--clearco-spacing-*</code> for special spacing</li>
+                <li><code>--clearco-typography-*</code> for brand fonts</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Built with Mantine Tokens + Custom Tokens</p>
+    </div>
+</body>
+</html>

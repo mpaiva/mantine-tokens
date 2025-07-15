@@ -1,0 +1,200 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "theme": {
+    "$description": "Dark theme tokens for Clearco brand",
+    "surface": {
+      "$description": "Surface colors for dark theme",
+      "primary": {
+        "$value": "#0a0a0a",
+        "$type": "color",
+        "$description": "Primary surface (main background)"
+      },
+      "secondary": {
+        "$value": "#1a1a1a",
+        "$type": "color",
+        "$description": "Secondary surface (cards, panels)"
+      },
+      "tertiary": {
+        "$value": "#242424",
+        "$type": "color",
+        "$description": "Tertiary surface (nested elements)"
+      },
+      "inverse": {
+        "$value": "{brand.neutral.50}",
+        "$type": "color",
+        "$description": "Inverse surface (tooltips, popovers)"
+      },
+      "brand": {
+        "$value": "color-mix(in srgb, {brand.primary.900} 20%, #0a0a0a)",
+        "$type": "color",
+        "$description": "Brand-tinted surface"
+      }
+    },
+    "content": {
+      "$description": "Content colors for dark theme",
+      "primary": {
+        "$value": "#f5f5f5",
+        "$type": "color",
+        "$description": "Primary content (headings, body text)"
+      },
+      "secondary": {
+        "$value": "#d4d4d4",
+        "$type": "color",
+        "$description": "Secondary content (labels, captions)"
+      },
+      "tertiary": {
+        "$value": "#a3a3a3",
+        "$type": "color",
+        "$description": "Tertiary content (hints, placeholders)"
+      },
+      "disabled": {
+        "$value": "#525252",
+        "$type": "color",
+        "$description": "Disabled content"
+      },
+      "inverse": {
+        "$value": "{brand.neutral.900}",
+        "$type": "color",
+        "$description": "Inverse content (on light backgrounds)"
+      },
+      "brand": {
+        "$value": "{brand.primary.300}",
+        "$type": "color",
+        "$description": "Brand-colored content"
+      }
+    },
+    "border": {
+      "$description": "Border colors for dark theme",
+      "subtle": {
+        "$value": "rgba(255, 255, 255, 0.1)",
+        "$type": "color",
+        "$description": "Subtle borders"
+      },
+      "default": {
+        "$value": "rgba(255, 255, 255, 0.2)",
+        "$type": "color",
+        "$description": "Default borders"
+      },
+      "strong": {
+        "$value": "rgba(255, 255, 255, 0.3)",
+        "$type": "color",
+        "$description": "Strong borders"
+      },
+      "inverse": {
+        "$value": "rgba(0, 0, 0, 0.2)",
+        "$type": "color",
+        "$description": "Inverse borders"
+      },
+      "brand": {
+        "$value": "{brand.primary.700}",
+        "$type": "color",
+        "$description": "Brand-colored borders"
+      }
+    },
+    "interactive": {
+      "$description": "Interactive element colors for dark theme",
+      "primary": {
+        "$description": "Primary interactive colors",
+        "default": {
+          "$value": "{brand.primary.400}",
+          "$type": "color",
+          "$description": "Default state"
+        },
+        "hover": {
+          "$value": "{brand.primary.300}",
+          "$type": "color",
+          "$description": "Hover state"
+        },
+        "active": {
+          "$value": "{brand.primary.200}",
+          "$type": "color",
+          "$description": "Active/pressed state"
+        },
+        "disabled": {
+          "$value": "{brand.primary.700}",
+          "$type": "color",
+          "$description": "Disabled state"
+        }
+      },
+      "secondary": {
+        "$description": "Secondary interactive colors",
+        "default": {
+          "$value": "rgba(255, 255, 255, 0.1)",
+          "$type": "color",
+          "$description": "Default state"
+        },
+        "hover": {
+          "$value": "rgba(255, 255, 255, 0.15)",
+          "$type": "color",
+          "$description": "Hover state"
+        },
+        "active": {
+          "$value": "rgba(255, 255, 255, 0.2)",
+          "$type": "color",
+          "$description": "Active/pressed state"
+        },
+        "disabled": {
+          "$value": "rgba(255, 255, 255, 0.05)",
+          "$type": "color",
+          "$description": "Disabled state"
+        }
+      },
+      "danger": {
+        "$description": "Danger/destructive interactive colors",
+        "default": {
+          "$value": "#ef4444",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "#dc2626",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "#b91c1c",
+          "$type": "color"
+        }
+      },
+      "success": {
+        "$description": "Success interactive colors",
+        "default": {
+          "$value": "#22c55e",
+          "$type": "color"
+        },
+        "hover": {
+          "$value": "#16a34a",
+          "$type": "color"
+        },
+        "active": {
+          "$value": "#15803d",
+          "$type": "color"
+        }
+      }
+    },
+    "focus": {
+      "$description": "Focus state colors",
+      "ring": {
+        "$value": "{brand.primary.400}",
+        "$type": "color",
+        "$description": "Focus ring color"
+      },
+      "offset": {
+        "$value": "#0a0a0a",
+        "$type": "color",
+        "$description": "Focus ring offset color"
+      }
+    },
+    "overlay": {
+      "$description": "Overlay colors",
+      "backdrop": {
+        "$value": "rgba(0, 0, 0, 0.8)",
+        "$type": "color",
+        "$description": "Modal backdrop"
+      },
+      "scrim": {
+        "$value": "rgba(0, 0, 0, 0.9)",
+        "$type": "color",
+        "$description": "Dark scrim for images"
+      }
+    }
+  }
+}
