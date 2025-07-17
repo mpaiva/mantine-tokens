@@ -1,0 +1,390 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "card": {
+    "$description": "Card component tokens",
+    "padding": {
+      "xs": {
+        "$value": "0.75rem",
+        "$type": "dimension",
+        "$description": "Extra small card padding (12px)"
+      },
+      "sm": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Small card padding (16px)"
+      },
+      "md": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Medium card padding (24px)"
+      },
+      "lg": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Large card padding (32px)"
+      },
+      "xl": {
+        "$value": "2.5rem",
+        "$type": "dimension",
+        "$description": "Extra large card padding (40px)"
+      }
+    },
+    "gap": {
+      "xs": {
+        "$value": "0.5rem",
+        "$type": "dimension",
+        "$description": "Extra small gap between card elements (8px)"
+      },
+      "sm": {
+        "$value": "0.75rem",
+        "$type": "dimension",
+        "$description": "Small gap between card elements (12px)"
+      },
+      "md": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Medium gap between card elements (16px)"
+      },
+      "lg": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Large gap between card elements (24px)"
+      },
+      "xl": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Extra large gap between card elements (32px)"
+      }
+    },
+    "border": {
+      "width": {
+        "$value": "1px",
+        "$type": "dimension",
+        "$description": "Card border width"
+      },
+      "radius": {
+        "none": {
+          "$value": "0",
+          "$type": "dimension",
+          "$description": "No border radius"
+        },
+        "sm": {
+          "$value": "0.375rem",
+          "$type": "dimension",
+          "$description": "Small border radius (6px)"
+        },
+        "md": {
+          "$value": "0.5rem",
+          "$type": "dimension",
+          "$description": "Medium border radius (8px)"
+        },
+        "lg": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Large border radius (12px)"
+        },
+        "xl": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Extra large border radius (16px)"
+        },
+        "2xl": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "2x large border radius (24px)"
+        }
+      }
+    },
+    "shadow": {
+      "none": {
+        "$value": "none",
+        "$type": "shadow",
+        "$description": "No shadow"
+      },
+      "xs": {
+        "$value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "$type": "shadow",
+        "$description": "Extra small shadow"
+      },
+      "sm": {
+        "$value": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+        "$type": "shadow",
+        "$description": "Small shadow"
+      },
+      "md": {
+        "$value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "$type": "shadow",
+        "$description": "Medium shadow"
+      },
+      "lg": {
+        "$value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        "$type": "shadow",
+        "$description": "Large shadow"
+      },
+      "xl": {
+        "$value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        "$type": "shadow",
+        "$description": "Extra large shadow"
+      },
+      "2xl": {
+        "$value": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        "$type": "shadow",
+        "$description": "2x large shadow"
+      }
+    },
+    "header": {
+      "padding": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Card header padding"
+      },
+      "border-width": {
+        "$value": "1px",
+        "$type": "dimension",
+        "$description": "Card header border width"
+      },
+      "font-size": {
+        "$value": "1.125rem",
+        "$type": "dimension",
+        "$description": "Card header font size (18px)"
+      },
+      "font-weight": {
+        "$value": "600",
+        "$type": "fontWeight",
+        "$description": "Card header font weight"
+      }
+    },
+    "footer": {
+      "padding": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Card footer padding"
+      },
+      "border-width": {
+        "$value": "1px",
+        "$type": "dimension",
+        "$description": "Card footer border width"
+      }
+    }
+  },
+  "container": {
+    "$description": "Container and layout tokens",
+    "max-width": {
+      "xs": {
+        "$value": "20rem",
+        "$type": "dimension",
+        "$description": "Extra small container (320px)"
+      },
+      "sm": {
+        "$value": "30rem",
+        "$type": "dimension",
+        "$description": "Small container (480px)"
+      },
+      "md": {
+        "$value": "48rem",
+        "$type": "dimension",
+        "$description": "Medium container (768px)"
+      },
+      "lg": {
+        "$value": "64rem",
+        "$type": "dimension",
+        "$description": "Large container (1024px)"
+      },
+      "xl": {
+        "$value": "80rem",
+        "$type": "dimension",
+        "$description": "Extra large container (1280px)"
+      },
+      "2xl": {
+        "$value": "96rem",
+        "$type": "dimension",
+        "$description": "2x large container (1536px)"
+      },
+      "full": {
+        "$value": "100%",
+        "$type": "dimension",
+        "$description": "Full width container"
+      }
+    },
+    "padding": {
+      "xs": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Extra small container padding (16px)"
+      },
+      "sm": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Small container padding (24px)"
+      },
+      "md": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Medium container padding (32px)"
+      },
+      "lg": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "Large container padding (48px)"
+      },
+      "xl": {
+        "$value": "4rem",
+        "$type": "dimension",
+        "$description": "Extra large container padding (64px)"
+      }
+    }
+  },
+  "section": {
+    "$description": "Section spacing tokens",
+    "padding": {
+      "vertical": {
+        "xs": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Extra small vertical section padding (24px)"
+        },
+        "sm": {
+          "$value": "2rem",
+          "$type": "dimension",
+          "$description": "Small vertical section padding (32px)"
+        },
+        "md": {
+          "$value": "3rem",
+          "$type": "dimension",
+          "$description": "Medium vertical section padding (48px)"
+        },
+        "lg": {
+          "$value": "4rem",
+          "$type": "dimension",
+          "$description": "Large vertical section padding (64px)"
+        },
+        "xl": {
+          "$value": "6rem",
+          "$type": "dimension",
+          "$description": "Extra large vertical section padding (96px)"
+        }
+      }
+    },
+    "gap": {
+      "xs": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Extra small section gap (16px)"
+      },
+      "sm": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Small section gap (24px)"
+      },
+      "md": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Medium section gap (32px)"
+      },
+      "lg": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "Large section gap (48px)"
+      },
+      "xl": {
+        "$value": "4rem",
+        "$type": "dimension",
+        "$description": "Extra large section gap (64px)"
+      }
+    }
+  },
+  "grid": {
+    "$description": "Grid layout tokens",
+    "gap": {
+      "xs": {
+        "$value": "0.5rem",
+        "$type": "dimension",
+        "$description": "Extra small grid gap (8px)"
+      },
+      "sm": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Small grid gap (16px)"
+      },
+      "md": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Medium grid gap (24px)"
+      },
+      "lg": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Large grid gap (32px)"
+      },
+      "xl": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "Extra large grid gap (48px)"
+      }
+    },
+    "columns": {
+      "count": {
+        "1": {
+          "$value": "1",
+          "$type": "number",
+          "$description": "Single column"
+        },
+        "2": {
+          "$value": "2",
+          "$type": "number",
+          "$description": "Two columns"
+        },
+        "3": {
+          "$value": "3",
+          "$type": "number",
+          "$description": "Three columns"
+        },
+        "4": {
+          "$value": "4",
+          "$type": "number",
+          "$description": "Four columns"
+        },
+        "6": {
+          "$value": "6",
+          "$type": "number",
+          "$description": "Six columns"
+        },
+        "8": {
+          "$value": "8",
+          "$type": "number",
+          "$description": "Eight columns"
+        },
+        "12": {
+          "$value": "12",
+          "$type": "number",
+          "$description": "Twelve columns"
+        }
+      }
+    }
+  },
+  "panel": {
+    "$description": "Panel and sidebar tokens",
+    "width": {
+      "narrow": {
+        "$value": "16rem",
+        "$type": "dimension",
+        "$description": "Narrow panel width (256px)"
+      },
+      "medium": {
+        "$value": "20rem",
+        "$type": "dimension",
+        "$description": "Medium panel width (320px)"
+      },
+      "wide": {
+        "$value": "24rem",
+        "$type": "dimension",
+        "$description": "Wide panel width (384px)"
+      }
+    },
+    "padding": {
+      "$value": "{card.padding.md}",
+      "$type": "dimension",
+      "$description": "Panel padding"
+    }
+  }
+}

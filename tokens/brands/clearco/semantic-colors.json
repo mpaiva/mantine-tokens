@@ -1,0 +1,189 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "semantic": {
+    "$description": "Enhanced semantic colors with full shades",
+    "success": {
+      "$description": "Success color scale",
+      "50": { "$value": "#e8f5e9", "$type": "color", "$description": "Lightest success tint" },
+      "100": { "$value": "#c8e6c9", "$type": "color", "$description": "Very light success tint" },
+      "200": { "$value": "#a5d6a7", "$type": "color", "$description": "Light success tint" },
+      "300": { "$value": "#81c784", "$type": "color", "$description": "Medium light success tint" },
+      "400": { "$value": "#66bb6a", "$type": "color", "$description": "Medium success tint" },
+      "500": { "$value": "#4caf50", "$type": "color", "$description": "Base success color" },
+      "600": { "$value": "#43a047", "$type": "color", "$description": "Medium success shade" },
+      "700": { "$value": "#388e3c", "$type": "color", "$description": "Dark success shade" },
+      "800": { "$value": "#2e7d32", "$type": "color", "$description": "Very dark success shade" },
+      "900": { "$value": "#1b5e20", "$type": "color", "$description": "Darkest success shade" }
+    },
+    "warning": {
+      "$description": "Warning color scale",
+      "50": { "$value": "#fffde7", "$type": "color", "$description": "Lightest warning tint" },
+      "100": { "$value": "#fff9c4", "$type": "color", "$description": "Very light warning tint" },
+      "200": { "$value": "#fff59d", "$type": "color", "$description": "Light warning tint" },
+      "300": { "$value": "#fff176", "$type": "color", "$description": "Medium light warning tint" },
+      "400": { "$value": "#ffee58", "$type": "color", "$description": "Medium warning tint" },
+      "500": { "$value": "#ffeb3b", "$type": "color", "$description": "Base warning color" },
+      "600": { "$value": "#fdd835", "$type": "color", "$description": "Medium warning shade" },
+      "700": { "$value": "#fbc02d", "$type": "color", "$description": "Dark warning shade" },
+      "800": { "$value": "#f9a825", "$type": "color", "$description": "Very dark warning shade" },
+      "900": { "$value": "#f57f17", "$type": "color", "$description": "Darkest warning shade" }
+    },
+    "error": {
+      "$description": "Error color scale",
+      "50": { "$value": "#ffebee", "$type": "color", "$description": "Lightest error tint" },
+      "100": { "$value": "#ffcdd2", "$type": "color", "$description": "Very light error tint" },
+      "200": { "$value": "#ef9a9a", "$type": "color", "$description": "Light error tint" },
+      "300": { "$value": "#e57373", "$type": "color", "$description": "Medium light error tint" },
+      "400": { "$value": "#ef5350", "$type": "color", "$description": "Medium error tint" },
+      "500": { "$value": "#f44336", "$type": "color", "$description": "Base error color" },
+      "600": { "$value": "#e53935", "$type": "color", "$description": "Medium error shade" },
+      "700": { "$value": "#d32f2f", "$type": "color", "$description": "Dark error shade" },
+      "800": { "$value": "#c62828", "$type": "color", "$description": "Very dark error shade" },
+      "900": { "$value": "#b71c1c", "$type": "color", "$description": "Darkest error shade" }
+    },
+    "info": {
+      "$description": "Info color scale",
+      "50": { "$value": "#e3f2fd", "$type": "color", "$description": "Lightest info tint" },
+      "100": { "$value": "#bbdefb", "$type": "color", "$description": "Very light info tint" },
+      "200": { "$value": "#90caf9", "$type": "color", "$description": "Light info tint" },
+      "300": { "$value": "#64b5f6", "$type": "color", "$description": "Medium light info tint" },
+      "400": { "$value": "#42a5f5", "$type": "color", "$description": "Medium info tint" },
+      "500": { "$value": "#2196f3", "$type": "color", "$description": "Base info color" },
+      "600": { "$value": "#1e88e5", "$type": "color", "$description": "Medium info shade" },
+      "700": { "$value": "#1976d2", "$type": "color", "$description": "Dark info shade" },
+      "800": { "$value": "#1565c0", "$type": "color", "$description": "Very dark info shade" },
+      "900": { "$value": "#0d47a1", "$type": "color", "$description": "Darkest info shade" }
+    }
+  },
+  "accessibility": {
+    "$description": "Accessibility-focused color tokens",
+    "contrast": {
+      "primary-on-light": {
+        "$value": "#003d7a",
+        "$type": "color",
+        "$description": "Primary color meeting WCAG AA on white background"
+      },
+      "primary-on-dark": {
+        "$value": "#4d94ff",
+        "$type": "color",
+        "$description": "Primary color meeting WCAG AA on dark background"
+      },
+      "secondary-on-light": {
+        "$value": "#994020",
+        "$type": "color",
+        "$description": "Secondary color meeting WCAG AA on white background"
+      },
+      "secondary-on-dark": {
+        "$value": "#ffa682",
+        "$type": "color",
+        "$description": "Secondary color meeting WCAG AA on dark background"
+      },
+      "success-on-light": {
+        "$value": "#388e3c",
+        "$type": "color",
+        "$description": "Success color meeting WCAG AA on white background"
+      },
+      "success-on-dark": {
+        "$value": "#81c784",
+        "$type": "color",
+        "$description": "Success color meeting WCAG AA on dark background"
+      },
+      "warning-on-light": {
+        "$value": "#f9a825",
+        "$type": "color",
+        "$description": "Warning color meeting WCAG AA on white background"
+      },
+      "warning-on-dark": {
+        "$value": "#fff176",
+        "$type": "color",
+        "$description": "Warning color meeting WCAG AA on dark background"
+      },
+      "error-on-light": {
+        "$value": "#d32f2f",
+        "$type": "color",
+        "$description": "Error color meeting WCAG AA on white background"
+      },
+      "error-on-dark": {
+        "$value": "#e57373",
+        "$type": "color",
+        "$description": "Error color meeting WCAG AA on dark background"
+      }
+    },
+    "focus": {
+      "ring": {
+        "$value": "#0066cc",
+        "$type": "color",
+        "$description": "Focus ring color"
+      },
+      "ring-offset": {
+        "$value": "#ffffff",
+        "$type": "color",
+        "$description": "Focus ring offset color"
+      },
+      "ring-dark": {
+        "$value": "#1a75ff",
+        "$type": "color",
+        "$description": "Focus ring color for dark backgrounds"
+      },
+      "ring-offset-dark": {
+        "$value": "#000000",
+        "$type": "color",
+        "$description": "Focus ring offset color for dark backgrounds"
+      }
+    }
+  },
+  "interactive": {
+    "$description": "Interactive state colors",
+    "primary": {
+      "hover": {
+        "$value": "#0052a3",
+        "$type": "color",
+        "$description": "Primary hover state"
+      },
+      "active": {
+        "$value": "#003d7a",
+        "$type": "color",
+        "$description": "Primary active/pressed state"
+      },
+      "disabled": {
+        "$value": "#4d94ff",
+        "$type": "color",
+        "$description": "Primary disabled state"
+      }
+    },
+    "secondary": {
+      "hover": {
+        "$value": "#cc562a",
+        "$type": "color",
+        "$description": "Secondary hover state"
+      },
+      "active": {
+        "$value": "#994020",
+        "$type": "color",
+        "$description": "Secondary active/pressed state"
+      },
+      "disabled": {
+        "$value": "#ffa682",
+        "$type": "color",
+        "$description": "Secondary disabled state"
+      }
+    },
+    "accent": {
+      "hover": {
+        "$value": "#3ea49d",
+        "$type": "color",
+        "$description": "Accent hover state"
+      },
+      "active": {
+        "$value": "#2f7b76",
+        "$type": "color",
+        "$description": "Accent active/pressed state"
+      },
+      "disabled": {
+        "$value": "#77e6df",
+        "$type": "color",
+        "$description": "Accent disabled state"
+      }
+    }
+  }
+}

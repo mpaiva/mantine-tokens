@@ -69,7 +69,7 @@ npm run build:brands         # Build all brand tokens
 npm run build:brands:verbose # Verbose brand build
 npm run dev:brands          # Watch mode for brands
 # Build specific brands:
-npm run build:brands clearco brand-b
+npm run build:brands clearco firstwatch
 ```
 
 ### Testing & Quality
@@ -93,7 +93,7 @@ npm run validate      # Validate token structure
 │   ├── custom/           # Custom brand-specific tokens
 │   └── brands/           # Multibrand token definitions
 │       ├── clearco/      # Clearco brand tokens
-│       └── brand-b/      # Example second brand
+│       └── firstwatch/   # Firstwatch brand tokens
 ├── graph/                 # Tokens Studio graph definitions
 │   ├── examples/          # Example graph configurations
 │   ├── resolvers/         # Custom resolver nodes

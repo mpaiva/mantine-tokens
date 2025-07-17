@@ -1,0 +1,322 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "theme": {
+    "$description": "Enhanced theme tokens with improved hierarchy",
+    "surface": {
+      "$description": "Enhanced surface hierarchy",
+      "base": {
+        "$value": "#ffffff",
+        "$type": "color",
+        "$description": "Base surface (page background)"
+      },
+      "raised": {
+        "$value": "#ffffff",
+        "$type": "color",
+        "$description": "Raised surface (cards, modals)"
+      },
+      "sunken": {
+        "$value": "#f8f9fa",
+        "$type": "color",
+        "$description": "Sunken surface (wells, indented areas)"
+      },
+      "overlay": {
+        "$value": "#ffffff",
+        "$type": "color",
+        "$description": "Overlay surface (dropdowns, tooltips)"
+      },
+      "selected": {
+        "$value": "#e6f0ff",
+        "$type": "color",
+        "$description": "Selected item surface"
+      },
+      "hover": {
+        "$value": "#f8f9fa",
+        "$type": "color",
+        "$description": "Hover state surface"
+      },
+      "active": {
+        "$value": "#f1f3f5",
+        "$type": "color",
+        "$description": "Active/pressed state surface"
+      },
+      "disabled": {
+        "$value": "#f8f9fa",
+        "$type": "color",
+        "$description": "Disabled state surface"
+      }
+    },
+    "elevation": {
+      "$description": "Elevation tokens for depth",
+      "raised": {
+        "$value": "{card.shadow.sm}",
+        "$type": "shadow",
+        "$description": "Raised element shadow"
+      },
+      "floating": {
+        "$value": "{card.shadow.md}",
+        "$type": "shadow",
+        "$description": "Floating element shadow"
+      },
+      "overlay": {
+        "$value": "{card.shadow.lg}",
+        "$type": "shadow",
+        "$description": "Overlay element shadow"
+      },
+      "modal": {
+        "$value": "{card.shadow.xl}",
+        "$type": "shadow",
+        "$description": "Modal dialog shadow"
+      }
+    },
+    "state": {
+      "$description": "State-specific tokens",
+      "hover": {
+        "opacity": {
+          "$value": "0.04",
+          "$type": "number",
+          "$description": "Hover state overlay opacity"
+        },
+        "background": {
+          "$value": "#212529",
+          "$type": "color",
+          "$description": "Hover state overlay color"
+        }
+      },
+      "active": {
+        "opacity": {
+          "$value": "0.08",
+          "$type": "number",
+          "$description": "Active state overlay opacity"
+        },
+        "background": {
+          "$value": "#212529",
+          "$type": "color",
+          "$description": "Active state overlay color"
+        }
+      },
+      "selected": {
+        "opacity": {
+          "$value": "0.12",
+          "$type": "number",
+          "$description": "Selected state overlay opacity"
+        },
+        "background": {
+          "$value": "#0066cc",
+          "$type": "color",
+          "$description": "Selected state overlay color"
+        }
+      },
+      "disabled": {
+        "opacity": {
+          "$value": "0.38",
+          "$type": "number",
+          "$description": "Disabled state opacity"
+        }
+      },
+      "loading": {
+        "opacity": {
+          "$value": "0.6",
+          "$type": "number",
+          "$description": "Loading state opacity"
+        }
+      },
+      "readonly": {
+        "opacity": {
+          "$value": "0.8",
+          "$type": "number",
+          "$description": "Read-only state opacity"
+        }
+      }
+    },
+    "backdrop": {
+      "$description": "Backdrop and scrim tokens",
+      "color": {
+        "$value": "#000000",
+        "$type": "color",
+        "$description": "Backdrop base color"
+      },
+      "opacity": {
+        "light": {
+          "$value": "0.2",
+          "$type": "number",
+          "$description": "Light backdrop opacity"
+        },
+        "medium": {
+          "$value": "0.4",
+          "$type": "number",
+          "$description": "Medium backdrop opacity"
+        },
+        "heavy": {
+          "$value": "0.6",
+          "$type": "number",
+          "$description": "Heavy backdrop opacity"
+        }
+      },
+      "blur": {
+        "$value": "8px",
+        "$type": "dimension",
+        "$description": "Backdrop blur amount"
+      }
+    },
+    "skeleton": {
+      "$description": "Skeleton loading state tokens",
+      "base": {
+        "$value": "#e9ecef",
+        "$type": "color",
+        "$description": "Skeleton base color"
+      },
+      "highlight": {
+        "$value": "#f1f3f5",
+        "$type": "color",
+        "$description": "Skeleton highlight color"
+      },
+      "duration": {
+        "$value": "1.5s",
+        "$type": "duration",
+        "$description": "Skeleton animation duration"
+      }
+    },
+    "divider": {
+      "$description": "Divider and separator tokens",
+      "color": {
+        "light": {
+          "$value": "#e9ecef",
+          "$type": "color",
+          "$description": "Light divider color"
+        },
+        "medium": {
+          "$value": "#dee2e6",
+          "$type": "color",
+          "$description": "Medium divider color"
+        },
+        "strong": {
+          "$value": "#ced4da",
+          "$type": "color",
+          "$description": "Strong divider color"
+        }
+      },
+      "width": {
+        "thin": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Thin divider width"
+        },
+        "medium": {
+          "$value": "2px",
+          "$type": "dimension",
+          "$description": "Medium divider width"
+        },
+        "thick": {
+          "$value": "4px",
+          "$type": "dimension",
+          "$description": "Thick divider width"
+        }
+      }
+    }
+  },
+  "theme-dark": {
+    "$description": "Enhanced dark theme tokens",
+    "surface": {
+      "$description": "Dark theme surface hierarchy",
+      "base": {
+        "$value": "#0a0a0a",
+        "$type": "color",
+        "$description": "Base surface (page background)"
+      },
+      "raised": {
+        "$value": "#141414",
+        "$type": "color",
+        "$description": "Raised surface (cards, modals)"
+      },
+      "sunken": {
+        "$value": "#000000",
+        "$type": "color",
+        "$description": "Sunken surface (wells, indented areas)"
+      },
+      "overlay": {
+        "$value": "#1f1f1f",
+        "$type": "color",
+        "$description": "Overlay surface (dropdowns, tooltips)"
+      },
+      "selected": {
+        "$value": "#001429",
+        "$type": "color",
+        "$description": "Selected item surface"
+      },
+      "hover": {
+        "$value": "#1a1a1a",
+        "$type": "color",
+        "$description": "Hover state surface"
+      },
+      "active": {
+        "$value": "#242424",
+        "$type": "color",
+        "$description": "Active/pressed state surface"
+      },
+      "disabled": {
+        "$value": "#0f0f0f",
+        "$type": "color",
+        "$description": "Disabled state surface"
+      }
+    },
+    "state": {
+      "$description": "Dark theme state tokens",
+      "hover": {
+        "opacity": {
+          "$value": "0.08",
+          "$type": "number",
+          "$description": "Hover state overlay opacity"
+        },
+        "background": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$description": "Hover state overlay color"
+        }
+      },
+      "active": {
+        "opacity": {
+          "$value": "0.12",
+          "$type": "number",
+          "$description": "Active state overlay opacity"
+        },
+        "background": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$description": "Active state overlay color"
+        }
+      },
+      "selected": {
+        "opacity": {
+          "$value": "0.16",
+          "$type": "number",
+          "$description": "Selected state overlay opacity"
+        },
+        "background": {
+          "$value": "#1a75ff",
+          "$type": "color",
+          "$description": "Selected state overlay color"
+        }
+      }
+    },
+    "divider": {
+      "$description": "Dark theme divider tokens",
+      "color": {
+        "light": {
+          "$value": "rgba(255, 255, 255, 0.08)",
+          "$type": "color",
+          "$description": "Light divider color"
+        },
+        "medium": {
+          "$value": "rgba(255, 255, 255, 0.12)",
+          "$type": "color",
+          "$description": "Medium divider color"
+        },
+        "strong": {
+          "$value": "rgba(255, 255, 255, 0.16)",
+          "$type": "color",
+          "$description": "Strong divider color"
+        }
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@ describe('Multibrand Build Tests', () => {
     expect(stdout).toContain('Building design tokens for multiple brands');
     expect(stdout).toContain('Brands to build:');
     expect(stdout).toContain('clearco');
-    expect(stdout).toContain('brand-b');
+    expect(stdout).toContain('firstwatch');
     expect(stderr).toBe('');
   }, 30000);
 
@@ -48,16 +48,16 @@ describe('Multibrand Build Tests', () => {
     expect(clearcoLightTheme).toContain('--clearco-theme-surface-primary');
     expect(clearcoDarkTheme).toContain('--clearco-theme-surface-primary');
     
-    // Check Brand B files
-    const brandBDir = path.join(brandsDir, 'brand-b');
-    const brandBColors = await fs.readFile(path.join(brandBDir, 'colors.css'), 'utf8');
-    const brandBLightTheme = await fs.readFile(path.join(brandBDir, 'theme-light.css'), 'utf8');
-    const brandBDarkTheme = await fs.readFile(path.join(brandBDir, 'theme-dark.css'), 'utf8');
+    // Check Firstwatch files
+    const firstwatchDir = path.join(brandsDir, 'firstwatch');
+    const firstwatchColors = await fs.readFile(path.join(firstwatchDir, 'colors.css'), 'utf8');
+    const firstwatchLightTheme = await fs.readFile(path.join(firstwatchDir, 'theme-light.css'), 'utf8');
+    const firstwatchDarkTheme = await fs.readFile(path.join(firstwatchDir, 'theme-dark.css'), 'utf8');
     
-    // Verify Brand B CSS variables
-    expect(brandBColors).toContain('--brand-b-brand-primary-500');
-    expect(brandBLightTheme).toContain('--brand-b-theme-surface-primary');
-    expect(brandBDarkTheme).toContain('--brand-b-theme-surface-primary');
+    // Verify Firstwatch CSS variables
+    expect(firstwatchColors).toContain('--firstwatch-brand-primary-500');
+    expect(firstwatchLightTheme).toContain('--firstwatch-theme-surface-primary');
+    expect(firstwatchDarkTheme).toContain('--firstwatch-theme-surface-primary');
   }, 30000);
 
   test('should generate combined CSS file for each brand', async () => {
@@ -66,14 +66,14 @@ describe('Multibrand Build Tests', () => {
     
     // Check combined files
     const clearcoAll = await fs.readFile(path.join(brandsDir, 'clearco', 'all.css'), 'utf8');
-    const brandBAll = await fs.readFile(path.join(brandsDir, 'brand-b', 'all.css'), 'utf8');
+    const firstwatchAll = await fs.readFile(path.join(brandsDir, 'firstwatch', 'all.css'), 'utf8');
     
     // Verify combined files include all tokens
     expect(clearcoAll).toContain('--clearco-brand-primary-500'); // Colors
     expect(clearcoAll).toContain('--clearco-theme-surface-primary'); // Theme tokens
     
-    expect(brandBAll).toContain('--brand-b-brand-primary-500'); // Colors
-    expect(brandBAll).toContain('--brand-b-theme-surface-primary'); // Theme tokens
+    expect(firstwatchAll).toContain('--firstwatch-brand-primary-500'); // Colors
+    expect(firstwatchAll).toContain('--firstwatch-theme-surface-primary'); // Theme tokens
   }, 30000);
 
   test('should generate TypeScript definitions for brands', async () => {
@@ -82,14 +82,14 @@ describe('Multibrand Build Tests', () => {
     
     // Check TypeScript files
     const clearcoTS = await fs.readFile(path.join(brandsDir, 'clearco', 'tokens.ts'), 'utf8');
-    const brandBTS = await fs.readFile(path.join(brandsDir, 'brand-b', 'tokens.ts'), 'utf8');
+    const firstwatchTS = await fs.readFile(path.join(brandsDir, 'firstwatch', 'tokens.ts'), 'utf8');
     
     // Verify TypeScript structure
     expect(clearcoTS).toContain('export const BrandPrimary500: string;');
     expect(clearcoTS).toContain('export const SemanticElevation1:');
     
-    expect(brandBTS).toContain('export const BrandPrimary500: string;');
-    expect(brandBTS).toContain('export const SemanticMotionDurationNormal: string;');
+    expect(firstwatchTS).toContain('export const BrandPrimary500: string;');
+    expect(firstwatchTS).toContain('export const SemanticMotionDurationNormal: string;');
   }, 30000);
 
   test('should generate brand info metadata', async () => {
@@ -98,7 +98,7 @@ describe('Multibrand Build Tests', () => {
     
     // Check brand info files
     const clearcoInfo = JSON.parse(await fs.readFile(path.join(brandsDir, 'clearco', 'brand-info.json'), 'utf8'));
-    const brandBInfo = JSON.parse(await fs.readFile(path.join(brandsDir, 'brand-b', 'brand-info.json'), 'utf8'));
+    const firstwatchInfo = JSON.parse(await fs.readFile(path.join(brandsDir, 'firstwatch', 'brand-info.json'), 'utf8'));
     
     // Verify metadata
     expect(clearcoInfo.name).toBe('clearco');
@@ -107,10 +107,10 @@ describe('Multibrand Build Tests', () => {
     expect(clearcoInfo.hasDarkTheme).toBe(true);
     expect(clearcoInfo.generatedAt).toBeDefined();
     
-    expect(brandBInfo.name).toBe('brand-b');
-    expect(brandBInfo.prefix).toBe('brand-b');
-    expect(brandBInfo.hasLightTheme).toBe(true);
-    expect(brandBInfo.hasDarkTheme).toBe(true);
+    expect(firstwatchInfo.name).toBe('firstwatch');
+    expect(firstwatchInfo.prefix).toBe('firstwatch');
+    expect(firstwatchInfo.hasLightTheme).toBe(true);
+    expect(firstwatchInfo.hasDarkTheme).toBe(true);
   }, 30000);
 
   test('should handle watch mode for brands', async () => {
@@ -160,7 +160,7 @@ describe('Multibrand Build Tests', () => {
     
     // Verify expected brands exist
     expect(brandDirs).toContain('clearco');
-    expect(brandDirs).toContain('brand-b');
+    expect(brandDirs).toContain('firstwatch');
     expect(brandDirs.length).toBeGreaterThanOrEqual(2);
   });
 });

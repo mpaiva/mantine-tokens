@@ -1,0 +1,381 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "input": {
+    "$description": "Input field component tokens",
+    "height": {
+      "xs": {
+        "$value": "1.75rem",
+        "$type": "dimension",
+        "$description": "Extra small input height (28px)"
+      },
+      "sm": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Small input height (32px)"
+      },
+      "md": {
+        "$value": "2.5rem",
+        "$type": "dimension",
+        "$description": "Medium input height (40px)"
+      },
+      "lg": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "Large input height (48px)"
+      },
+      "xl": {
+        "$value": "3.5rem",
+        "$type": "dimension",
+        "$description": "Extra large input height (56px)"
+      }
+    },
+    "padding": {
+      "horizontal": {
+        "xs": {
+          "$value": "0.5rem",
+          "$type": "dimension",
+          "$description": "Extra small horizontal padding (8px)"
+        },
+        "sm": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Small horizontal padding (12px)"
+        },
+        "md": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Medium horizontal padding (16px)"
+        },
+        "lg": {
+          "$value": "1.25rem",
+          "$type": "dimension",
+          "$description": "Large horizontal padding (20px)"
+        },
+        "xl": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Extra large horizontal padding (24px)"
+        }
+      }
+    },
+    "border": {
+      "width": {
+        "default": {
+          "$value": "1px",
+          "$type": "dimension",
+          "$description": "Default border width"
+        },
+        "focus": {
+          "$value": "2px",
+          "$type": "dimension",
+          "$description": "Focus state border width"
+        }
+      },
+      "radius": {
+        "xs": {
+          "$value": "0.125rem",
+          "$type": "dimension",
+          "$description": "Extra small border radius (2px)"
+        },
+        "sm": {
+          "$value": "0.25rem",
+          "$type": "dimension",
+          "$description": "Small border radius (4px)"
+        },
+        "md": {
+          "$value": "0.375rem",
+          "$type": "dimension",
+          "$description": "Medium border radius (6px)"
+        },
+        "lg": {
+          "$value": "0.5rem",
+          "$type": "dimension",
+          "$description": "Large border radius (8px)"
+        },
+        "xl": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Extra large border radius (12px)"
+        }
+      }
+    },
+    "font": {
+      "size": {
+        "xs": {
+          "$value": "0.75rem",
+          "$type": "dimension",
+          "$description": "Extra small input font size (12px)"
+        },
+        "sm": {
+          "$value": "0.875rem",
+          "$type": "dimension",
+          "$description": "Small input font size (14px)"
+        },
+        "md": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Medium input font size (16px)"
+        },
+        "lg": {
+          "$value": "1.125rem",
+          "$type": "dimension",
+          "$description": "Large input font size (18px)"
+        },
+        "xl": {
+          "$value": "1.25rem",
+          "$type": "dimension",
+          "$description": "Extra large input font size (20px)"
+        }
+      }
+    },
+    "icon": {
+      "size": {
+        "xs": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Extra small icon size (16px)"
+        },
+        "sm": {
+          "$value": "1.125rem",
+          "$type": "dimension",
+          "$description": "Small icon size (18px)"
+        },
+        "md": {
+          "$value": "1.25rem",
+          "$type": "dimension",
+          "$description": "Medium icon size (20px)"
+        },
+        "lg": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Large icon size (24px)"
+        },
+        "xl": {
+          "$value": "1.75rem",
+          "$type": "dimension",
+          "$description": "Extra large icon size (28px)"
+        }
+      },
+      "gap": {
+        "$value": "0.5rem",
+        "$type": "dimension",
+        "$description": "Gap between icon and text"
+      }
+    },
+    "label": {
+      "gap": {
+        "$value": "0.375rem",
+        "$type": "dimension",
+        "$description": "Gap between label and input (6px)"
+      },
+      "font-size": {
+        "$value": "0.875rem",
+        "$type": "dimension",
+        "$description": "Label font size (14px)"
+      },
+      "font-weight": {
+        "$value": "500",
+        "$type": "fontWeight",
+        "$description": "Label font weight"
+      }
+    },
+    "helper": {
+      "gap": {
+        "$value": "0.25rem",
+        "$type": "dimension",
+        "$description": "Gap between input and helper text (4px)"
+      },
+      "font-size": {
+        "$value": "0.75rem",
+        "$type": "dimension",
+        "$description": "Helper text font size (12px)"
+      }
+    },
+    "transition": {
+      "duration": {
+        "$value": "150ms",
+        "$type": "duration",
+        "$description": "Transition duration for state changes"
+      },
+      "easing": {
+        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$type": "cubicBezier",
+        "$description": "Transition easing function"
+      }
+    },
+    "shadow": {
+      "focus": {
+        "$value": "0 0 0 3px rgba(0, 102, 204, 0.25)",
+        "$type": "shadow",
+        "$description": "Focus shadow with transparency"
+      },
+      "error": {
+        "$value": "0 0 0 3px rgba(244, 67, 54, 0.125)",
+        "$type": "shadow",
+        "$description": "Error state shadow"
+      },
+      "success": {
+        "$value": "0 0 0 3px rgba(76, 175, 80, 0.125)",
+        "$type": "shadow",
+        "$description": "Success state shadow"
+      }
+    }
+  },
+  "textarea": {
+    "$description": "Textarea specific tokens",
+    "min-height": {
+      "sm": {
+        "$value": "4rem",
+        "$type": "dimension",
+        "$description": "Small textarea minimum height (64px)"
+      },
+      "md": {
+        "$value": "6rem",
+        "$type": "dimension",
+        "$description": "Medium textarea minimum height (96px)"
+      },
+      "lg": {
+        "$value": "8rem",
+        "$type": "dimension",
+        "$description": "Large textarea minimum height (128px)"
+      }
+    },
+    "padding": {
+      "vertical": {
+        "$value": "0.5rem",
+        "$type": "dimension",
+        "$description": "Vertical padding for textarea (8px)"
+      }
+    }
+  },
+  "select": {
+    "$description": "Select dropdown specific tokens",
+    "arrow": {
+      "size": {
+        "$value": "1.25rem",
+        "$type": "dimension",
+        "$description": "Dropdown arrow size (20px)"
+      },
+      "gap": {
+        "$value": "0.75rem",
+        "$type": "dimension",
+        "$description": "Gap from right edge (12px)"
+      }
+    },
+    "option": {
+      "padding": {
+        "$value": "0.5rem 1rem",
+        "$type": "dimension",
+        "$description": "Option item padding"
+      },
+      "hover-background": {
+        "$value": "#f1f3f5",
+        "$type": "color",
+        "$description": "Option hover background"
+      }
+    }
+  },
+  "checkbox": {
+    "$description": "Checkbox and radio button tokens",
+    "size": {
+      "sm": {
+        "$value": "1rem",
+        "$type": "dimension",
+        "$description": "Small checkbox size (16px)"
+      },
+      "md": {
+        "$value": "1.25rem",
+        "$type": "dimension",
+        "$description": "Medium checkbox size (20px)"
+      },
+      "lg": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Large checkbox size (24px)"
+      }
+    },
+    "border-radius": {
+      "$value": "0.25rem",
+      "$type": "dimension",
+      "$description": "Checkbox border radius (4px)"
+    },
+    "check": {
+      "thickness": {
+        "$value": "2px",
+        "$type": "dimension",
+        "$description": "Checkmark stroke thickness"
+      }
+    }
+  },
+  "radio": {
+    "$description": "Radio button specific tokens",
+    "inner-circle": {
+      "scale": {
+        "$value": "0.5",
+        "$type": "number",
+        "$description": "Inner circle scale factor"
+      }
+    }
+  },
+  "toggle": {
+    "$description": "Toggle switch tokens",
+    "width": {
+      "sm": {
+        "$value": "2.5rem",
+        "$type": "dimension",
+        "$description": "Small toggle width (40px)"
+      },
+      "md": {
+        "$value": "3rem",
+        "$type": "dimension",
+        "$description": "Medium toggle width (48px)"
+      },
+      "lg": {
+        "$value": "3.5rem",
+        "$type": "dimension",
+        "$description": "Large toggle width (56px)"
+      }
+    },
+    "height": {
+      "sm": {
+        "$value": "1.25rem",
+        "$type": "dimension",
+        "$description": "Small toggle height (20px)"
+      },
+      "md": {
+        "$value": "1.5rem",
+        "$type": "dimension",
+        "$description": "Medium toggle height (24px)"
+      },
+      "lg": {
+        "$value": "1.75rem",
+        "$type": "dimension",
+        "$description": "Large toggle height (28px)"
+      }
+    },
+    "thumb": {
+      "size": {
+        "sm": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "Small thumb size (16px)"
+        },
+        "md": {
+          "$value": "1.25rem",
+          "$type": "dimension",
+          "$description": "Medium thumb size (20px)"
+        },
+        "lg": {
+          "$value": "1.5rem",
+          "$type": "dimension",
+          "$description": "Large thumb size (24px)"
+        }
+      },
+      "gap": {
+        "$value": "0.125rem",
+        "$type": "dimension",
+        "$description": "Gap between thumb and track (2px)"
+      }
+    }
+  }
+}

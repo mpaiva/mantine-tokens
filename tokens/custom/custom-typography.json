@@ -2,28 +2,6 @@
   "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
   "typography": {
     "$description": "Custom typography tokens",
-    "fontFamily": {
-      "display": {
-        "$value": "'Playfair Display', Georgia, serif",
-        "$type": "fontFamily",
-        "$description": "Display font for large headings"
-      },
-      "brand": {
-        "$value": "'Montserrat', 'Helvetica Neue', sans-serif",
-        "$type": "fontFamily",
-        "$description": "Brand font for marketing materials"
-      },
-      "heading": {
-        "$value": "'Atkinson Hyperlegible Next', 'Helvetica Neue', Arial, sans-serif",
-        "$type": "fontFamily",
-        "$description": "Clearco brand font for headings"
-      },
-      "body": {
-        "$value": "'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-        "$type": "fontFamily",
-        "$description": "Clearco brand font for body text and labels"
-      }
-    },
     "fontSize": {
       "display": {
         "$value": "3rem",
@@ -34,6 +12,16 @@
         "$value": "4rem",
         "$type": "dimension",
         "$description": "Jumbo size for special emphasis (64px)"
+      },
+      "hero": {
+        "$value": "2.5rem",
+        "$type": "dimension",
+        "$description": "Hero size for section headers (40px)"
+      },
+      "headline": {
+        "$value": "2rem",
+        "$type": "dimension",
+        "$description": "Headline size for page titles (32px)"
       }
     },
     "lineHeight": {
@@ -42,10 +30,94 @@
         "$type": "number",
         "$description": "Compact line height for headings"
       },
+      "normal": {
+        "$value": "1.5",
+        "$type": "number",
+        "$description": "Normal line height for body text"
+      },
+      "relaxed": {
+        "$value": "1.75",
+        "$type": "number",
+        "$description": "Relaxed line height for improved readability"
+      },
       "loose": {
         "$value": "2",
         "$type": "number",
-        "$description": "Loose line height for readability"
+        "$description": "Loose line height for maximum readability"
+      }
+    },
+    "letterSpacing": {
+      "tighter": {
+        "$value": "-0.02em",
+        "$type": "dimension",
+        "$description": "Tighter letter spacing for headings"
+      },
+      "tight": {
+        "$value": "-0.01em",
+        "$type": "dimension",
+        "$description": "Tight letter spacing"
+      },
+      "normal": {
+        "$value": "0",
+        "$type": "dimension",
+        "$description": "Normal letter spacing"
+      },
+      "wide": {
+        "$value": "0.02em",
+        "$type": "dimension",
+        "$description": "Wide letter spacing for caps"
+      },
+      "wider": {
+        "$value": "0.04em",
+        "$type": "dimension",
+        "$description": "Wider letter spacing for all caps"
+      }
+    },
+    "fontWeight": {
+      "thin": {
+        "$value": "100",
+        "$type": "fontWeight",
+        "$description": "Thin font weight"
+      },
+      "extralight": {
+        "$value": "200",
+        "$type": "fontWeight",
+        "$description": "Extra light font weight"
+      },
+      "light": {
+        "$value": "300",
+        "$type": "fontWeight",
+        "$description": "Light font weight"
+      },
+      "normal": {
+        "$value": "400",
+        "$type": "fontWeight",
+        "$description": "Normal font weight"
+      },
+      "medium": {
+        "$value": "500",
+        "$type": "fontWeight",
+        "$description": "Medium font weight"
+      },
+      "semibold": {
+        "$value": "600",
+        "$type": "fontWeight",
+        "$description": "Semibold font weight"
+      },
+      "bold": {
+        "$value": "700",
+        "$type": "fontWeight",
+        "$description": "Bold font weight"
+      },
+      "extrabold": {
+        "$value": "800",
+        "$type": "fontWeight",
+        "$description": "Extra bold font weight"
+      },
+      "black": {
+        "$value": "900",
+        "$type": "fontWeight",
+        "$description": "Black font weight"
       }
     }
   }

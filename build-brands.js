@@ -99,17 +99,108 @@ async function buildBrand(brandName) {
   StyleDictionary.registerTransform(createBrandTransform(brandName));
   StyleDictionary.registerFormat(createBrandCSSFormat(brandName));
   
-  // Build base configuration (colors, typography and semantic patterns)
+  // Register brand documentation format
+  StyleDictionary.registerFormat({
+    name: `markdown/${brandName}-docs`,
+    format: ({ dictionary }) => {
+      let md = `# ${brandName.charAt(0).toUpperCase() + brandName.slice(1)} Brand Token Documentation\n\n`;
+      md += `This document contains all design tokens for the ${brandName} brand.\n\n`;
+      md += `**Brand Prefix**: \`${brandName}\`\n\n`;
+      
+      // Add theme information
+      if (hasLightTheme || hasDarkTheme) {
+        md += '## Available Themes\n\n';
+        if (hasLightTheme) md += '- ✅ Light Theme (`theme-light.css`)\n';
+        if (hasDarkTheme) md += '- ✅ Dark Theme (`theme-dark.css`)\n';
+        md += '\n';
+      }
+      
+      md += '## Table of Contents\n\n';
+      
+      // Group tokens by category
+      const categories = {};
+      dictionary.allTokens.forEach(token => {
+        const category = token.path[0];
+        if (!categories[category]) {
+          categories[category] = [];
+        }
+        categories[category].push(token);
+      });
+      
+      // Generate TOC
+      Object.keys(categories).sort().forEach(category => {
+        md += `- [${category.charAt(0).toUpperCase() + category.slice(1)}](#${category})\n`;
+      });
+      md += '\n---\n\n';
+      
+      // Generate sections for each category
+      Object.keys(categories).sort().forEach(category => {
+        md += `## ${category.charAt(0).toUpperCase() + category.slice(1)}\n\n`;
+        md += '| Token | Value | CSS Variable | Description |\n';
+        md += '|-------|-------|--------------|-------------|\n';
+        
+        categories[category].forEach(token => {
+          const name = token.path.slice(1).join('.');
+          const value = token.$value || token.value;
+          const cssVar = `--${brandName}-${token.path.join('-').toLowerCase()}`;
+          const description = token.$description || token.comment || '';
+          
+          // Format value for display
+          let displayValue = value;
+          if (typeof value === 'object' && !Array.isArray(value)) {
+            displayValue = JSON.stringify(value);
+          } else if (Array.isArray(value)) {
+            displayValue = '[shadow values]';
+          }
+          
+          md += `| ${name} | \`${displayValue}\` | \`${cssVar}\` | ${description} |\n`;
+        });
+        
+        md += '\n';
+      });
+      
+      // Add usage examples
+      md += '## Using Brand Tokens in CSS\n\n';
+      md += `Brand tokens are available as CSS custom properties with the \`${brandName}\` prefix:\n\n`;
+      md += '```css\n';
+      md += `/* Using ${brandName} brand colors */\n`;
+      md += `.my-element {\n`;
+      md += `  color: var(--${brandName}-brand-primary);\n`;
+      md += `  background-color: var(--${brandName}-brand-secondary);\n`;
+      md += `}\n\n`;
+      md += `/* Using ${brandName} theme tokens */\n`;
+      md += `.theme-aware {\n`;
+      md += `  background: var(--${brandName}-theme-surface-primary);\n`;
+      md += `  color: var(--${brandName}-theme-content-primary);\n`;
+      md += `  border-color: var(--${brandName}-theme-border-subtle);\n`;
+      md += `}\n`;
+      md += '```\n\n';
+      
+      // Add theme switching example
+      if (hasLightTheme && hasDarkTheme) {
+        md += '## Theme Switching\n\n';
+        md += 'To switch between light and dark themes, add the appropriate class to your root element:\n\n';
+        md += '```html\n';
+        md += '<!-- Light theme -->\n';
+        md += '<html class="theme-light">\n\n';
+        md += '<!-- Dark theme -->\n';
+        md += '<html class="theme-dark">\n';
+        md += '```\n';
+      }
+      
+      return md;
+    }
+  });
+  
+  // Build base configuration - include all JSON files in the brand folder
+  const brandFiles = fs.readdirSync(brandPath)
+    .filter(file => file.endsWith('.json') && file !== 'theme-light.json' && file !== 'theme-dark.json')
+    .map(file => `tokens/brands/${brandName}/${file}`);
+  
   const sources = [
-    `tokens/brands/${brandName}/colors.json`,
+    ...brandFiles,
     'tokens/semantic/theme-patterns.json'
   ];
-  
-  // Include typography if it exists
-  const typographyPath = resolve(brandPath, 'typography.json');
-  if (fs.existsSync(typographyPath)) {
-    sources.push(`tokens/brands/${brandName}/typography.json`);
-  }
   
   const baseConfig = {
     source: sources,
@@ -141,6 +232,14 @@ async function buildBrand(brandName) {
           destination: 'tokens.ts',
           format: 'typescript/es6-declarations'
         }]
+      },
+      docs: {
+        buildPath: `build/brands/${brandName}/`,
+        transforms: ['name/human'],
+        files: [{
+          destination: 'tokens.md',
+          format: `markdown/${brandName}-docs`
+        }]
       }
     }
   };
@@ -153,7 +252,7 @@ async function buildBrand(brandName) {
   if (hasLightTheme) {
     const lightThemeConfig = {
       source: [
-        `tokens/brands/${brandName}/colors.json`,
+        ...brandFiles,
         `tokens/brands/${brandName}/theme-light.json`
       ],
       platforms: {
@@ -180,7 +279,7 @@ async function buildBrand(brandName) {
   if (hasDarkTheme) {
     const darkThemeConfig = {
       source: [
-        `tokens/brands/${brandName}/colors.json`,
+        ...brandFiles,
         `tokens/brands/${brandName}/theme-dark.json`
       ],
       platforms: {
@@ -206,9 +305,8 @@ async function buildBrand(brandName) {
   // Build combined file with everything
   const allConfig = {
     source: [
-      `tokens/brands/${brandName}/colors.json`,
+      ...brandFiles,
       'tokens/semantic/theme-patterns.json',
-      ...(fs.existsSync(typographyPath) ? [`tokens/brands/${brandName}/typography.json`] : []),
       ...(hasLightTheme ? [`tokens/brands/${brandName}/theme-light.json`] : []),
       ...(hasDarkTheme ? [`tokens/brands/${brandName}/theme-dark.json`] : [])
     ],
@@ -229,13 +327,12 @@ async function buildBrand(brandName) {
   const allSd = new StyleDictionary(allConfig);
   
   if (isVerbose) {
-    console.log(`📁 Sources: ${baseConfig.source.join(', ')}`);
+    console.log(`📁 Sources: ${sources.join(', ')}`);
     console.log(`📁 Output: build/brands/${brandName}/`);
   }
 
   try {
     await allSd.buildAllPlatforms();
-    console.log(`✅ ${brandName} brand tokens built successfully!`);
     
     // Create brand info file
     const brandInfo = {
@@ -250,6 +347,20 @@ async function buildBrand(brandName) {
       resolve(__dirname, `build/brands/${brandName}/brand-info.json`),
       JSON.stringify(brandInfo, null, 2)
     );
+    
+    console.log(`\n✅ ${brandName} brand tokens built successfully!`);
+    console.log(`\n📁 Output files:`);
+    console.log(`   - build/brands/${brandName}/colors.css        Brand colors`);
+    if (hasLightTheme) {
+      console.log(`   - build/brands/${brandName}/theme-light.css   Light theme`);
+    }
+    if (hasDarkTheme) {
+      console.log(`   - build/brands/${brandName}/theme-dark.css    Dark theme`);
+    }
+    console.log(`   - build/brands/${brandName}/all.css           All tokens combined`);
+    console.log(`   - build/brands/${brandName}/tokens.js         JavaScript tokens`);
+    console.log(`   - build/brands/${brandName}/tokens.ts         TypeScript tokens`);
+    console.log(`   - build/brands/${brandName}/tokens.md         Documentation\n`);
     
   } catch (error) {
     console.error(`❌ Error building ${brandName} brand:`, error);
@@ -274,6 +385,12 @@ const failCount = results.filter(r => !r.success).length;
 
 if (failCount === 0) {
   console.log('\n✨ All brand tokens built successfully!');
+  console.log('\n📁 Brand outputs created in build/brands/');
+  console.log('   Each brand folder contains:');
+  console.log('   - CSS files (colors, themes, all combined)');
+  console.log('   - JavaScript/TypeScript exports');
+  console.log('   - Documentation (tokens.md)');
+  console.log('   - Brand metadata (brand-info.json)\n');
 } else {
   console.log(`\n⚠️  Build completed with ${failCount} error(s):`);
   results.filter(r => !r.success).forEach(r => {

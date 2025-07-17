@@ -232,6 +232,113 @@ async function updateClaudeMd(oldPrefix, newPrefix) {
   return await updateFileWithPrefix(claudePath, oldPrefix, newPrefix, patterns);
 }
 
+// Update generated tokens.md files
+async function updateGeneratedDocs(oldPrefix, newPrefix, isCustom = false) {
+  const updated = [];
+  
+  try {
+    // Update main tokens.md for Mantine tokens
+    if (!isCustom) {
+      const mainTokensPath = path.join(__dirname, '..', 'build', 'docs', 'tokens.md');
+      const patterns = [
+        // Update prefix references in markdown
+        {
+          regex: new RegExp(`\\*\\*Current Prefix\\*\\*: \\\`${oldPrefix}\\\``, 'g'),
+          replacement: `**Current Prefix**: \`${newPrefix}\``
+        },
+        // Update CSS variable examples
+        {
+          regex: new RegExp(`--${oldPrefix}-`, 'g'),
+          replacement: `--${newPrefix}-`
+        },
+        // Update var() references
+        {
+          regex: new RegExp(`var\\(--${oldPrefix}-`, 'g'),
+          replacement: `var(--${newPrefix}-`
+        }
+      ];
+      
+      if (await updateFileWithPrefix(mainTokensPath, oldPrefix, newPrefix, patterns)) {
+        updated.push('build/docs/tokens.md');
+      }
+    }
+    
+    // Update custom tokens.md
+    const customTokensPath = path.join(__dirname, '..', 'build', 'custom', 'tokens.md');
+    if (await fs.access(customTokensPath).then(() => true).catch(() => false)) {
+      const customOldPrefix = isCustom ? oldPrefix : (await getLastCustomPrefix() || 'custom');
+      const customNewPrefix = isCustom ? newPrefix : (await getCurrentCustomPrefix());
+      
+      const patterns = [
+        {
+          regex: new RegExp(`\\*\\*Current Prefix\\*\\*: \\\`${customOldPrefix}\\\``, 'g'),
+          replacement: `**Current Prefix**: \`${customNewPrefix}\``
+        },
+        {
+          regex: new RegExp(`--${customOldPrefix}-`, 'g'),
+          replacement: `--${customNewPrefix}-`
+        },
+        {
+          regex: new RegExp(`var\\(--${customOldPrefix}-`, 'g'),
+          replacement: `var(--${customNewPrefix}-`
+        }
+      ];
+      
+      if (await updateFileWithPrefix(customTokensPath, customOldPrefix, customNewPrefix, patterns)) {
+        updated.push('build/custom/tokens.md');
+      }
+    }
+    
+    // Update brand documentation files
+    const brandsDir = path.join(__dirname, '..', 'build', 'brands');
+    try {
+      const brands = await fs.readdir(brandsDir);
+      for (const brand of brands) {
+        const brandPath = path.join(brandsDir, brand);
+        const stat = await fs.stat(brandPath);
+        
+        if (stat.isDirectory()) {
+          const brandTokensPath = path.join(brandPath, 'tokens.md');
+          if (await fs.access(brandTokensPath).then(() => true).catch(() => false)) {
+            // Brand tokens use their own prefix, so we don't need to update the prefix itself
+            // But we might need to update any references to other token sets
+            updated.push(`build/brands/${brand}/tokens.md`);
+          }
+        }
+      }
+    } catch (error) {
+      // Brands directory might not exist
+    }
+  } catch (error) {
+    console.error('Error updating generated docs:', error);
+  }
+  
+  return updated;
+}
+
+// Helper to get current custom prefix
+async function getCurrentCustomPrefix() {
+  try {
+    const prefixPath = path.join(__dirname, '..', 'tokens', '_custom-prefix.json');
+    const content = await fs.readFile(prefixPath, 'utf8');
+    const data = JSON.parse(content);
+    return data.prefix || 'custom';
+  } catch {
+    return 'custom';
+  }
+}
+
+// Helper to get last custom prefix
+async function getLastCustomPrefix() {
+  try {
+    const cachePath = path.join(__dirname, '..', '.custom-prefix-cache');
+    const content = await fs.readFile(cachePath, 'utf8');
+    return content.trim();
+  } catch {
+    return null;
+  }
+}
+
 // Main function
 async function main() {
   const buildType = isCustomBuild ? 'custom' : 'Mantine';
@@ -241,8 +348,19 @@ async function main() {
   const currentPrefix = await getCurrentPrefix();
   const lastPrefix = await getLastPrefix();
   
-  // Skip documentation updates for custom build
+  // Handle custom build differently
   if (isCustomBuild) {
+    // For custom builds, only update the generated custom tokens.md if prefix changed
+    if (lastPrefix !== currentPrefix && lastPrefix) {
+      console.log(`${colors.yellow}⚡ Custom prefix changed from "${lastPrefix}" to "${currentPrefix}"${colors.reset}\n`);
+      const updatedDocs = await updateGeneratedDocs(lastPrefix, currentPrefix, true);
+      
+      if (updatedDocs.length > 0) {
+        console.log(`${colors.green}✓ Updated documentation:${colors.reset}`);
+        updatedDocs.forEach(doc => console.log(`   - ${doc}`));
+      }
+    }
+    
     console.log(`${colors.green}✓ Custom build completed with prefix "${currentPrefix}"${colors.reset}`);
     await saveLastPrefix(currentPrefix);
     return;
@@ -278,6 +396,10 @@ async function main() {
   if (await updateClaudeMd(oldPrefix, currentPrefix)) {
     updates.push('CLAUDE.md');
   }
+  
+  // Update generated documentation
+  const updatedGeneratedDocs = await updateGeneratedDocs(oldPrefix, currentPrefix, isCustomBuild);
+  updates.push(...updatedGeneratedDocs);
   
   // Save the current prefix for next time
   await saveLastPrefix(currentPrefix);

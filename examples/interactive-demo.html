@@ -340,7 +340,7 @@
                         <label style="font-weight: 600;">Brand:</label>
                         <div class="brand-selector" id="brandSelector">
                             <button class="brand-button active" data-brand="clearco">Clearco</button>
-                            <button class="brand-button" data-brand="brand-b">Brand B</button>
+                            <button class="brand-button" data-brand="firstwatch">Firstwatch</button>
                         </div>
                     </div>
                     
@@ -561,7 +561,7 @@
         // Update CSS variable names throughout the page
         function updateCSSVariableNames(brand) {
             // Update all inline styles that use CSS variables
-            const elements = document.querySelectorAll('[style*="--clearco"], [style*="--brand-b"]');
+            const elements = document.querySelectorAll('[style*="--clearco"], [style*="--firstwatch"]');
             elements.forEach(el => {
                 let style = el.getAttribute('style');
                 style = style.replace(/--\w+-/g, `--${brand}-`);

@@ -51,22 +51,34 @@ async function buildAll() {
     // Then build custom tokens
     await runBuild('build-custom.js', args);
     
+    // Build brand tokens
+    await runBuild('build-brands.js', args);
+    
+    // Generate unified documentation
+    console.log('\n📚 Generating unified documentation...');
+    await runBuild('scripts/generate-all-tokens-docs.js');
+    
     console.log('\n✅ All tokens built successfully!');
     console.log('\n📁 Output structure:');
     console.log('   build/');
-    console.log('   ├── css/          # Mantine CSS variables');
-    console.log('   ├── scss/         # Mantine SCSS variables');
-    console.log('   ├── js/           # Mantine JavaScript tokens');
-    console.log('   ├── ts/           # Mantine TypeScript tokens');
-    console.log('   ├── json/         # Mantine JSON tokens');
-    console.log('   ├── docs/         # Mantine documentation');
-    console.log('   └── custom/       # All custom token outputs');
-    console.log('       ├── variables.css');
-    console.log('       ├── variables.scss');
-    console.log('       ├── tokens.js');
-    console.log('       ├── tokens.ts');
-    console.log('       ├── *.tokens.json');
-    console.log('       └── tokens.md\n');
+    console.log('   ├── css/              # Mantine CSS variables');
+    console.log('   ├── scss/             # Mantine SCSS variables');
+    console.log('   ├── js/               # Mantine JavaScript tokens');
+    console.log('   ├── ts/               # Mantine TypeScript tokens');
+    console.log('   ├── json/             # Mantine JSON tokens');
+    console.log('   ├── docs/             # Mantine documentation');
+    console.log('   │   └── tokens.md');
+    console.log('   ├── custom/           # Custom token outputs');
+    console.log('   │   ├── variables.css');
+    console.log('   │   ├── tokens.ts');
+    console.log('   │   └── tokens.md');
+    console.log('   ├── brands/           # Brand-specific tokens');
+    console.log('   │   └── {brand}/');
+    console.log('   │       ├── all.css');
+    console.log('   │       ├── tokens.ts');
+    console.log('   │       └── tokens.md');
+    console.log('   ├── all-tokens.md     # Unified documentation');
+    console.log('   └── all-tokens.html   # Interactive reference\n');
     
     console.log('💡 Usage tips:');
     console.log('   - Import build/css/variables.css for Mantine tokens');

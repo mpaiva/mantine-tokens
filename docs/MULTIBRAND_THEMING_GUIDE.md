@@ -19,7 +19,7 @@ tokens/
 │   │   ├── colors.json        # Brand color palette
 │   │   ├── theme-light.json   # Light theme mappings
 │   │   └── theme-dark.json    # Dark theme mappings
-│   └── brand-b/
+│   └── firstwatch/
 │       ├── colors.json
 │       ├── theme-light.json
 │       └── theme-dark.json

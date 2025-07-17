@@ -1,0 +1,243 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "motion": {
+    "$description": "Motion and animation tokens",
+    "duration": {
+      "$description": "Animation duration scales",
+      "instant": {
+        "$value": "0ms",
+        "$type": "duration",
+        "$description": "Instant (no animation)"
+      },
+      "fast": {
+        "$value": "100ms",
+        "$type": "duration",
+        "$description": "Fast animations (tooltips, small state changes)"
+      },
+      "normal": {
+        "$value": "200ms",
+        "$type": "duration",
+        "$description": "Normal animations (most interactions)"
+      },
+      "slow": {
+        "$value": "300ms",
+        "$type": "duration",
+        "$description": "Slow animations (modals, page transitions)"
+      },
+      "slower": {
+        "$value": "400ms",
+        "$type": "duration",
+        "$description": "Slower animations (complex transitions)"
+      },
+      "slowest": {
+        "$value": "600ms",
+        "$type": "duration",
+        "$description": "Slowest animations (dramatic effects)"
+      }
+    },
+    "easing": {
+      "$description": "Easing function curves",
+      "linear": {
+        "$value": "linear",
+        "$type": "cubicBezier",
+        "$description": "Linear easing (constant speed)"
+      },
+      "ease-in": {
+        "$value": "cubic-bezier(0.4, 0, 1, 1)",
+        "$type": "cubicBezier",
+        "$description": "Ease in (accelerate from zero)"
+      },
+      "ease-out": {
+        "$value": "cubic-bezier(0, 0, 0.2, 1)",
+        "$type": "cubicBezier",
+        "$description": "Ease out (decelerate to zero)"
+      },
+      "ease-in-out": {
+        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$type": "cubicBezier",
+        "$description": "Ease in-out (standard curve)"
+      },
+      "ease-in-back": {
+        "$value": "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+        "$type": "cubicBezier",
+        "$description": "Ease in with overshoot"
+      },
+      "ease-out-back": {
+        "$value": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+        "$type": "cubicBezier",
+        "$description": "Ease out with overshoot"
+      },
+      "ease-in-out-back": {
+        "$value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "$type": "cubicBezier",
+        "$description": "Ease in-out with overshoot"
+      },
+      "bounce": {
+        "$value": "cubic-bezier(0.87, -0.41, 0.19, 1.44)",
+        "$type": "cubicBezier",
+        "$description": "Bounce effect"
+      }
+    },
+    "delay": {
+      "$description": "Animation delay scales",
+      "none": {
+        "$value": "0ms",
+        "$type": "duration",
+        "$description": "No delay"
+      },
+      "short": {
+        "$value": "50ms",
+        "$type": "duration",
+        "$description": "Short delay"
+      },
+      "medium": {
+        "$value": "100ms",
+        "$type": "duration",
+        "$description": "Medium delay"
+      },
+      "long": {
+        "$value": "200ms",
+        "$type": "duration",
+        "$description": "Long delay"
+      }
+    },
+    "transition": {
+      "$description": "Common transition presets",
+      "all": {
+        "$value": "all {motion.duration.normal} {motion.easing.ease-in-out}",
+        "$type": "transition",
+        "$description": "Transition all properties"
+      },
+      "colors": {
+        "$value": "background-color {motion.duration.normal} {motion.easing.ease-in-out}, border-color {motion.duration.normal} {motion.easing.ease-in-out}, color {motion.duration.normal} {motion.easing.ease-in-out}, fill {motion.duration.normal} {motion.easing.ease-in-out}, stroke {motion.duration.normal} {motion.easing.ease-in-out}",
+        "$type": "transition",
+        "$description": "Transition color properties"
+      },
+      "opacity": {
+        "$value": "opacity {motion.duration.normal} {motion.easing.ease-in-out}",
+        "$type": "transition",
+        "$description": "Transition opacity"
+      },
+      "transform": {
+        "$value": "transform {motion.duration.normal} {motion.easing.ease-in-out}",
+        "$type": "transition",
+        "$description": "Transition transform"
+      },
+      "shadow": {
+        "$value": "box-shadow {motion.duration.normal} {motion.easing.ease-in-out}",
+        "$type": "transition",
+        "$description": "Transition shadow"
+      },
+      "none": {
+        "$value": "none",
+        "$type": "transition",
+        "$description": "No transition"
+      }
+    },
+    "spring": {
+      "$description": "Spring animation parameters",
+      "stiff": {
+        "stiffness": {
+          "$value": "400",
+          "$type": "number",
+          "$description": "Stiff spring stiffness"
+        },
+        "damping": {
+          "$value": "40",
+          "$type": "number",
+          "$description": "Stiff spring damping"
+        }
+      },
+      "normal": {
+        "stiffness": {
+          "$value": "200",
+          "$type": "number",
+          "$description": "Normal spring stiffness"
+        },
+        "damping": {
+          "$value": "20",
+          "$type": "number",
+          "$description": "Normal spring damping"
+        }
+      },
+      "gentle": {
+        "stiffness": {
+          "$value": "100",
+          "$type": "number",
+          "$description": "Gentle spring stiffness"
+        },
+        "damping": {
+          "$value": "15",
+          "$type": "number",
+          "$description": "Gentle spring damping"
+        }
+      }
+    },
+    "keyframes": {
+      "$description": "Common keyframe animations",
+      "fade-in": {
+        "$value": "fadeIn",
+        "$type": "string",
+        "$description": "Fade in animation name"
+      },
+      "fade-out": {
+        "$value": "fadeOut",
+        "$type": "string",
+        "$description": "Fade out animation name"
+      },
+      "slide-in": {
+        "$value": "slideIn",
+        "$type": "string",
+        "$description": "Slide in animation name"
+      },
+      "slide-out": {
+        "$value": "slideOut",
+        "$type": "string",
+        "$description": "Slide out animation name"
+      },
+      "scale-in": {
+        "$value": "scaleIn",
+        "$type": "string",
+        "$description": "Scale in animation name"
+      },
+      "scale-out": {
+        "$value": "scaleOut",
+        "$type": "string",
+        "$description": "Scale out animation name"
+      },
+      "rotate": {
+        "$value": "rotate",
+        "$type": "string",
+        "$description": "Rotate animation name"
+      },
+      "pulse": {
+        "$value": "pulse",
+        "$type": "string",
+        "$description": "Pulse animation name"
+      },
+      "shake": {
+        "$value": "shake",
+        "$type": "string",
+        "$description": "Shake animation name"
+      },
+      "bounce": {
+        "$value": "bounce",
+        "$type": "string",
+        "$description": "Bounce animation name"
+      }
+    },
+    "reduced-motion": {
+      "$description": "Tokens for respecting prefers-reduced-motion",
+      "duration": {
+        "$value": "0.01ms",
+        "$type": "duration",
+        "$description": "Near-instant duration for reduced motion"
+      },
+      "transition": {
+        "$value": "none",
+        "$type": "transition",
+        "$description": "No transition for reduced motion"
+      }
+    }
+  }
+}
