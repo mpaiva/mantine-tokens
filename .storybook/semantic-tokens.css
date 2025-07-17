@@ -1,0 +1,70 @@
+/* Semantic token mappings */
+:root {
+  /* Background colors */
+  --mantine-color-background: var(--mantine-theme-color-background-default, var(--mantine-color-white));
+  --mantine-color-background-subtle: var(--mantine-theme-color-background-subtle, var(--mantine-color-gray-50));
+  --mantine-color-background-muted: var(--mantine-theme-color-background-muted, var(--mantine-color-gray-100));
+  
+  /* Surface colors */
+  --mantine-color-surface: var(--mantine-theme-color-surface-default, var(--mantine-color-white));
+  --mantine-color-surface-subtle: var(--mantine-theme-color-surface-subtle, var(--mantine-color-gray-50));
+  --mantine-color-surface-hover: var(--mantine-theme-color-surface-hover, var(--mantine-color-gray-100));
+  
+  /* Border colors */
+  --mantine-color-border: var(--mantine-theme-color-border-default, var(--mantine-color-gray-300));
+  --mantine-color-border-subtle: var(--mantine-theme-color-border-subtle, var(--mantine-color-gray-200));
+  --mantine-color-border-strong: var(--mantine-theme-color-border-strong, var(--mantine-color-gray-400));
+  --mantine-color-border-hover: var(--mantine-theme-color-border-default, var(--mantine-color-gray-400));
+  
+  /* Text colors */
+  --mantine-color-text-primary: var(--mantine-theme-color-text-default, var(--mantine-color-black));
+  --mantine-color-text-secondary: var(--mantine-theme-color-text-subtle, var(--mantine-color-gray-700));
+  --mantine-color-text-tertiary: var(--mantine-theme-color-text-muted, var(--mantine-color-gray-600));
+  --mantine-color-text-disabled: var(--mantine-theme-color-text-disabled, var(--mantine-color-gray-400));
+  --mantine-color-text-inverse: var(--mantine-theme-color-text-inverse, var(--mantine-color-white));
+  
+  /* State colors */
+  --mantine-color-primary: var(--mantine-theme-color-primary-default, var(--mantine-color-blue-600));
+  --mantine-color-primary-hover: var(--mantine-theme-color-primary-hover, var(--mantine-color-blue-700));
+  --mantine-color-primary-active: var(--mantine-theme-color-primary-active, var(--mantine-color-blue-800));
+  --mantine-color-primary-subtle: var(--mantine-theme-color-primary-subtle, var(--mantine-color-blue-50));
+  --mantine-color-primary-contrast: var(--mantine-theme-color-primary-contrast, var(--mantine-color-white));
+  
+  --mantine-color-success: var(--mantine-theme-color-success-default, var(--mantine-color-green-600));
+  --mantine-color-success-hover: var(--mantine-theme-color-success-default, var(--mantine-color-green-700));
+  --mantine-color-success-subtle: var(--mantine-theme-color-success-subtle, var(--mantine-color-green-50));
+  --mantine-color-success-contrast: var(--mantine-theme-color-success-contrast, var(--mantine-color-white));
+  
+  --mantine-color-warning: var(--mantine-theme-color-warning-default, var(--mantine-color-yellow-600));
+  --mantine-color-warning-hover: var(--mantine-theme-color-warning-default, var(--mantine-color-yellow-700));
+  --mantine-color-warning-subtle: var(--mantine-theme-color-warning-subtle, var(--mantine-color-yellow-50));
+  --mantine-color-warning-contrast: var(--mantine-theme-color-warning-contrast, var(--mantine-color-black));
+  
+  --mantine-color-error: var(--mantine-theme-color-error-default, var(--mantine-color-red-600));
+  --mantine-color-error-hover: var(--mantine-theme-color-error-default, var(--mantine-color-red-700));
+  --mantine-color-error-subtle: var(--mantine-theme-color-error-subtle, var(--mantine-color-red-50));
+  --mantine-color-error-contrast: var(--mantine-theme-color-error-contrast, var(--mantine-color-white));
+  
+  --mantine-color-info: var(--mantine-theme-color-info-default, var(--mantine-color-blue-600));
+  --mantine-color-info-hover: var(--mantine-theme-color-info-default, var(--mantine-color-blue-700));
+  --mantine-color-info-subtle: var(--mantine-theme-color-info-subtle, var(--mantine-color-blue-50));
+  --mantine-color-info-contrast: var(--mantine-theme-color-info-contrast, var(--mantine-color-white));
+  
+  /* RGB values for transparency */
+  --mantine-color-primary-rgb: 34, 139, 230;
+  --mantine-color-success-rgb: 64, 192, 87;
+  --mantine-color-warning-rgb: 250, 176, 5;
+  --mantine-color-error-rgb: 250, 82, 82;
+}
+
+/* Dark theme overrides */
+[data-mantine-color-scheme="dark"] {
+  --mantine-color-background: var(--mantine-color-dark-900);
+  --mantine-color-surface: var(--mantine-color-dark-800);
+  --mantine-color-surface-hover: var(--mantine-color-dark-700);
+  --mantine-color-border: var(--mantine-color-dark-600);
+  --mantine-color-border-subtle: var(--mantine-color-dark-700);
+  --mantine-color-text-primary: var(--mantine-color-dark-50);
+  --mantine-color-text-secondary: var(--mantine-color-dark-200);
+  --mantine-color-text-tertiary: var(--mantine-color-dark-300);
+}

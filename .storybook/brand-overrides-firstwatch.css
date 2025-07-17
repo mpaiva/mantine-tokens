@@ -1,0 +1,108 @@
+/* Firstwatch Brand Overrides - Maps Firstwatch tokens to Mantine variables */
+[data-brand="firstwatch"] {
+  /* Primary Brand Colors - Purple */
+  --mantine-color-primary: var(--firstwatch-brand-primary-500);
+  --mantine-color-primary-hover: var(--firstwatch-brand-primary-600);
+  --mantine-color-primary-active: var(--firstwatch-brand-primary-700);
+  --mantine-color-primary-subtle: var(--firstwatch-brand-primary-50);
+  --mantine-color-primary-contrast: white;
+  --mantine-color-primary-rgb: 107, 70, 193;
+  
+  /* Secondary & Accent Colors */
+  --mantine-color-secondary: var(--firstwatch-brand-secondary-500);
+  --mantine-color-accent: var(--firstwatch-brand-accent-500);
+  
+  /* State Colors */
+  --mantine-color-success: var(--firstwatch-brand-semantic-success);
+  --mantine-color-success-hover: var(--firstwatch-brand-secondary-600);
+  --mantine-color-success-subtle: var(--firstwatch-brand-secondary-50);
+  --mantine-color-success-contrast: white;
+  --mantine-color-success-rgb: 16, 185, 129;
+  
+  --mantine-color-warning: var(--firstwatch-brand-semantic-warning);
+  --mantine-color-warning-hover: var(--firstwatch-brand-accent-600);
+  --mantine-color-warning-subtle: var(--firstwatch-brand-accent-50);
+  --mantine-color-warning-contrast: black;
+  --mantine-color-warning-rgb: 245, 158, 11;
+  
+  --mantine-color-error: var(--firstwatch-brand-semantic-error);
+  --mantine-color-error-hover: #dc2626;
+  --mantine-color-error-subtle: #fee2e2;
+  --mantine-color-error-contrast: white;
+  --mantine-color-error-rgb: 239, 68, 68;
+  
+  --mantine-color-info: var(--firstwatch-brand-primary-500);
+  --mantine-color-info-hover: var(--firstwatch-brand-primary-600);
+  --mantine-color-info-subtle: var(--firstwatch-brand-primary-50);
+  --mantine-color-info-contrast: white;
+  --mantine-color-info-rgb: 107, 70, 193;
+  
+  /* Neutral/Gray Scale - Purple-tinted */
+  --mantine-color-gray-50: var(--firstwatch-brand-neutral-50);
+  --mantine-color-gray-100: var(--firstwatch-brand-neutral-100);
+  --mantine-color-gray-200: var(--firstwatch-brand-neutral-200);
+  --mantine-color-gray-300: var(--firstwatch-brand-neutral-300);
+  --mantine-color-gray-400: var(--firstwatch-brand-neutral-400);
+  --mantine-color-gray-500: var(--firstwatch-brand-neutral-500);
+  --mantine-color-gray-600: var(--firstwatch-brand-neutral-600);
+  --mantine-color-gray-700: var(--firstwatch-brand-neutral-700);
+  --mantine-color-gray-800: var(--firstwatch-brand-neutral-800);
+  --mantine-color-gray-900: var(--firstwatch-brand-neutral-900);
+  
+  /* Typography */
+  --mantine-typography-fontfamily-sans: var(--firstwatch-typography-fontfamily-sans);
+  --mantine-typography-fontfamily-heading: var(--firstwatch-typography-fontfamily-heading);
+  --mantine-typography-fontfamily-body: var(--firstwatch-typography-fontfamily-body);
+  --mantine-typography-fontfamily-mono: var(--firstwatch-typography-fontfamily-mono);
+  --mantine-font-family-body: var(--firstwatch-typography-fontfamily-body);
+  --mantine-font-family-mono: var(--firstwatch-typography-fontfamily-mono);
+  
+  /* Override specific color scales with brand colors */
+  --mantine-color-purple-50: var(--firstwatch-brand-primary-50);
+  --mantine-color-purple-100: var(--firstwatch-brand-primary-100);
+  --mantine-color-purple-200: var(--firstwatch-brand-primary-200);
+  --mantine-color-purple-300: var(--firstwatch-brand-primary-300);
+  --mantine-color-purple-400: var(--firstwatch-brand-primary-400);
+  --mantine-color-purple-500: var(--firstwatch-brand-primary-500);
+  --mantine-color-purple-600: var(--firstwatch-brand-primary-600);
+  --mantine-color-purple-700: var(--firstwatch-brand-primary-700);
+  --mantine-color-purple-800: var(--firstwatch-brand-primary-800);
+  --mantine-color-purple-900: var(--firstwatch-brand-primary-900);
+  
+  --mantine-color-green-50: var(--firstwatch-brand-secondary-50);
+  --mantine-color-green-100: var(--firstwatch-brand-secondary-100);
+  --mantine-color-green-200: var(--firstwatch-brand-secondary-200);
+  --mantine-color-green-300: var(--firstwatch-brand-secondary-300);
+  --mantine-color-green-400: var(--firstwatch-brand-secondary-400);
+  --mantine-color-green-500: var(--firstwatch-brand-secondary-500);
+  --mantine-color-green-600: var(--firstwatch-brand-secondary-600);
+  --mantine-color-green-700: var(--firstwatch-brand-secondary-700);
+  --mantine-color-green-800: var(--firstwatch-brand-secondary-800);
+  --mantine-color-green-900: var(--firstwatch-brand-secondary-900);
+  
+  --mantine-color-amber-50: var(--firstwatch-brand-accent-50);
+  --mantine-color-amber-100: var(--firstwatch-brand-accent-100);
+  --mantine-color-amber-200: var(--firstwatch-brand-accent-200);
+  --mantine-color-amber-300: var(--firstwatch-brand-accent-300);
+  --mantine-color-amber-400: var(--firstwatch-brand-accent-400);
+  --mantine-color-amber-500: var(--firstwatch-brand-accent-500);
+  --mantine-color-amber-600: var(--firstwatch-brand-accent-600);
+  --mantine-color-amber-700: var(--firstwatch-brand-accent-700);
+  --mantine-color-amber-800: var(--firstwatch-brand-accent-800);
+  --mantine-color-amber-900: var(--firstwatch-brand-accent-900);
+}
+
+/* Update semantic colors for dark theme when Firstwatch is active */
+[data-brand="firstwatch"][data-mantine-color-scheme="dark"] {
+  --mantine-color-background: var(--firstwatch-brand-neutral-900);
+  --mantine-color-surface: var(--firstwatch-brand-neutral-800);
+  --mantine-color-surface-hover: var(--firstwatch-brand-neutral-700);
+  --mantine-color-border: var(--firstwatch-brand-neutral-600);
+  --mantine-color-border-subtle: var(--firstwatch-brand-neutral-700);
+  --mantine-color-text-primary: var(--firstwatch-brand-neutral-50);
+  --mantine-color-text-secondary: var(--firstwatch-brand-neutral-200);
+  --mantine-color-text-tertiary: var(--firstwatch-brand-neutral-300);
+}
+
+/* Font imports for Firstwatch brand */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');

@@ -1,5 +1,8 @@
 {
-  "extends": ["eslint:recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:storybook/recommended"
+  ],
   "env": {
     "node": true,
     "es2022": true
@@ -9,19 +12,54 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-console": ["warn", { "allow": ["warn", "error", "log"] }],
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "log"
+        ]
+      }
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "prefer-const": "error",
     "no-var": "error",
     "object-shorthand": "error",
     "prefer-template": "error",
     "prefer-arrow-callback": "error",
-    "arrow-body-style": ["error", "as-needed"],
-    "quotes": ["error", "single", { "avoidEscape": true }],
-    "semi": ["error", "always"],
-    "comma-dangle": ["error", "always-multiline"],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
     "no-trailing-spaces": "error",
-    "indent": ["error", 2],
-    "eol-last": ["error", "always"]
+    "indent": [
+      "error",
+      2
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ]
   }
 }

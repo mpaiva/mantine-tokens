@@ -1,0 +1,86 @@
+/* Clearco Brand Overrides - Maps Clearco tokens to Mantine variables */
+[data-brand="clearco"] {
+  /* Primary Brand Colors */
+  --mantine-color-primary: var(--clearco-brand-primary);
+  --mantine-color-primary-hover: var(--clearco-brand-primary-600, #0052a3);
+  --mantine-color-primary-active: var(--clearco-brand-primary-700, #003d7a);
+  --mantine-color-primary-subtle: var(--clearco-brand-primary-50, #e6f0ff);
+  --mantine-color-primary-contrast: white;
+  --mantine-color-primary-rgb: 0, 102, 204;
+  
+  /* Secondary & Accent Colors */
+  --mantine-color-secondary: var(--clearco-brand-secondary);
+  --mantine-color-accent: var(--clearco-brand-accent);
+  
+  /* State Colors */
+  --mantine-color-success: var(--clearco-brand-success);
+  --mantine-color-success-hover: var(--clearco-brand-success-600, #1e7e34);
+  --mantine-color-success-subtle: var(--clearco-brand-success-50, #d4edda);
+  --mantine-color-success-contrast: white;
+  --mantine-color-success-rgb: 40, 167, 69;
+  
+  --mantine-color-warning: var(--clearco-brand-warning);
+  --mantine-color-warning-hover: var(--clearco-brand-warning-600, #e0a800);
+  --mantine-color-warning-subtle: var(--clearco-brand-warning-50, #fff3cd);
+  --mantine-color-warning-contrast: black;
+  --mantine-color-warning-rgb: 255, 193, 7;
+  
+  --mantine-color-error: var(--clearco-brand-error);
+  --mantine-color-error-hover: var(--clearco-brand-error-600, #bd2130);
+  --mantine-color-error-subtle: var(--clearco-brand-error-50, #f8d7da);
+  --mantine-color-error-contrast: white;
+  --mantine-color-error-rgb: 220, 53, 69;
+  
+  --mantine-color-info: var(--clearco-brand-primary);
+  --mantine-color-info-hover: var(--clearco-brand-primary-600, #0052a3);
+  --mantine-color-info-subtle: var(--clearco-brand-primary-50, #e6f0ff);
+  --mantine-color-info-contrast: white;
+  --mantine-color-info-rgb: 0, 102, 204;
+  
+  /* Neutral/Gray Scale */
+  --mantine-color-gray-50: var(--clearco-brand-neutral-50);
+  --mantine-color-gray-100: var(--clearco-brand-neutral-100);
+  --mantine-color-gray-200: var(--clearco-brand-neutral-200);
+  --mantine-color-gray-300: var(--clearco-brand-neutral-300);
+  --mantine-color-gray-400: var(--clearco-brand-neutral-400);
+  --mantine-color-gray-500: var(--clearco-brand-neutral-500);
+  --mantine-color-gray-600: var(--clearco-brand-neutral-600);
+  --mantine-color-gray-700: var(--clearco-brand-neutral-700);
+  --mantine-color-gray-800: var(--clearco-brand-neutral-800);
+  --mantine-color-gray-900: var(--clearco-brand-neutral-900);
+  
+  /* Typography */
+  --mantine-typography-fontfamily-sans: var(--clearco-typography-fontfamily-sans);
+  --mantine-typography-fontfamily-heading: var(--clearco-typography-fontfamily-heading);
+  --mantine-typography-fontfamily-body: var(--clearco-typography-fontfamily-body);
+  --mantine-typography-fontfamily-mono: var(--clearco-typography-fontfamily-mono);
+  --mantine-font-family-body: var(--clearco-typography-fontfamily-body);
+  --mantine-font-family-mono: var(--clearco-typography-fontfamily-mono);
+  
+  /* Card Component Overrides */
+  --mantine-card-padding-default: var(--clearco-card-padding-md);
+  --mantine-card-padding-compact: var(--clearco-card-padding-sm);
+  --mantine-card-padding-spacious: var(--clearco-card-padding-lg);
+  
+  /* Input Component Overrides */
+  --mantine-input-fontsize-xs: var(--clearco-input-font-size-xs);
+  --mantine-input-fontsize-sm: var(--clearco-input-font-size-sm);
+  --mantine-input-fontsize-md: var(--clearco-input-font-size-md);
+  --mantine-input-fontsize-lg: var(--clearco-input-font-size-lg);
+  --mantine-input-fontsize-xl: var(--clearco-input-font-size-xl);
+}
+
+/* Update semantic colors for dark theme when Clearco is active */
+[data-brand="clearco"][data-mantine-color-scheme="dark"] {
+  --mantine-color-background: var(--clearco-brand-neutral-900);
+  --mantine-color-surface: var(--clearco-brand-neutral-800);
+  --mantine-color-surface-hover: var(--clearco-brand-neutral-700);
+  --mantine-color-border: var(--clearco-brand-neutral-600);
+  --mantine-color-border-subtle: var(--clearco-brand-neutral-700);
+  --mantine-color-text-primary: var(--clearco-brand-neutral-50);
+  --mantine-color-text-secondary: var(--clearco-brand-neutral-200);
+  --mantine-color-text-tertiary: var(--clearco-brand-neutral-300);
+}
+
+/* Font imports for Clearco brand */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');

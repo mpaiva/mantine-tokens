@@ -141,3 +141,6 @@ claude_project_config.json
 # Prefix cache
 .prefix-cache
 .custom-prefix-cache
+
+*storybook.log
+storybook-static
