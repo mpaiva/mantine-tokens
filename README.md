@@ -57,6 +57,15 @@ npm run dev    # Watch mode for token changes
 npm run watch  # Alias for dev mode
 ```
 
+### Storybook Development
+```bash
+npm run dev:storybook        # Run Storybook with automatic token watching
+npm run dev:storybook:custom # Watch custom tokens + Storybook
+npm run dev:storybook:all    # Watch all tokens + Storybook
+```
+
+These commands provide hot-reload support for token changes in Storybook. See [Storybook Development Guide](./docs/STORYBOOK_DEVELOPMENT.md) for details.
+
 ### Custom Tokens Build
 ```bash
 npm run build:custom         # Build custom tokens with custom prefix

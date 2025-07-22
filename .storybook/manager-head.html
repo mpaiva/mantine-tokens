@@ -8,71 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- Firstwatch Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&family=Lobster+Two:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Manager styles -->
+<link rel="stylesheet" href="/.storybook/manager-styles.css">
 
 <style>
-  /* Base styles for brand typography */
-  .sb-bar,
-  .sb-main,
-  .sidebar-container {
-    transition: font-family 0.2s ease;
+  /* Smooth transitions for theme changes */
+  * {
+    transition: color 0.2s ease, font-family 0.2s ease;
   }
   
-  /* Mantine brand typography */
-  [data-brand="mantine"] .sb-bar,
-  [data-brand="mantine"] .sb-main,
-  [data-brand="mantine"] .sidebar-container {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  }
-  
-  /* Clearco brand typography */
-  [data-brand="clearco"] .sb-bar,
-  [data-brand="clearco"] .sb-main,
-  [data-brand="clearco"] .sidebar-container {
-    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-  
-  [data-brand="clearco"] h1,
-  [data-brand="clearco"] h2,
-  [data-brand="clearco"] h3,
-  [data-brand="clearco"] h4,
-  [data-brand="clearco"] h5,
-  [data-brand="clearco"] h6,
-  [data-brand="clearco"] .sidebar-header {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
-  }
-  
-  /* Firstwatch brand typography */
-  [data-brand="firstwatch"] .sb-bar,
-  [data-brand="firstwatch"] .sb-main,
-  [data-brand="firstwatch"] .sidebar-container {
-    font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-  
-  [data-brand="firstwatch"] h1,
-  [data-brand="firstwatch"] h2,
-  [data-brand="firstwatch"] h3,
-  [data-brand="firstwatch"] h4,
-  [data-brand="firstwatch"] h5,
-  [data-brand="firstwatch"] h6,
-  [data-brand="firstwatch"] .sidebar-header {
-    font-family: 'Roboto Slab', Georgia, 'Times New Roman', serif !important;
-  }
-  
-  /* Ensure typography changes apply to all UI elements */
-  [data-brand] button,
-  [data-brand] input,
-  [data-brand] select,
-  [data-brand] textarea {
-    font-family: inherit;
-  }
-  
-  /* Code blocks should use monospace */
-  [data-brand] code,
-  [data-brand] pre,
-  [data-brand] .prismjs {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
-  }
+  /* Brand CSS files provide all token values via CSS variables */
+  /* Typography and colors are applied dynamically via manager-theme-loader.js */
 </style>
 
 <script>
@@ -84,10 +32,32 @@
     // Apply brand class to document root
     document.documentElement.setAttribute('data-brand', currentBrand);
     
+    // Load brand CSS files dynamically
+    function loadBrandCSS(brand) {
+      // Remove existing brand CSS
+      const existingBrandLink = document.getElementById('manager-brand-css');
+      if (existingBrandLink) {
+        existingBrandLink.remove();
+      }
+      
+      // Load new brand CSS if not mantine
+      if (brand !== 'mantine') {
+        const link = document.createElement('link');
+        link.id = 'manager-brand-css';
+        link.rel = 'stylesheet';
+        link.href = `./brands/${brand}/all.css`;
+        document.head.appendChild(link);
+      }
+    }
+    
+    // Load initial brand CSS
+    loadBrandCSS(currentBrand);
+    
     // Listen for brand changes
     window.addEventListener('storage', function(e) {
       if (e.key === 'storybook-brand' && e.newValue) {
         document.documentElement.setAttribute('data-brand', e.newValue);
+        loadBrandCSS(e.newValue);
       }
     });
     
@@ -96,7 +66,11 @@
       if (e.data && e.data.type === 'brand-change' && e.data.brand) {
         document.documentElement.setAttribute('data-brand', e.data.brand);
         localStorage.setItem('storybook-brand', e.data.brand);
+        loadBrandCSS(e.data.brand);
       }
     });
   })();
 </script>
+
+<!-- Navigation font updater -->
+<script src="/.storybook/manager-navigation-updater.js"></script>

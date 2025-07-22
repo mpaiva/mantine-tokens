@@ -1,3 +1,5 @@
+import './token-status-indicator.js';
+
 /** @type { import('@storybook/html-vite').Preview } */
 const preview = {
   parameters: {

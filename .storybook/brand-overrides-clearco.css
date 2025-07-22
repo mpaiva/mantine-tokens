@@ -1,10 +1,11 @@
 /* Clearco Brand Overrides - Maps Clearco tokens to Mantine variables */
+/* Fonts are now loaded dynamically by google-fonts-loader.js */
 [data-brand="clearco"] {
   /* Primary Brand Colors */
   --mantine-color-primary: var(--clearco-brand-primary);
-  --mantine-color-primary-hover: var(--clearco-brand-primary-600, #0052a3);
-  --mantine-color-primary-active: var(--clearco-brand-primary-700, #003d7a);
-  --mantine-color-primary-subtle: var(--clearco-brand-primary-50, #e6f0ff);
+  --mantine-color-primary-hover: #0052a3;
+  --mantine-color-primary-active: #003d7a;
+  --mantine-color-primary-subtle: #e6f0ff;
   --mantine-color-primary-contrast: white;
   --mantine-color-primary-rgb: 0, 102, 204;
   
@@ -20,20 +21,20 @@
   --mantine-color-success-rgb: 40, 167, 69;
   
   --mantine-color-warning: var(--clearco-brand-warning);
-  --mantine-color-warning-hover: var(--clearco-brand-warning-600, #e0a800);
-  --mantine-color-warning-subtle: var(--clearco-brand-warning-50, #fff3cd);
+  --mantine-color-warning-hover: #e0a800;
+  --mantine-color-warning-subtle: #fff3cd;
   --mantine-color-warning-contrast: black;
   --mantine-color-warning-rgb: 255, 193, 7;
   
   --mantine-color-error: var(--clearco-brand-error);
-  --mantine-color-error-hover: var(--clearco-brand-error-600, #bd2130);
-  --mantine-color-error-subtle: var(--clearco-brand-error-50, #f8d7da);
+  --mantine-color-error-hover: #bd2130;
+  --mantine-color-error-subtle: #f8d7da;
   --mantine-color-error-contrast: white;
   --mantine-color-error-rgb: 220, 53, 69;
   
   --mantine-color-info: var(--clearco-brand-primary);
-  --mantine-color-info-hover: var(--clearco-brand-primary-600, #0052a3);
-  --mantine-color-info-subtle: var(--clearco-brand-primary-50, #e6f0ff);
+  --mantine-color-info-hover: #0052a3;
+  --mantine-color-info-subtle: #e6f0ff;
   --mantine-color-info-contrast: white;
   --mantine-color-info-rgb: 0, 102, 204;
   
@@ -81,6 +82,3 @@
   --mantine-color-text-secondary: var(--clearco-brand-neutral-200);
   --mantine-color-text-tertiary: var(--clearco-brand-neutral-300);
 }
-
-/* Font imports for Clearco brand */
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');

@@ -1,4 +1,5 @@
 /* Firstwatch Brand Overrides - Maps Firstwatch tokens to Mantine variables */
+/* Fonts are now loaded dynamically by google-fonts-loader.js */
 [data-brand="firstwatch"] {
   /* Primary Brand Colors - Purple */
   --mantine-color-primary: var(--firstwatch-brand-primary-500);
@@ -103,6 +104,3 @@
   --mantine-color-text-secondary: var(--firstwatch-brand-neutral-200);
   --mantine-color-text-tertiary: var(--firstwatch-brand-neutral-300);
 }
-
-/* Font imports for Firstwatch brand */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');

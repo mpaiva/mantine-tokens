@@ -1,104 +1,119 @@
 import { addons } from 'storybook/manager-api';
 import { create } from 'storybook/theming';
+import { createBrandTheme, applyDynamicFonts } from './manager-theme-loader.js';
+// Temporarily disable hot reload to fix blank page issue
+// import './manager-hot-reload.js';
 
-// Base theme configuration
+// Base theme configuration - minimal defaults only
 const baseTheme = {
   brandTitle: 'Mantine Design Tokens',
   brandUrl: 'https://mantine.dev',
+  base: 'light',
   
-  // UI
-  appBg: 'white',
-  appContentBg: 'white',
-  appPreviewBg: 'white',
-  appBorderColor: '#E9ECEF',
-  appBorderRadius: 4,
-  
-  // Text colors
-  textColor: '#000000',
-  textInverseColor: '#FFFFFF',
-  textMutedColor: '#868E96',
-  
-  // Toolbar default and active colors
-  barTextColor: '#495057',
-  barSelectedColor: '#228BE6',
-  barHoverColor: '#228BE6',
-  barBg: '#FFFFFF',
-  
-  // Form colors
-  inputBg: 'white',
-  inputBorder: '#DEE2E6',
-  inputTextColor: '#000000',
-  inputBorderRadius: 4,
-  
-  // Additional UI elements
-  buttonBg: '#F8F9FA',
-  buttonBorder: '#DEE2E6',
-  booleanBg: '#E9ECEF',
-  booleanSelectedBg: '#228BE6'
+  // Default fallback values - will be overridden by token values
+  fontBase: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+  fontCode: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 };
 
-// Create themes for each brand
-const themes = {
-  mantine: create({
-    ...baseTheme,
-    base: 'light',
-    fontBase: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-    fontCode: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-  }),
+// Dynamic theme cache
+const dynamicThemeCache = new Map();
+
+// Function to update theme with dynamic values
+async function updateTheme(brand) {
+  console.log(`Loading dynamic theme for ${brand}`);
   
-  clearco: create({
-    ...baseTheme,
-    base: 'light',
-    brandTitle: 'Clearco Design System',
-    fontBase: '"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    fontCode: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  try {
+    // Check cache first
+    if (dynamicThemeCache.has(brand)) {
+      const cachedTheme = dynamicThemeCache.get(brand);
+      addons.setConfig({ theme: cachedTheme });
+      applyBrandStyles(brand);
+      return;
+    }
     
-    // Clearco brand colors
-    barSelectedColor: '#0F172A',
-    barHoverColor: '#0F172A',
-    buttonBg: '#E0E7FF',
-    booleanSelectedBg: '#0F172A'
-  }),
+    // Create dynamic theme
+    const dynamicTheme = await createBrandTheme(brand, baseTheme);
+    const theme = create(dynamicTheme);
+    
+    // Cache the theme
+    dynamicThemeCache.set(brand, theme);
+    
+    // Apply the theme
+    addons.setConfig({ theme });
+    
+    // Apply brand-specific styles
+    applyBrandStyles(brand);
+    
+    // Apply dynamic fonts
+    applyDynamicFonts(brand);
+    
+  } catch (error) {
+    console.error(`Failed to load dynamic theme for ${brand}:`, error);
+    
+    // Use minimal fallback theme
+    const fallbackTheme = create({
+      ...baseTheme,
+      brandTitle: `${brand.charAt(0).toUpperCase() + brand.slice(1)} Design System`,
+    });
+    
+    addons.setConfig({ theme: fallbackTheme });
+    applyBrandStyles(brand);
+  }
+}
+
+// Function to apply brand-specific styles
+function applyBrandStyles(brand) {
+  // Update data attribute for CSS targeting
+  document.documentElement.setAttribute('data-brand', brand);
   
-  firstwatch: create({
-    ...baseTheme,
-    base: 'light',
-    brandTitle: 'Firstwatch Design System',
-    fontBase: '"Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    fontCode: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-    
-    // Firstwatch brand colors
-    barSelectedColor: '#6B46C1',
-    barHoverColor: '#6B46C1',
-    buttonBg: '#F0E6FF',
-    booleanSelectedBg: '#6B46C1'
-  })
+  // Notify manager-head.html to update brand CSS
+  window.postMessage({ type: 'brand-change', brand }, '*');
+}
+
+// Get initial brand
+const getInitialBrand = () => {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('storybook-brand') || 'mantine';
+  }
+  return 'mantine';
 };
 
-// Set initial theme
+// Initialize with minimal theme while loading dynamic theme
+const initialBrand = getInitialBrand();
 addons.setConfig({
-  theme: themes.mantine,
+  theme: create({
+    ...baseTheme,
+    brandTitle: `${initialBrand.charAt(0).toUpperCase() + initialBrand.slice(1)} Design System`,
+  }),
 });
+
+// Apply initial brand styles
+if (typeof window !== 'undefined') {
+  document.documentElement.setAttribute('data-brand', initialBrand);
+  
+  // Load dynamic theme asynchronously
+  setTimeout(() => updateTheme(initialBrand), 100);
+}
 
 // Listen for brand changes from the parent window
 if (typeof window !== 'undefined') {
+  // Function to handle brand changes
+  const handleBrandChange = async (brand) => {
+    // Update theme with dynamic values
+    await updateTheme(brand);
+  };
+  
+  // Expose functions for hot reload
+  window.__updateManagerTheme = updateTheme;
+  window.__applyDynamicFonts = applyDynamicFonts;
+  
   // Create a custom event listener for brand changes
-  window.addEventListener('storage', (e) => {
+  window.addEventListener('storage', async (e) => {
     if (e.key === 'storybook-brand') {
       const brand = e.newValue || 'mantine';
-      if (themes[brand]) {
-        addons.setConfig({
-          theme: themes[brand],
-        });
-      }
+      await handleBrandChange(brand);
     }
   });
   
-  // Check initial brand from localStorage
-  const initialBrand = localStorage.getItem('storybook-brand') || 'mantine';
-  if (themes[initialBrand]) {
-    addons.setConfig({
-      theme: themes[initialBrand],
-    });
-  }
+  // Initial theme is already loaded above
 }

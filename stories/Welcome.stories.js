@@ -136,7 +136,7 @@ const styles = {
         max-width: 800px;
         margin: 0 auto;
         padding: 2rem;
-        font-family: var(--mantine-font-family-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+        font-family: var(--mantine-typography-fontfamily-body);
         line-height: 1.6;
       }
       
@@ -145,6 +145,7 @@ const styles = {
         font-size: 2.5rem;
         font-weight: 700;
         color: var(--mantine-color-text-primary);
+        font-family: var(--mantine-typography-fontfamily-heading);
       }
       
       .intro {
@@ -162,6 +163,7 @@ const styles = {
         font-size: 1.75rem;
         font-weight: 600;
         color: var(--mantine-color-text-primary);
+        font-family: var(--mantine-typography-fontfamily-heading);
       }
       
       .welcome-page h3 {
@@ -169,6 +171,7 @@ const styles = {
         font-size: 1.25rem;
         font-weight: 600;
         color: var(--mantine-color-text-primary);
+        font-family: var(--mantine-typography-fontfamily-heading);
       }
       
       .welcome-page ul, .welcome-page ol {

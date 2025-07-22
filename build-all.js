@@ -99,8 +99,8 @@ async function watchAll() {
     const args = ['--watch'];
     if (isVerbose) args.push('--verbose');
     
-    // Start both watchers in parallel
-    console.log('Starting watchers for both Mantine and custom tokens...\n');
+    // Start all watchers in parallel
+    console.log('Starting watchers for Mantine, custom, and brand tokens...\n');
     
     // Run Mantine watcher
     const mantineWatcher = spawn('node', ['build-standard.js', ...args], {
@@ -114,11 +114,18 @@ async function watchAll() {
       stdio: 'inherit'
     });
     
+    // Run brands watcher
+    const brandsWatcher = spawn('node', ['build-brands.js', ...args], {
+      cwd: __dirname,
+      stdio: 'inherit'
+    });
+    
     // Handle process termination
     process.on('SIGINT', () => {
       console.log('\n\n👋 Stopping all watchers...');
       mantineWatcher.kill();
       customWatcher.kill();
+      brandsWatcher.kill();
       process.exit(0);
     });
     
@@ -129,6 +136,10 @@ async function watchAll() {
     
     customWatcher.on('error', (err) => {
       console.error('Custom watcher error:', err);
+    });
+    
+    brandsWatcher.on('error', (err) => {
+      console.error('Brands watcher error:', err);
     });
     
   } catch (error) {

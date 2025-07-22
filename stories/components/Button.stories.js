@@ -173,13 +173,14 @@ function getButtonStyles() {
   return `
     .button-showcase {
       padding: 1rem;
-      font-family: var(--mantine-font-family-body);
+      font-family: var(--mantine-typography-fontfamily-body);
     }
     
     .button-showcase h3 {
       margin: 0 0 1.5rem 0;
       font-size: 1.25rem;
       font-weight: 600;
+      font-family: var(--mantine-typography-fontfamily-heading);
     }
     
     .button-grid {
@@ -199,6 +200,7 @@ function getButtonStyles() {
       font-size: 0.875rem;
       font-weight: 600;
       color: var(--mantine-color-text-secondary);
+      font-family: var(--mantine-typography-fontfamily-heading);
     }
     
     .button-row {

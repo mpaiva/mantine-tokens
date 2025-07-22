@@ -19,10 +19,10 @@ export const BrandComparison = () => {
         <h2>Current Brand</h2>
         <div class="brand-details">
           <p>Use the paintbrush icon in the toolbar to switch between:</p>
-          <ul>
-            <li><strong>Mantine</strong> - Default blue theme with system fonts</li>
-            <li><strong>Clearco</strong> - Deep blue/orange with Public Sans & Playfair Display</li>
-            <li><strong>Firstwatch</strong> - Purple/green with Roboto Condensed & Roboto Slab</li>
+          <ul id="brand-list">
+            <li><strong>Mantine</strong> - <span id="mantine-desc">Default blue theme with system fonts</span></li>
+            <li><strong>Clearco</strong> - <span id="clearco-desc">Loading...</span></li>
+            <li><strong>Firstwatch</strong> - <span id="firstwatch-desc">Loading...</span></li>
           </ul>
         </div>
       </section>
@@ -244,18 +244,90 @@ const brandColors = {
     </style>
     
     <script>
-      // Display current font values
-      setTimeout(() => {
+      // Extract font name from font-family string
+      function extractFontName(fontFamily) {
+        if (!fontFamily) return '';
+        // Extract first font name, removing quotes
+        const match = fontFamily.match(/['"]?([^'",-]+)/);
+        return match ? match[1].trim() : fontFamily.split(',')[0].trim();
+      }
+      
+      // Get brand color info
+      function getBrandColorInfo(brand) {
         const computedStyle = getComputedStyle(document.documentElement);
         
-        const headingFont = computedStyle.getPropertyValue('--mantine-typography-fontfamily-heading');
-        const bodyFont = computedStyle.getPropertyValue('--mantine-typography-fontfamily-body');
-        const monoFont = computedStyle.getPropertyValue('--mantine-typography-fontfamily-mono');
+        if (brand === 'mantine') {
+          return 'blue';
+        } else if (brand === 'clearco') {
+          return 'deep blue/orange';
+        } else if (brand === 'firstwatch') {
+          return 'purple/green';
+        }
+        return '';
+      }
+      
+      // Update brand descriptions
+      function updateBrandDescriptions() {
+        const computedStyle = getComputedStyle(document.documentElement);
         
-        document.getElementById('heading-font').textContent = headingFont || 'Default';
-        document.getElementById('body-font').textContent = bodyFont || 'Default';
-        document.getElementById('mono-font').textContent = monoFont || 'Default';
-      }, 100);
+        // Update Clearco description
+        const clearcoHeading = extractFontName(computedStyle.getPropertyValue('--clearco-typography-fontfamily-heading'));
+        const clearcoBody = extractFontName(computedStyle.getPropertyValue('--clearco-typography-fontfamily-body'));
+        const clearcoDesc = document.getElementById('clearco-desc');
+        if (clearcoDesc) {
+          clearcoDesc.textContent = \`Deep blue/orange with \${clearcoBody} & \${clearcoHeading}\`;
+        }
+        
+        // Update Firstwatch description
+        const firstwatchHeading = extractFontName(computedStyle.getPropertyValue('--firstwatch-typography-fontfamily-heading'));
+        const firstwatchBody = extractFontName(computedStyle.getPropertyValue('--firstwatch-typography-fontfamily-body'));
+        const firstwatchDesc = document.getElementById('firstwatch-desc');
+        if (firstwatchDesc) {
+          firstwatchDesc.textContent = \`Purple/green with \${firstwatchBody} & \${firstwatchHeading}\`;
+        }
+      }
+      
+      // Display current font values
+      function updateFontDisplay() {
+        const computedStyle = getComputedStyle(document.documentElement);
+        const currentBrand = document.body.getAttribute('data-brand') || 'mantine';
+        
+        // Get font values based on current brand
+        let headingFont, bodyFont, monoFont;
+        
+        if (currentBrand === 'mantine') {
+          headingFont = computedStyle.getPropertyValue('--mantine-typography-fontfamily-heading');
+          bodyFont = computedStyle.getPropertyValue('--mantine-typography-fontfamily-body');
+          monoFont = computedStyle.getPropertyValue('--mantine-typography-fontfamily-mono');
+        } else {
+          // For brands, use brand-specific variables
+          headingFont = computedStyle.getPropertyValue(\`--\${currentBrand}-typography-fontfamily-heading\`);
+          bodyFont = computedStyle.getPropertyValue(\`--\${currentBrand}-typography-fontfamily-body\`);
+          monoFont = computedStyle.getPropertyValue(\`--\${currentBrand}-typography-fontfamily-mono\`);
+        }
+        
+        // Update display
+        document.getElementById('heading-font').textContent = headingFont?.trim() || 'Default system fonts';
+        document.getElementById('body-font').textContent = bodyFont?.trim() || 'Default system fonts';
+        document.getElementById('mono-font').textContent = monoFont?.trim() || 'Default monospace fonts';
+        
+        // Update brand descriptions
+        updateBrandDescriptions();
+      }
+      
+      // Update on load and when brand changes
+      setTimeout(updateFontDisplay, 100);
+      
+      // Listen for brand changes
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'data-brand') {
+            setTimeout(updateFontDisplay, 100);
+          }
+        });
+      });
+      
+      observer.observe(document.body, { attributes: true });
     </script>
   `;
 };

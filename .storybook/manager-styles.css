@@ -1,0 +1,65 @@
+/* Manager UI Dynamic Styles - Using CSS Variables Only */
+
+/* Typography using CSS variables */
+[data-brand] h1,
+[data-brand] h2,
+[data-brand] h3,
+[data-brand] h4,
+[data-brand] h5,
+[data-brand] h6,
+[data-brand] .css-1p6h5ss,
+[data-brand] button[title*="Design System"],
+[data-brand] div[class*="brand"] h1,
+[data-brand] .sidebar-header,
+[data-brand] [class*="heading"],
+[data-brand] [class*="title"] {
+  font-family: var(--manager-font-heading) !important;
+}
+
+/* Body text using CSS variables */
+[data-brand] .sidebar-container,
+[data-brand] [role="navigation"],
+[data-brand] button:not([title*="Design System"]),
+[data-brand] .sb-bar,
+[data-brand] .sb-main,
+[data-brand] body {
+  font-family: var(--manager-font-body) !important;
+}
+
+/* Code blocks using CSS variables */
+[data-brand] code,
+[data-brand] pre,
+[data-brand] .prismjs {
+  font-family: var(--manager-font-mono) !important;
+}
+
+/* Navigation colors using CSS variables for each brand */
+[data-brand="mantine"] button[data-selected="true"],
+[data-brand="mantine"] a[data-selected="true"] {
+  color: var(--mantine-color-blue-6, #228BE6) !important;
+}
+
+[data-brand="mantine"] button:hover,
+[data-brand="mantine"] a:hover {
+  color: var(--mantine-color-blue-6, #228BE6) !important;
+}
+
+[data-brand="clearco"] button[data-selected="true"],
+[data-brand="clearco"] a[data-selected="true"] {
+  color: var(--clearco-brand-primary-500, var(--clearco-brand-primary, #0066cc)) !important;
+}
+
+[data-brand="clearco"] button:hover,
+[data-brand="clearco"] a:hover {
+  color: var(--clearco-brand-primary-500, var(--clearco-brand-primary, #0066cc)) !important;
+}
+
+[data-brand="firstwatch"] button[data-selected="true"],
+[data-brand="firstwatch"] a[data-selected="true"] {
+  color: var(--firstwatch-brand-primary-500, var(--firstwatch-brand-primary, #6b46c1)) !important;
+}
+
+[data-brand="firstwatch"] button:hover,
+[data-brand="firstwatch"] a:hover {
+  color: var(--firstwatch-brand-primary-500, var(--firstwatch-brand-primary, #6b46c1)) !important;
+}

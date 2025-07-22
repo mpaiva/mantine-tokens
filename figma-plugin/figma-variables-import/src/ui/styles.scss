@@ -1,0 +1,97 @@
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html,
+body,
+#root {
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	// Allow text selection for better accessibility
+	// Only disable selection on specific UI elements
+}
+
+body {
+	font-family: Inter, system-ui, sans-serif;
+	font-size: 11px;
+	line-height: (16px / 11px);
+	background-color: var(--figma-color-bg, #ffffff);
+	color: var(--figma-color-text, #0d0d0d); // Solid color for better contrast
+}
+
+h1 {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 11px;
+	font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+	font-size: 11px;
+	font-weight: normal;
+}
+
+a,
+a:visited {
+	color: var(--figma-color-text-brand, #007be5);
+	text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+	text-decoration: underline;
+}
+
+b,
+strong {
+	font-weight: 600;
+}
+
+// Visible focus indicators for accessibility
+*:focus-visible {
+	outline: 2px solid var(--figma-color-text-brand, #007be5);
+	outline-offset: 2px;
+}
+
+// For browsers that don't support :focus-visible
+@supports not selector(:focus-visible) {
+	*:focus {
+		outline: 2px solid var(--figma-color-text-brand, #007be5);
+		outline-offset: 2px;
+	}
+}
+
+img,
+svg {
+	border: none;
+	page-break-inside: avoid;
+	vertical-align: baseline;
+}
+
+button {
+	border-radius: 0;
+	border-width: 0;
+}
+
+input,
+button,
+textarea,
+select,
+option,
+optgroup {
+	font: inherit;
+}

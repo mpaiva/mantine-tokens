@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Navigation Updates</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .brand-button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .brand-button.mantine {
+            background: #228BE6;
+            color: white;
+        }
+        .brand-button.clearco {
+            background: #0066cc;
+            color: white;
+        }
+        .brand-button.firstwatch {
+            background: #6b46c1;
+            color: white;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Navigation Update Test</h1>
+    
+    <div class="test-section">
+        <h2>1. Brand Selection</h2>
+        <p>Click a brand to update localStorage and trigger navigation updates:</p>
+        <button class="brand-button mantine" onclick="setBrand('mantine')">Mantine</button>
+        <button class="brand-button clearco" onclick="setBrand('clearco')">Clearco</button>
+        <button class="brand-button firstwatch" onclick="setBrand('firstwatch')">Firstwatch</button>
+        <div class="status" id="brand-status">Current brand: <span id="current-brand">loading...</span></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Expected Results</h2>
+        <ul>
+            <li><strong>Mantine:</strong> System fonts, blue (#228BE6) navigation colors</li>
+            <li><strong>Clearco:</strong> Atkinson Hyperlegible heading, Public Sans body, blue (#0066cc) navigation colors</li>
+            <li><strong>Firstwatch:</strong> Lobster Two heading, Roboto Condensed body, purple (#6b46c1) navigation colors</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Storybook Preview</h2>
+        <iframe src="http://localhost:6006" id="storybook-frame"></iframe>
+    </div>
+
+    <script>
+        // Get current brand
+        function getCurrentBrand() {
+            return localStorage.getItem('storybook-brand') || 'mantine';
+        }
+
+        // Update brand display
+        function updateBrandDisplay() {
+            const brand = getCurrentBrand();
+            document.getElementById('current-brand').textContent = brand;
+        }
+
+        // Set brand
+        function setBrand(brand) {
+            console.log('Setting brand to:', brand);
+            
+            // Update localStorage
+            localStorage.setItem('storybook-brand', brand);
+            
+            // Trigger storage event
+            window.dispatchEvent(new StorageEvent('storage', {
+                key: 'storybook-brand',
+                newValue: brand,
+                url: window.location.href
+            }));
+            
+            // Update display
+            updateBrandDisplay();
+            
+            // Reload iframe
+            const iframe = document.getElementById('storybook-frame');
+            iframe.src = iframe.src;
+        }
+
+        // Initialize
+        updateBrandDisplay();
+        
+        // Listen for storage changes
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'storybook-brand') {
+                updateBrandDisplay();
+            }
+        });
+    </script>
+</body>
+</html>

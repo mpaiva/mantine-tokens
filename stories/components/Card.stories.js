@@ -138,13 +138,14 @@ function getCardStyles() {
   return `
     .card-showcase {
       padding: 1rem;
-      font-family: var(--mantine-font-family-body);
+      font-family: var(--mantine-typography-fontfamily-body);
     }
     
     .card-showcase > h3 {
       margin: 0 0 1.5rem 0;
       font-size: 1.25rem;
       font-weight: 600;
+      font-family: var(--mantine-typography-fontfamily-heading);
     }
     
     .card-grid {
@@ -241,6 +242,7 @@ function getCardStyles() {
       font-size: 1.125rem;
       font-weight: 600;
       color: var(--mantine-color-text-primary);
+      font-family: var(--mantine-typography-fontfamily-heading);
     }
     
     .card-description {

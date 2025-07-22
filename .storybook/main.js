@@ -1,4 +1,6 @@
 
+import { tokenReloadPlugin } from './vite-plugin-token-reload.js';
+
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
   stories: [
@@ -20,6 +22,10 @@ const config = {
   viteFinal: async (config) => {
     return {
       ...config,
+      plugins: [
+        ...config.plugins,
+        tokenReloadPlugin()
+      ],
       resolve: {
         ...config.resolve,
         extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
@@ -27,6 +33,13 @@ const config = {
       optimizeDeps: {
         ...config.optimizeDeps,
         include: []
+      },
+      server: {
+        ...config.server,
+        watch: {
+          // Ensure Vite watches the build directory
+          ignored: ['!**/build/**']
+        }
       }
     };
   }

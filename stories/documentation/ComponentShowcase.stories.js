@@ -190,13 +190,14 @@ export const AllComponents = () => {
         padding: 2rem;
         max-width: 1200px;
         margin: 0 auto;
-        font-family: var(--mantine-typography-fontfamily-sans);
+        font-family: var(--mantine-typography-fontfamily-body);
       }
       
       .component-test-grid h1 {
         font-size: 2rem;
         margin: 0 0 0.5rem 0;
         color: var(--mantine-color-text-primary);
+        font-family: var(--mantine-typography-fontfamily-heading);
       }
       
       .component-test-grid > p {
@@ -216,6 +217,7 @@ export const AllComponents = () => {
         margin: 0 0 1.5rem 0;
         font-size: 1.5rem;
         color: var(--mantine-color-text-primary);
+        font-family: var(--mantine-typography-fontfamily-heading);
       }
       
       .test-group {
@@ -226,6 +228,7 @@ export const AllComponents = () => {
         margin: 0 0 1rem 0;
         font-size: 1.125rem;
         color: var(--mantine-color-text-secondary);
+        font-family: var(--mantine-typography-fontfamily-heading);
       }
       
       .component-row {
@@ -431,6 +434,7 @@ function getCardStyles() {
       font-size: 1.125rem;
       font-weight: 600;
       color: var(--mantine-color-text-primary);
+      font-family: var(--mantine-typography-fontfamily-heading);
     }
     
     .card-description {

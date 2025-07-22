@@ -14,6 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // Parse command line arguments
 const args = process.argv.slice(2);
 const isVerbose = args.includes('--verbose');
+const isWatchMode = args.includes('--watch');
 const brands = args.filter(arg => !arg.startsWith('--'));
 
 // Get all brands if none specified
@@ -486,3 +487,61 @@ fs.writeFileSync(
   resolve(__dirname, 'build/brands/index.json'),
   JSON.stringify({ brands: brandIndex }, null, 2)
 );
+
+// Watch mode
+if (isWatchMode) {
+  console.log('\n👀 Watching for brand token changes...');
+  console.log('Press Ctrl+C to stop watching.\n');
+  
+  const chokidar = await import('chokidar');
+  
+  // Watch all brand token directories
+  const watchPaths = availableBrands.map(brand => `tokens/brands/${brand}/**/*.json`);
+  
+  const watcher = chokidar.watch(watchPaths, {
+    ignoreInitial: true,
+    awaitWriteFinish: {
+      stabilityThreshold: 300,
+      pollInterval: 100
+    }
+  });
+  
+  watcher.on('change', async (path) => {
+    console.log(`\n🔄 Token file changed: ${path}`);
+    
+    // Determine which brand was affected
+    const pathParts = path.split('/');
+    const brandIndex = pathParts.findIndex(part => part === 'brands');
+    if (brandIndex !== -1 && brandIndex + 1 < pathParts.length) {
+      const changedBrand = pathParts[brandIndex + 1];
+      
+      console.log(`🏗️  Rebuilding ${changedBrand} brand tokens...`);
+      const startTime = Date.now();
+      const success = await buildBrand(changedBrand);
+      const buildTime = Date.now() - startTime;
+      
+      if (success) {
+        console.log(`✅ ${changedBrand} brand rebuilt successfully in ${buildTime}ms!`);
+        console.log(`📁 CSS files updated - Storybook should reload automatically`);
+        console.log('\n👀 Watching for changes...\n');
+      } else {
+        console.log(`❌ Failed to rebuild ${changedBrand} brand`);
+      }
+    }
+  });
+  
+  watcher.on('add', (path) => {
+    console.log(`➕ New token file: ${path}`);
+  });
+  
+  watcher.on('unlink', (path) => {
+    console.log(`➖ Token file removed: ${path}`);
+  });
+  
+  // Handle process termination
+  process.on('SIGINT', () => {
+    console.log('\n\n👋 Stopping brand token watcher...');
+    watcher.close();
+    process.exit(0);
+  });
+}
