@@ -1,5 +1,5 @@
 export default {
-  title: 'Design Tokens/Border Radius',
+  title: 'Global/Primitives/Border Radius',
   parameters: {
     docs: {
       description: {

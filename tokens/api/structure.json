@@ -1,0 +1,287 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Structure semantic API tokens - context-aware tokens for layout, spacing, and borders",
+  "structure": {
+    "$description": "Structure tokens define spatial relationships and visual boundaries",
+    "spacing": {
+      "$description": "Spacing tokens for consistent layout rhythm",
+      "inline": {
+        "xxs": {
+          "$value": "@structure.spacing.inline.xxs",
+          "$type": "dimension",
+          "$description": "Extra extra small inline spacing"
+        },
+        "xs": {
+          "$value": "@structure.spacing.inline.xs",
+          "$type": "dimension",
+          "$description": "Extra small inline spacing"
+        },
+        "sm": {
+          "$value": "@structure.spacing.inline.sm",
+          "$type": "dimension",
+          "$description": "Small inline spacing"
+        },
+        "md": {
+          "$value": "@structure.spacing.inline.md",
+          "$type": "dimension",
+          "$description": "Medium inline spacing"
+        },
+        "lg": {
+          "$value": "@structure.spacing.inline.lg",
+          "$type": "dimension",
+          "$description": "Large inline spacing"
+        },
+        "xl": {
+          "$value": "@structure.spacing.inline.xl",
+          "$type": "dimension",
+          "$description": "Extra large inline spacing"
+        }
+      },
+      "stack": {
+        "xxs": {
+          "$value": "@structure.spacing.stack.xxs",
+          "$type": "dimension",
+          "$description": "Extra extra small stack spacing"
+        },
+        "xs": {
+          "$value": "@structure.spacing.stack.xs",
+          "$type": "dimension",
+          "$description": "Extra small stack spacing"
+        },
+        "sm": {
+          "$value": "@structure.spacing.stack.sm",
+          "$type": "dimension",
+          "$description": "Small stack spacing"
+        },
+        "md": {
+          "$value": "@structure.spacing.stack.md",
+          "$type": "dimension",
+          "$description": "Medium stack spacing"
+        },
+        "lg": {
+          "$value": "@structure.spacing.stack.lg",
+          "$type": "dimension",
+          "$description": "Large stack spacing"
+        },
+        "xl": {
+          "$value": "@structure.spacing.stack.xl",
+          "$type": "dimension",
+          "$description": "Extra large stack spacing"
+        }
+      },
+      "inset": {
+        "xs": {
+          "$value": "@structure.spacing.inset.xs",
+          "$type": "dimension",
+          "$description": "Extra small inset spacing"
+        },
+        "sm": {
+          "$value": "@structure.spacing.inset.sm",
+          "$type": "dimension",
+          "$description": "Small inset spacing"
+        },
+        "md": {
+          "$value": "@structure.spacing.inset.md",
+          "$type": "dimension",
+          "$description": "Medium inset spacing"
+        },
+        "lg": {
+          "$value": "@structure.spacing.inset.lg",
+          "$type": "dimension",
+          "$description": "Large inset spacing"
+        },
+        "xl": {
+          "$value": "@structure.spacing.inset.xl",
+          "$type": "dimension",
+          "$description": "Extra large inset spacing"
+        }
+      },
+      "section": {
+        "xs": {
+          "$value": "@structure.spacing.section.xs",
+          "$type": "dimension",
+          "$description": "Extra small section spacing"
+        },
+        "sm": {
+          "$value": "@structure.spacing.section.sm",
+          "$type": "dimension",
+          "$description": "Small section spacing"
+        },
+        "md": {
+          "$value": "@structure.spacing.section.md",
+          "$type": "dimension",
+          "$description": "Medium section spacing"
+        },
+        "lg": {
+          "$value": "@structure.spacing.section.lg",
+          "$type": "dimension",
+          "$description": "Large section spacing"
+        }
+      }
+    },
+    "border": {
+      "$description": "Border tokens for visual boundaries",
+      "width": {
+        "thin": {
+          "$value": "@structure.border.width.thin",
+          "$type": "dimension",
+          "$description": "Thin border width"
+        },
+        "medium": {
+          "$value": "@structure.border.width.medium",
+          "$type": "dimension",
+          "$description": "Medium border width"
+        },
+        "thick": {
+          "$value": "@structure.border.width.thick",
+          "$type": "dimension",
+          "$description": "Thick border width"
+        }
+      },
+      "color": {
+        "subtle": {
+          "$value": "@structure.border.color.subtle",
+          "$type": "color",
+          "$description": "Subtle border color"
+        },
+        "default": {
+          "$value": "@structure.border.color.default",
+          "$type": "color",
+          "$description": "Default border color"
+        },
+        "strong": {
+          "$value": "@structure.border.color.strong",
+          "$type": "color",
+          "$description": "Strong border color"
+        },
+        "inverse": {
+          "$value": "@structure.border.color.inverse",
+          "$type": "color",
+          "$description": "Inverse border color"
+        }
+      },
+      "radius": {
+        "none": {
+          "$value": "@structure.border.radius.none",
+          "$type": "dimension",
+          "$description": "No border radius"
+        },
+        "sm": {
+          "$value": "@structure.border.radius.sm",
+          "$type": "dimension",
+          "$description": "Small border radius"
+        },
+        "md": {
+          "$value": "@structure.border.radius.md",
+          "$type": "dimension",
+          "$description": "Medium border radius"
+        },
+        "lg": {
+          "$value": "@structure.border.radius.lg",
+          "$type": "dimension",
+          "$description": "Large border radius"
+        },
+        "xl": {
+          "$value": "@structure.border.radius.xl",
+          "$type": "dimension",
+          "$description": "Extra large border radius"
+        },
+        "full": {
+          "$value": "@structure.border.radius.full",
+          "$type": "dimension",
+          "$description": "Full border radius (pill)"
+        }
+      }
+    },
+    "divider": {
+      "$description": "Divider tokens for content separation",
+      "color": {
+        "subtle": {
+          "$value": "@structure.divider.color.subtle",
+          "$type": "color",
+          "$description": "Subtle divider color"
+        },
+        "default": {
+          "$value": "@structure.divider.color.default",
+          "$type": "color",
+          "$description": "Default divider color"
+        },
+        "strong": {
+          "$value": "@structure.divider.color.strong",
+          "$type": "color",
+          "$description": "Strong divider color"
+        }
+      },
+      "width": {
+        "default": {
+          "$value": "@structure.divider.width.default",
+          "$type": "dimension",
+          "$description": "Default divider width"
+        }
+      }
+    },
+    "layout": {
+      "$description": "Layout structure tokens",
+      "container": {
+        "padding": {
+          "mobile": {
+            "$value": "@structure.layout.container.padding.mobile",
+            "$type": "dimension",
+            "$description": "Container padding on mobile"
+          },
+          "tablet": {
+            "$value": "@structure.layout.container.padding.tablet",
+            "$type": "dimension",
+            "$description": "Container padding on tablet"
+          },
+          "desktop": {
+            "$value": "@structure.layout.container.padding.desktop",
+            "$type": "dimension",
+            "$description": "Container padding on desktop"
+          }
+        },
+        "maxWidth": {
+          "sm": {
+            "$value": "@structure.layout.container.maxWidth.sm",
+            "$type": "dimension",
+            "$description": "Small container max width"
+          },
+          "md": {
+            "$value": "@structure.layout.container.maxWidth.md",
+            "$type": "dimension",
+            "$description": "Medium container max width"
+          },
+          "lg": {
+            "$value": "@structure.layout.container.maxWidth.lg",
+            "$type": "dimension",
+            "$description": "Large container max width"
+          },
+          "xl": {
+            "$value": "@structure.layout.container.maxWidth.xl",
+            "$type": "dimension",
+            "$description": "Extra large container max width"
+          }
+        }
+      },
+      "grid": {
+        "gap": {
+          "mobile": {
+            "$value": "@structure.layout.grid.gap.mobile",
+            "$type": "dimension",
+            "$description": "Grid gap on mobile"
+          },
+          "tablet": {
+            "$value": "@structure.layout.grid.gap.tablet",
+            "$type": "dimension",
+            "$description": "Grid gap on tablet"
+          },
+          "desktop": {
+            "$value": "@structure.layout.grid.gap.desktop",
+            "$type": "dimension",
+            "$description": "Grid gap on desktop"
+          }
+        }
+      }
+    }
+  }
+}

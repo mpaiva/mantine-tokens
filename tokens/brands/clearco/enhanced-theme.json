@@ -5,42 +5,42 @@
     "surface": {
       "$description": "Enhanced surface hierarchy",
       "base": {
-        "$value": "#ffffff",
+        "$value": "{theme.surface.primary}",
         "$type": "color",
         "$description": "Base surface (page background)"
       },
       "raised": {
-        "$value": "#ffffff",
+        "$value": "{theme.surface.secondary}",
         "$type": "color",
         "$description": "Raised surface (cards, modals)"
       },
       "sunken": {
-        "$value": "#f8f9fa",
+        "$value": "{theme.surface.primary}",
         "$type": "color",
         "$description": "Sunken surface (wells, indented areas)"
       },
       "overlay": {
-        "$value": "#ffffff",
+        "$value": "{theme.surface.tertiary}",
         "$type": "color",
         "$description": "Overlay surface (dropdowns, tooltips)"
       },
       "selected": {
-        "$value": "#e6f0ff",
+        "$value": "{theme.interactive.primary.default}",
         "$type": "color",
         "$description": "Selected item surface"
       },
       "hover": {
-        "$value": "#f8f9fa",
+        "$value": "{theme.surface.secondary}",
         "$type": "color",
         "$description": "Hover state surface"
       },
       "active": {
-        "$value": "#f1f3f5",
+        "$value": "{theme.surface.tertiary}",
         "$type": "color",
         "$description": "Active/pressed state surface"
       },
       "disabled": {
-        "$value": "#f8f9fa",
+        "$value": "{theme.surface.secondary}",
         "$type": "color",
         "$description": "Disabled state surface"
       }
@@ -161,12 +161,12 @@
     "skeleton": {
       "$description": "Skeleton loading state tokens",
       "base": {
-        "$value": "#e9ecef",
+        "$value": "{theme.surface.secondary}",
         "$type": "color",
         "$description": "Skeleton base color"
       },
       "highlight": {
-        "$value": "#f1f3f5",
+        "$value": "{theme.surface.tertiary}",
         "$type": "color",
         "$description": "Skeleton highlight color"
       },
@@ -180,17 +180,17 @@
       "$description": "Divider and separator tokens",
       "color": {
         "light": {
-          "$value": "#e9ecef",
+          "$value": "{theme.border.subtle}",
           "$type": "color",
           "$description": "Light divider color"
         },
         "medium": {
-          "$value": "#dee2e6",
+          "$value": "{theme.border.default}",
           "$type": "color",
           "$description": "Medium divider color"
         },
         "strong": {
-          "$value": "#ced4da",
+          "$value": "{theme.border.strong}",
           "$type": "color",
           "$description": "Strong divider color"
         }
@@ -210,111 +210,6 @@
           "$value": "4px",
           "$type": "dimension",
           "$description": "Thick divider width"
-        }
-      }
-    }
-  },
-  "theme-dark": {
-    "$description": "Enhanced dark theme tokens",
-    "surface": {
-      "$description": "Dark theme surface hierarchy",
-      "base": {
-        "$value": "#0a0a0a",
-        "$type": "color",
-        "$description": "Base surface (page background)"
-      },
-      "raised": {
-        "$value": "#141414",
-        "$type": "color",
-        "$description": "Raised surface (cards, modals)"
-      },
-      "sunken": {
-        "$value": "#000000",
-        "$type": "color",
-        "$description": "Sunken surface (wells, indented areas)"
-      },
-      "overlay": {
-        "$value": "#1f1f1f",
-        "$type": "color",
-        "$description": "Overlay surface (dropdowns, tooltips)"
-      },
-      "selected": {
-        "$value": "#001429",
-        "$type": "color",
-        "$description": "Selected item surface"
-      },
-      "hover": {
-        "$value": "#1a1a1a",
-        "$type": "color",
-        "$description": "Hover state surface"
-      },
-      "active": {
-        "$value": "#242424",
-        "$type": "color",
-        "$description": "Active/pressed state surface"
-      },
-      "disabled": {
-        "$value": "#0f0f0f",
-        "$type": "color",
-        "$description": "Disabled state surface"
-      }
-    },
-    "state": {
-      "$description": "Dark theme state tokens",
-      "hover": {
-        "opacity": {
-          "$value": "0.08",
-          "$type": "number",
-          "$description": "Hover state overlay opacity"
-        },
-        "background": {
-          "$value": "#ffffff",
-          "$type": "color",
-          "$description": "Hover state overlay color"
-        }
-      },
-      "active": {
-        "opacity": {
-          "$value": "0.12",
-          "$type": "number",
-          "$description": "Active state overlay opacity"
-        },
-        "background": {
-          "$value": "#ffffff",
-          "$type": "color",
-          "$description": "Active state overlay color"
-        }
-      },
-      "selected": {
-        "opacity": {
-          "$value": "0.16",
-          "$type": "number",
-          "$description": "Selected state overlay opacity"
-        },
-        "background": {
-          "$value": "#1a75ff",
-          "$type": "color",
-          "$description": "Selected state overlay color"
-        }
-      }
-    },
-    "divider": {
-      "$description": "Dark theme divider tokens",
-      "color": {
-        "light": {
-          "$value": "rgba(255, 255, 255, 0.08)",
-          "$type": "color",
-          "$description": "Light divider color"
-        },
-        "medium": {
-          "$value": "rgba(255, 255, 255, 0.12)",
-          "$type": "color",
-          "$description": "Medium divider color"
-        },
-        "strong": {
-          "$value": "rgba(255, 255, 255, 0.16)",
-          "$type": "color",
-          "$description": "Strong divider color"
         }
       }
     }

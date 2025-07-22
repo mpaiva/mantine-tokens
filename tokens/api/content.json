@@ -1,0 +1,139 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Content semantic API tokens - context-aware colors for text, icons, and media",
+  "content": {
+    "$description": "Content tokens define the visual hierarchy of content elements",
+    "primary": {
+      "$description": "Primary content for main text and important elements",
+      "default": {
+        "$value": "@content.primary.default",
+        "$type": "color",
+        "$description": "Primary content color (headings, body text)"
+      },
+      "emphasis": {
+        "$value": "@content.primary.emphasis",
+        "$type": "color",
+        "$description": "Emphasized primary content"
+      }
+    },
+    "secondary": {
+      "$description": "Secondary content for supporting text",
+      "default": {
+        "$value": "@content.secondary.default",
+        "$type": "color",
+        "$description": "Secondary content color (labels, captions)"
+      },
+      "emphasis": {
+        "$value": "@content.secondary.emphasis",
+        "$type": "color",
+        "$description": "Emphasized secondary content"
+      }
+    },
+    "tertiary": {
+      "$description": "Tertiary content for hints and placeholders",
+      "default": {
+        "$value": "@content.tertiary.default",
+        "$type": "color",
+        "$description": "Tertiary content color (hints, placeholders)"
+      }
+    },
+    "inverse": {
+      "$description": "Inverse content for use on inverted surfaces",
+      "primary": {
+        "$value": "@content.inverse.primary",
+        "$type": "color",
+        "$description": "Primary inverse content"
+      },
+      "secondary": {
+        "$value": "@content.inverse.secondary",
+        "$type": "color",
+        "$description": "Secondary inverse content"
+      },
+      "tertiary": {
+        "$value": "@content.inverse.tertiary",
+        "$type": "color",
+        "$description": "Tertiary inverse content"
+      }
+    },
+    "brand": {
+      "$description": "Brand-colored content",
+      "default": {
+        "$value": "@content.brand.default",
+        "$type": "color",
+        "$description": "Brand-colored content"
+      },
+      "emphasis": {
+        "$value": "@content.brand.emphasis",
+        "$type": "color",
+        "$description": "Emphasized brand content"
+      }
+    },
+    "link": {
+      "$description": "Link content states",
+      "idle": {
+        "$value": "@content.link.idle",
+        "$type": "color",
+        "$description": "Link idle state"
+      },
+      "hover": {
+        "$value": "@content.link.hover",
+        "$type": "color",
+        "$description": "Link hover state"
+      },
+      "active": {
+        "$value": "@content.link.active",
+        "$type": "color",
+        "$description": "Link active/pressed state"
+      },
+      "visited": {
+        "$value": "@content.link.visited",
+        "$type": "color",
+        "$description": "Link visited state"
+      }
+    },
+    "code": {
+      "$description": "Code and monospace content",
+      "default": {
+        "$value": "@content.code.default",
+        "$type": "color",
+        "$description": "Code text color"
+      },
+      "background": {
+        "$value": "@content.code.background",
+        "$type": "color",
+        "$description": "Inline code background"
+      }
+    },
+    "disabled": {
+      "$description": "Disabled content",
+      "default": {
+        "$value": "@content.disabled.default",
+        "$type": "color",
+        "$description": "Disabled content color"
+      }
+    },
+    "icon": {
+      "$description": "Icon-specific content colors",
+      "primary": {
+        "$value": "@content.icon.primary",
+        "$type": "color",
+        "$description": "Primary icon color"
+      },
+      "secondary": {
+        "$value": "@content.icon.secondary",
+        "$type": "color",
+        "$description": "Secondary icon color"
+      },
+      "tertiary": {
+        "$value": "@content.icon.tertiary",
+        "$type": "color",
+        "$description": "Tertiary icon color"
+      },
+      "brand": {
+        "$value": "@content.icon.brand",
+        "$type": "color",
+        "$description": "Brand icon color"
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "clearco": {
+    "$description": "Clearco brand color system - merged from colors.json and brand-colors.json",
+    "primary": {
+      "$description": "Primary brand color with tints and shades",
+      "50": { "$value": "#e6f0ff", "$type": "color", "$description": "Lightest tint" },
+      "100": { "$value": "#b3d1ff", "$type": "color", "$description": "Very light tint" },
+      "200": { "$value": "#80b3ff", "$type": "color", "$description": "Light tint" },
+      "300": { "$value": "#4d94ff", "$type": "color", "$description": "Medium light tint" },
+      "400": { "$value": "#1a75ff", "$type": "color", "$description": "Medium tint" },
+      "500": { "$value": "#0066cc", "$type": "color", "$description": "Base primary color" },
+      "600": { "$value": "#0052a3", "$type": "color", "$description": "Medium shade" },
+      "700": { "$value": "#003d7a", "$type": "color", "$description": "Dark shade" },
+      "800": { "$value": "#002952", "$type": "color", "$description": "Very dark shade" },
+      "900": { "$value": "#001429", "$type": "color", "$description": "Darkest shade" },
+      "base": { "$value": "{clearco.primary.500}", "$type": "color", "$description": "Base primary color reference" }
+    },
+    "secondary": {
+      "$description": "Secondary brand color with tints and shades",
+      "50": { "$value": "#fff2ed", "$type": "color", "$description": "Lightest tint" },
+      "100": { "$value": "#ffd9c9", "$type": "color", "$description": "Very light tint" },
+      "200": { "$value": "#ffbfa6", "$type": "color", "$description": "Light tint" },
+      "300": { "$value": "#ffa682", "$type": "color", "$description": "Medium light tint" },
+      "400": { "$value": "#ff8d5f", "$type": "color", "$description": "Medium tint" },
+      "500": { "$value": "#ff6b35", "$type": "color", "$description": "Base secondary color" },
+      "600": { "$value": "#cc562a", "$type": "color", "$description": "Medium shade" },
+      "700": { "$value": "#994020", "$type": "color", "$description": "Dark shade" },
+      "800": { "$value": "#662b15", "$type": "color", "$description": "Very dark shade" },
+      "900": { "$value": "#33150b", "$type": "color", "$description": "Darkest shade" },
+      "base": { "$value": "{clearco.secondary.500}", "$type": "color", "$description": "Base secondary color reference" }
+    },
+    "accent": {
+      "$description": "Accent color with tints and shades",
+      "50": { "$value": "#e9fbfa", "$type": "color", "$description": "Lightest tint" },
+      "100": { "$value": "#c3f4f1", "$type": "color", "$description": "Very light tint" },
+      "200": { "$value": "#9dede8", "$type": "color", "$description": "Light tint" },
+      "300": { "$value": "#77e6df", "$type": "color", "$description": "Medium light tint" },
+      "400": { "$value": "#51dfd6", "$type": "color", "$description": "Medium tint" },
+      "500": { "$value": "#4ecdc4", "$type": "color", "$description": "Base accent color" },
+      "600": { "$value": "#3ea49d", "$type": "color", "$description": "Medium shade" },
+      "700": { "$value": "#2f7b76", "$type": "color", "$description": "Dark shade" },
+      "800": { "$value": "#1f524e", "$type": "color", "$description": "Very dark shade" },
+      "900": { "$value": "#102927", "$type": "color", "$description": "Darkest shade" },
+      "base": { "$value": "{clearco.accent.500}", "$type": "color", "$description": "Base accent color reference" }
+    },
+    "neutral": {
+      "$description": "Brand-tuned neutral scale",
+      "50": { "$value": "#f8f9fa", "$type": "color", "$description": "Lightest neutral" },
+      "100": { "$value": "#f1f3f5", "$type": "color", "$description": "Very light neutral" },
+      "200": { "$value": "#e9ecef", "$type": "color", "$description": "Light neutral" },
+      "300": { "$value": "#dee2e6", "$type": "color", "$description": "Medium light neutral" },
+      "400": { "$value": "#ced4da", "$type": "color", "$description": "Medium neutral" },
+      "500": { "$value": "#adb5bd", "$type": "color", "$description": "Base neutral" },
+      "600": { "$value": "#6c757d", "$type": "color", "$description": "Medium dark neutral" },
+      "700": { "$value": "#495057", "$type": "color", "$description": "Dark neutral" },
+      "800": { "$value": "#343a40", "$type": "color", "$description": "Very dark neutral" },
+      "900": { "$value": "#212529", "$type": "color", "$description": "Darkest neutral" }
+    },
+    "semantic": {
+      "$description": "Semantic colors for Clearco brand",
+      "success": {
+        "$value": "#28a745",
+        "$type": "color",
+        "$description": "Success state color"
+      },
+      "warning": {
+        "$value": "#ffc107",
+        "$type": "color",
+        "$description": "Warning state color"
+      },
+      "error": {
+        "$value": "#dc3545",
+        "$type": "color",
+        "$description": "Error state color"
+      },
+      "info": {
+        "$value": "{clearco.primary.500}",
+        "$type": "color",
+        "$description": "Info state color"
+      }
+    }
+  }
+}

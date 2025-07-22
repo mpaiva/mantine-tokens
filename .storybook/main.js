@@ -2,7 +2,11 @@
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
   stories: [
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+    "../stories/Welcome.stories.js",
+    "../stories/global/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../stories/brands/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../stories/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../stories/documentation/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   addons: [
     "@storybook/addon-docs",

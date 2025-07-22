@@ -1,0 +1,136 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Elevation semantic API tokens - context-aware tokens for depth and hierarchy",
+  "elevation": {
+    "$description": "Elevation tokens create visual hierarchy through shadows and z-index",
+    "shadow": {
+      "$description": "Shadow elevation levels",
+      "none": {
+        "$value": "@elevation.shadow.none",
+        "$type": "shadow",
+        "$description": "No elevation shadow"
+      },
+      "raised": {
+        "$value": "@elevation.shadow.raised",
+        "$type": "shadow",
+        "$description": "Slightly raised elements (cards, tiles)"
+      },
+      "floating": {
+        "$value": "@elevation.shadow.floating",
+        "$type": "shadow",
+        "$description": "Floating elements (dropdowns, tooltips)"
+      },
+      "overlay": {
+        "$value": "@elevation.shadow.overlay",
+        "$type": "shadow",
+        "$description": "Overlay elements (modals, dialogs)"
+      },
+      "sticky": {
+        "$value": "@elevation.shadow.sticky",
+        "$type": "shadow",
+        "$description": "Sticky/fixed elements (headers, toolbars)"
+      }
+    },
+    "zIndex": {
+      "$description": "Z-index stacking order",
+      "base": {
+        "$value": "@elevation.zIndex.base",
+        "$type": "number",
+        "$description": "Base level content"
+      },
+      "raised": {
+        "$value": "@elevation.zIndex.raised",
+        "$type": "number",
+        "$description": "Raised content (cards over background)"
+      },
+      "dropdown": {
+        "$value": "@elevation.zIndex.dropdown",
+        "$type": "number",
+        "$description": "Dropdown menus"
+      },
+      "sticky": {
+        "$value": "@elevation.zIndex.sticky",
+        "$type": "number",
+        "$description": "Sticky elements"
+      },
+      "fixed": {
+        "$value": "@elevation.zIndex.fixed",
+        "$type": "number",
+        "$description": "Fixed positioned elements"
+      },
+      "overlay": {
+        "$value": "@elevation.zIndex.overlay",
+        "$type": "number",
+        "$description": "Overlay backdrop"
+      },
+      "modal": {
+        "$value": "@elevation.zIndex.modal",
+        "$type": "number",
+        "$description": "Modal dialogs"
+      },
+      "popover": {
+        "$value": "@elevation.zIndex.popover",
+        "$type": "number",
+        "$description": "Popovers and tooltips"
+      },
+      "notification": {
+        "$value": "@elevation.zIndex.notification",
+        "$type": "number",
+        "$description": "Toast notifications"
+      },
+      "maximum": {
+        "$value": "@elevation.zIndex.maximum",
+        "$type": "number",
+        "$description": "Maximum z-index (critical UI)"
+      }
+    },
+    "focus": {
+      "$description": "Focus state elevation",
+      "ring": {
+        "color": {
+          "$value": "@elevation.focus.ring.color",
+          "$type": "color",
+          "$description": "Focus ring color"
+        },
+        "width": {
+          "$value": "@elevation.focus.ring.width",
+          "$type": "dimension",
+          "$description": "Focus ring width"
+        },
+        "offset": {
+          "$value": "@elevation.focus.ring.offset",
+          "$type": "dimension",
+          "$description": "Focus ring offset"
+        },
+        "offsetColor": {
+          "$value": "@elevation.focus.ring.offsetColor",
+          "$type": "color",
+          "$description": "Focus ring offset color"
+        }
+      }
+    },
+    "blur": {
+      "$description": "Backdrop blur effects",
+      "none": {
+        "$value": "@elevation.blur.none",
+        "$type": "dimension",
+        "$description": "No blur"
+      },
+      "sm": {
+        "$value": "@elevation.blur.sm",
+        "$type": "dimension",
+        "$description": "Small blur"
+      },
+      "md": {
+        "$value": "@elevation.blur.md",
+        "$type": "dimension",
+        "$description": "Medium blur"
+      },
+      "lg": {
+        "$value": "@elevation.blur.lg",
+        "$type": "dimension",
+        "$description": "Large blur"
+      }
+    }
+  }
+}

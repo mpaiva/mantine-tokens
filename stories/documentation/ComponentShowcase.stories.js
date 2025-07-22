@@ -1,5 +1,5 @@
 export default {
-  title: 'Tests/Component Showcase',
+  title: 'Documentation/Component Showcase',
   parameters: {
     docs: {
       description: {

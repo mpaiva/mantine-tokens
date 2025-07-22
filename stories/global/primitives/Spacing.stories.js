@@ -1,5 +1,5 @@
 export default {
-  title: 'Design Tokens/Spacing',
+  title: 'Global/Primitives/Spacing',
   parameters: {
     docs: {
       description: {

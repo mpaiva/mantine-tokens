@@ -1,0 +1,133 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Surface semantic API tokens - context-aware surface colors for backgrounds, cards, and containers",
+  "surface": {
+    "$description": "Surface tokens define the visual hierarchy of UI surfaces",
+    "page": {
+      "$description": "Page-level surface tokens",
+      "background": {
+        "$value": "@surface.page.background",
+        "$type": "color",
+        "$description": "Main page background color"
+      }
+    },
+    "primary": {
+      "$description": "Primary surfaces for main content areas",
+      "idle": {
+        "background": {
+          "$value": "@surface.primary.idle.background",
+          "$type": "color",
+          "$description": "Primary surface background (cards, panels)"
+        },
+        "foreground": {
+          "$value": "@surface.primary.idle.foreground",
+          "$type": "color",
+          "$description": "Primary surface foreground color"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@surface.primary.hover.background",
+          "$type": "color",
+          "$description": "Primary surface hover state"
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "@surface.primary.active.background",
+          "$type": "color",
+          "$description": "Primary surface active/pressed state"
+        }
+      },
+      "selected": {
+        "background": {
+          "$value": "@surface.primary.selected.background",
+          "$type": "color",
+          "$description": "Primary surface selected state"
+        }
+      }
+    },
+    "secondary": {
+      "$description": "Secondary surfaces for nested or supporting content",
+      "idle": {
+        "background": {
+          "$value": "@surface.secondary.idle.background",
+          "$type": "color",
+          "$description": "Secondary surface background"
+        },
+        "foreground": {
+          "$value": "@surface.secondary.idle.foreground",
+          "$type": "color",
+          "$description": "Secondary surface foreground color"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@surface.secondary.hover.background",
+          "$type": "color",
+          "$description": "Secondary surface hover state"
+        }
+      }
+    },
+    "tertiary": {
+      "$description": "Tertiary surfaces for deeply nested content",
+      "idle": {
+        "background": {
+          "$value": "@surface.tertiary.idle.background",
+          "$type": "color",
+          "$description": "Tertiary surface background"
+        }
+      }
+    },
+    "inverted": {
+      "$description": "Inverted surfaces for high contrast areas",
+      "idle": {
+        "background": {
+          "$value": "@surface.inverted.idle.background",
+          "$type": "color",
+          "$description": "Inverted surface background (tooltips, popovers)"
+        },
+        "foreground": {
+          "$value": "@surface.inverted.idle.foreground",
+          "$type": "color",
+          "$description": "Inverted surface foreground color"
+        }
+      }
+    },
+    "overlay": {
+      "$description": "Overlay surfaces for modals and dropdowns",
+      "idle": {
+        "background": {
+          "$value": "@surface.overlay.idle.background",
+          "$type": "color",
+          "$description": "Overlay surface background"
+        }
+      },
+      "backdrop": {
+        "color": {
+          "$value": "@surface.overlay.backdrop.color",
+          "$type": "color",
+          "$description": "Modal backdrop color"
+        },
+        "opacity": {
+          "$value": "@surface.overlay.backdrop.opacity",
+          "$type": "number",
+          "$description": "Modal backdrop opacity"
+        }
+      }
+    },
+    "disabled": {
+      "$description": "Disabled surface states",
+      "background": {
+        "$value": "@surface.disabled.background",
+        "$type": "color",
+        "$description": "Disabled surface background"
+      },
+      "foreground": {
+        "$value": "@surface.disabled.foreground",
+        "$type": "color",
+        "$description": "Disabled surface foreground"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "typography": {
+    "$description": "Clearco typography size overrides and extensions",
+    "fontSize": {
+      "display": {
+        "$value": "3.5rem",
+        "$type": "fontSize",
+        "$description": "Display text size for hero sections"
+      },
+      "hero": {
+        "$value": "4.5rem",
+        "$type": "fontSize",
+        "$description": "Extra large hero text"
+      },
+      "headline": {
+        "$value": "2.5rem",
+        "$type": "fontSize",
+        "$description": "Headline size for marketing"
+      },
+      "subheadline": {
+        "$value": "1.75rem",
+        "$type": "fontSize",
+        "$description": "Subheadline size"
+      }
+    },
+    "lineHeight": {
+      "display": {
+        "$value": "1.1",
+        "$type": "lineHeight",
+        "$description": "Tight line height for display text"
+      },
+      "hero": {
+        "$value": "1.05",
+        "$type": "lineHeight",
+        "$description": "Very tight line height for hero text"
+      },
+      "headline": {
+        "$value": "1.2",
+        "$type": "lineHeight",
+        "$description": "Tight line height for headlines"
+      },
+      "body": {
+        "$value": "1.6",
+        "$type": "lineHeight",
+        "$description": "Comfortable reading line height"
+      }
+    }
+  }
+}

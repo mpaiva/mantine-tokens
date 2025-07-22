@@ -94,10 +94,41 @@ async function buildBrand(brandName) {
   // Check if theme files exist
   const hasLightTheme = fs.existsSync(resolve(brandPath, 'theme-light.json'));
   const hasDarkTheme = fs.existsSync(resolve(brandPath, 'theme-dark.json'));
+  const hasEnhancedTheme = fs.existsSync(resolve(brandPath, 'enhanced-theme.json'));
   
   // Register brand-specific transform and format
   StyleDictionary.registerTransform(createBrandTransform(brandName));
   StyleDictionary.registerFormat(createBrandCSSFormat(brandName));
+  
+  // Register DTCG-compliant JSON format for brands
+  StyleDictionary.registerFormat({
+    name: `json/${brandName}-dtcg`,
+    format: ({ dictionary }) => {
+      const buildTokenTree = (tokens) => {
+        const tree = {};
+        tokens.forEach(token => {
+          let current = tree;
+          token.path.forEach((segment, index) => {
+            if (index === token.path.length - 1) {
+              current[segment] = {
+                $value: token.$value || token.value,
+                $type: token.$type || token.type
+              };
+              if (token.$description || token.comment) {
+                current[segment].$description = token.$description || token.comment;
+              }
+            } else {
+              if (!current[segment]) current[segment] = {};
+              current = current[segment];
+            }
+          });
+        });
+        return tree;
+      };
+      const tokenTree = buildTokenTree(dictionary.allTokens);
+      return JSON.stringify(tokenTree, null, 2);
+    }
+  });
   
   // Register brand documentation format
   StyleDictionary.registerFormat({
@@ -194,7 +225,10 @@ async function buildBrand(brandName) {
   
   // Build base configuration - include all JSON files in the brand folder
   const brandFiles = fs.readdirSync(brandPath)
-    .filter(file => file.endsWith('.json') && file !== 'theme-light.json' && file !== 'theme-dark.json')
+    .filter(file => file.endsWith('.json') && 
+            file !== 'theme-light.json' && 
+            file !== 'theme-dark.json' && 
+            file !== 'enhanced-theme.json')  // Exclude enhanced-theme.json from base build
     .map(file => `tokens/brands/${brandName}/${file}`);
   
   const sources = [
@@ -204,6 +238,9 @@ async function buildBrand(brandName) {
   
   const baseConfig = {
     source: sources,
+    log: {
+      verbosity: isVerbose ? 'verbose' : 'default'
+    },
     platforms: {
       css: {
         buildPath: `build/brands/${brandName}/`,
@@ -233,6 +270,15 @@ async function buildBrand(brandName) {
           format: 'typescript/es6-declarations'
         }]
       },
+      json: {
+        buildPath: 'build/json/',
+        transforms: ['name/camel', 'color/hex'],
+        files: [{
+          destination: `${brandName}.all.tokens.json`,
+          format: `json/${brandName}-dtcg`,
+          filter: (token) => token.path[0] !== 'theme'
+        }]
+      },
       docs: {
         buildPath: `build/brands/${brandName}/`,
         transforms: ['name/human'],
@@ -253,8 +299,12 @@ async function buildBrand(brandName) {
     const lightThemeConfig = {
       source: [
         ...brandFiles,
-        `tokens/brands/${brandName}/theme-light.json`
+        `tokens/brands/${brandName}/theme-light.json`,
+        ...(hasEnhancedTheme ? [`tokens/brands/${brandName}/enhanced-theme.json`] : [])  // Include enhanced theme if it exists
       ],
+      log: {
+        verbosity: isVerbose ? 'verbose' : 'default'
+      },
       platforms: {
         css: {
           buildPath: `build/brands/${brandName}/`,
@@ -268,6 +318,15 @@ async function buildBrand(brandName) {
               outputReferences: true
             }
           }]
+        },
+        json: {
+          buildPath: 'build/json/',
+          transforms: ['name/camel', 'color/hex'],
+          files: [{
+            destination: `${brandName}.light.tokens.json`,
+            format: `json/${brandName}-dtcg`,
+            filter: (token) => token.path[0] === 'theme'
+          }]
         }
       }
     };
@@ -280,8 +339,12 @@ async function buildBrand(brandName) {
     const darkThemeConfig = {
       source: [
         ...brandFiles,
-        `tokens/brands/${brandName}/theme-dark.json`
+        `tokens/brands/${brandName}/theme-dark.json`,
+        ...(hasEnhancedTheme ? [`tokens/brands/${brandName}/enhanced-theme.json`] : [])  // Include enhanced theme if it exists
       ],
+      log: {
+        verbosity: isVerbose ? 'verbose' : 'default'
+      },
       platforms: {
         css: {
           buildPath: `build/brands/${brandName}/`,
@@ -294,6 +357,15 @@ async function buildBrand(brandName) {
               selector: '.theme-dark',
               outputReferences: true
             }
+          }]
+        },
+        json: {
+          buildPath: 'build/json/',
+          transforms: ['name/camel', 'color/hex'],
+          files: [{
+            destination: `${brandName}.dark.tokens.json`,
+            format: `json/${brandName}-dtcg`,
+            filter: (token) => token.path[0] === 'theme'
           }]
         }
       }

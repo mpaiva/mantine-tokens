@@ -1,0 +1,172 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Dark theme semantic tokens using API references",
+  "theme": {
+    "color": {
+      "background": {
+        "default": {
+          "$value": "@surface.page.background",
+          "$type": "color",
+          "$description": "Default page background"
+        },
+        "subtle": {
+          "$value": "@surface.secondary.idle.background",
+          "$type": "color",
+          "$description": "Subtle background for sections"
+        },
+        "muted": {
+          "$value": "@surface.tertiary.idle.background",
+          "$type": "color",
+          "$description": "Muted background for disabled states"
+        }
+      },
+      "surface": {
+        "default": {
+          "$value": "@surface.primary.idle.background",
+          "$type": "color",
+          "$description": "Default surface color for cards, modals"
+        },
+        "subtle": {
+          "$value": "@surface.secondary.idle.background",
+          "$type": "color",
+          "$description": "Subtle surface variation"
+        },
+        "hover": {
+          "$value": "@surface.primary.hover.background",
+          "$type": "color",
+          "$description": "Surface hover state"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "@structure.border.color.default",
+          "$type": "color",
+          "$description": "Default border color"
+        },
+        "subtle": {
+          "$value": "@structure.border.color.subtle",
+          "$type": "color",
+          "$description": "Subtle border color"
+        },
+        "strong": {
+          "$value": "@structure.border.color.strong",
+          "$type": "color",
+          "$description": "Strong border color"
+        }
+      },
+      "text": {
+        "default": {
+          "$value": "@content.primary.default",
+          "$type": "color",
+          "$description": "Default text color"
+        },
+        "subtle": {
+          "$value": "@content.secondary.default",
+          "$type": "color",
+          "$description": "Subtle text color"
+        },
+        "muted": {
+          "$value": "@content.tertiary.default",
+          "$type": "color",
+          "$description": "Muted text color"
+        },
+        "disabled": {
+          "$value": "@content.disabled.default",
+          "$type": "color",
+          "$description": "Disabled text color"
+        },
+        "inverse": {
+          "$value": "@content.inverse.primary",
+          "$type": "color",
+          "$description": "Inverse text color"
+        }
+      },
+      "primary": {
+        "$value": "@interactive.primary.idle.background",
+        "$type": "color",
+        "$description": "Primary brand color"
+      },
+      "success": {
+        "$value": "@feedback.success.foreground.default",
+        "$type": "color",
+        "$description": "Success state color"
+      },
+      "warning": {
+        "$value": "@feedback.warning.foreground.default",
+        "$type": "color",
+        "$description": "Warning state color"
+      },
+      "error": {
+        "$value": "@feedback.error.foreground.default",
+        "$type": "color",
+        "$description": "Error state color"
+      },
+      "info": {
+        "$value": "@feedback.info.foreground.default",
+        "$type": "color",
+        "$description": "Info state color"
+      }
+    },
+    "spacing": {
+      "xs": {
+        "$value": "@structure.spacing.inline.xs",
+        "$type": "dimension",
+        "$description": "Extra small spacing"
+      },
+      "sm": {
+        "$value": "@structure.spacing.inline.sm",
+        "$type": "dimension",
+        "$description": "Small spacing"
+      },
+      "md": {
+        "$value": "@structure.spacing.inline.md",
+        "$type": "dimension",
+        "$description": "Medium spacing"
+      },
+      "lg": {
+        "$value": "@structure.spacing.inline.lg",
+        "$type": "dimension",
+        "$description": "Large spacing"
+      },
+      "xl": {
+        "$value": "@structure.spacing.inline.xl",
+        "$type": "dimension",
+        "$description": "Extra large spacing"
+      }
+    },
+    "radius": {
+      "sm": {
+        "$value": "@structure.border.radius.sm",
+        "$type": "dimension",
+        "$description": "Small border radius"
+      },
+      "md": {
+        "$value": "@structure.border.radius.md",
+        "$type": "dimension",
+        "$description": "Medium border radius"
+      },
+      "lg": {
+        "$value": "@structure.border.radius.lg",
+        "$type": "dimension",
+        "$description": "Large border radius"
+      }
+    },
+    "shadow": {
+      "sm": {
+        "$value": "@elevation.shadow.raised",
+        "$type": "shadow",
+        "$description": "Small shadow"
+      },
+      "md": {
+        "$value": "@elevation.shadow.floating",
+        "$type": "shadow",
+        "$description": "Medium shadow"
+      },
+      "lg": {
+        "$value": "@elevation.shadow.overlay",
+        "$type": "shadow",
+        "$description": "Large shadow"
+      }
+    }
+  }
+}

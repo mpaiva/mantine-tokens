@@ -1,5 +1,5 @@
 export default {
-  title: 'Tests/Brand Showcase',
+  title: 'Documentation/Brand Comparison',
   parameters: {
     docs: {
       description: {

@@ -17,12 +17,33 @@ export const Introduction = () => {
         <h2>Overview</h2>
         <p>This design system provides a comprehensive set of tokens including:</p>
         <ul>
-          <li><strong>Colors</strong>: Full color palette with semantic color mappings</li>
-          <li><strong>Typography</strong>: Font families, sizes, weights, and line heights</li>
-          <li><strong>Spacing</strong>: Consistent spacing scale from 0 to 3xl</li>
-          <li><strong>Shadows</strong>: Elevation system with 5 levels</li>
-          <li><strong>Border Radius</strong>: Radius scale from sharp to pill-shaped</li>
-          <li><strong>Component Tokens</strong>: Pre-configured tokens for buttons, cards, inputs, and more</li>
+          <li><strong>Primitive Tokens</strong>: Core design values
+            <ul>
+              <li>Colors: Full color palette with 10 shades per color</li>
+              <li>Typography: Font families, sizes, weights, and line heights</li>
+              <li>Spacing: Consistent spacing scale from 0 to 3xl</li>
+              <li>Shadows: Elevation system with 5 levels</li>
+              <li>Border Radius: Radius scale from sharp to pill-shaped</li>
+            </ul>
+          </li>
+          <li><strong>Semantic Tokens</strong>: Theme-aware tokens that adapt to context
+            <ul>
+              <li>Surface colors for backgrounds and containers</li>
+              <li>Text colors with proper hierarchy</li>
+              <li>Border colors for dividers and inputs</li>
+              <li>Interactive states (primary, success, error, warning)</li>
+              <li>Focus and overlay tokens</li>
+            </ul>
+          </li>
+          <li><strong>Custom Tokens</strong>: Extended tokens for specific needs
+            <ul>
+              <li>Extra spacing values (xxs, 4xl, 5xl, section, page)</li>
+              <li>Display typography sizes (jumbo, display, hero)</li>
+              <li>Extended font weights (thin to black)</li>
+              <li>Component-specific tokens (oval button)</li>
+            </ul>
+          </li>
+          <li><strong>Component Tokens</strong>: Pre-configured tokens for standard components</li>
         </ul>
       </section>
       
@@ -68,8 +89,16 @@ const styles = {
         <h2>Token Categories</h2>
         <p>Navigate through the sidebar to explore:</p>
         <ul>
-          <li><strong>Design Tokens</strong>: Raw token values organized by type</li>
+          <li><strong>Global</strong>: Core design tokens
+            <ul>
+              <li>Primitives: Raw token values (colors, typography, spacing)</li>
+              <li>Semantic: Theme-aware tokens that adapt to light/dark mode</li>
+              <li>Custom: Extended tokens for specific use cases</li>
+            </ul>
+          </li>
+          <li><strong>Brands</strong>: Brand-specific tokens and themes</li>
           <li><strong>Components</strong>: Example components built with the design tokens</li>
+          <li><strong>Documentation</strong>: References and tools</li>
         </ul>
       </section>
       

@@ -368,10 +368,10 @@ async function build() {
           }]
         },
         json: {
-          buildPath: 'build/custom/',
+          buildPath: 'build/json/',
           transforms: ['name/camel', 'color/hex'],
           files: [{
-            destination: `${globalPrefix}.tokens.json`,
+            destination: `mantine.custom.tokens.json`,
             format: 'json/custom-dtcg'
           }]
         },

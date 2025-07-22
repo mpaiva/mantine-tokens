@@ -1,0 +1,220 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Feedback semantic API tokens - context-aware colors for system feedback and states",
+  "feedback": {
+    "$description": "Feedback tokens communicate system states and messages",
+    "error": {
+      "$description": "Error state feedback",
+      "background": {
+        "subtle": {
+          "$value": "@feedback.error.background.subtle",
+          "$type": "color",
+          "$description": "Subtle error background"
+        },
+        "default": {
+          "$value": "@feedback.error.background.default",
+          "$type": "color",
+          "$description": "Default error background"
+        },
+        "emphasis": {
+          "$value": "@feedback.error.background.emphasis",
+          "$type": "color",
+          "$description": "Emphasized error background"
+        }
+      },
+      "foreground": {
+        "default": {
+          "$value": "@feedback.error.foreground.default",
+          "$type": "color",
+          "$description": "Error text color"
+        },
+        "onEmphasis": {
+          "$value": "@feedback.error.foreground.onEmphasis",
+          "$type": "color",
+          "$description": "Text on emphasized error background"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "@feedback.error.border.default",
+          "$type": "color",
+          "$description": "Error border color"
+        }
+      },
+      "icon": {
+        "default": {
+          "$value": "@feedback.error.icon.default",
+          "$type": "color",
+          "$description": "Error icon color"
+        }
+      }
+    },
+    "warning": {
+      "$description": "Warning state feedback",
+      "background": {
+        "subtle": {
+          "$value": "@feedback.warning.background.subtle",
+          "$type": "color",
+          "$description": "Subtle warning background"
+        },
+        "default": {
+          "$value": "@feedback.warning.background.default",
+          "$type": "color",
+          "$description": "Default warning background"
+        },
+        "emphasis": {
+          "$value": "@feedback.warning.background.emphasis",
+          "$type": "color",
+          "$description": "Emphasized warning background"
+        }
+      },
+      "foreground": {
+        "default": {
+          "$value": "@feedback.warning.foreground.default",
+          "$type": "color",
+          "$description": "Warning text color"
+        },
+        "onEmphasis": {
+          "$value": "@feedback.warning.foreground.onEmphasis",
+          "$type": "color",
+          "$description": "Text on emphasized warning background"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "@feedback.warning.border.default",
+          "$type": "color",
+          "$description": "Warning border color"
+        }
+      },
+      "icon": {
+        "default": {
+          "$value": "@feedback.warning.icon.default",
+          "$type": "color",
+          "$description": "Warning icon color"
+        }
+      }
+    },
+    "success": {
+      "$description": "Success state feedback",
+      "background": {
+        "subtle": {
+          "$value": "@feedback.success.background.subtle",
+          "$type": "color",
+          "$description": "Subtle success background"
+        },
+        "default": {
+          "$value": "@feedback.success.background.default",
+          "$type": "color",
+          "$description": "Default success background"
+        },
+        "emphasis": {
+          "$value": "@feedback.success.background.emphasis",
+          "$type": "color",
+          "$description": "Emphasized success background"
+        }
+      },
+      "foreground": {
+        "default": {
+          "$value": "@feedback.success.foreground.default",
+          "$type": "color",
+          "$description": "Success text color"
+        },
+        "onEmphasis": {
+          "$value": "@feedback.success.foreground.onEmphasis",
+          "$type": "color",
+          "$description": "Text on emphasized success background"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "@feedback.success.border.default",
+          "$type": "color",
+          "$description": "Success border color"
+        }
+      },
+      "icon": {
+        "default": {
+          "$value": "@feedback.success.icon.default",
+          "$type": "color",
+          "$description": "Success icon color"
+        }
+      }
+    },
+    "info": {
+      "$description": "Info state feedback",
+      "background": {
+        "subtle": {
+          "$value": "@feedback.info.background.subtle",
+          "$type": "color",
+          "$description": "Subtle info background"
+        },
+        "default": {
+          "$value": "@feedback.info.background.default",
+          "$type": "color",
+          "$description": "Default info background"
+        },
+        "emphasis": {
+          "$value": "@feedback.info.background.emphasis",
+          "$type": "color",
+          "$description": "Emphasized info background"
+        }
+      },
+      "foreground": {
+        "default": {
+          "$value": "@feedback.info.foreground.default",
+          "$type": "color",
+          "$description": "Info text color"
+        },
+        "onEmphasis": {
+          "$value": "@feedback.info.foreground.onEmphasis",
+          "$type": "color",
+          "$description": "Text on emphasized info background"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "@feedback.info.border.default",
+          "$type": "color",
+          "$description": "Info border color"
+        }
+      },
+      "icon": {
+        "default": {
+          "$value": "@feedback.info.icon.default",
+          "$type": "color",
+          "$description": "Info icon color"
+        }
+      }
+    },
+    "neutral": {
+      "$description": "Neutral state feedback",
+      "background": {
+        "subtle": {
+          "$value": "@feedback.neutral.background.subtle",
+          "$type": "color",
+          "$description": "Subtle neutral background"
+        },
+        "default": {
+          "$value": "@feedback.neutral.background.default",
+          "$type": "color",
+          "$description": "Default neutral background"
+        }
+      },
+      "foreground": {
+        "default": {
+          "$value": "@feedback.neutral.foreground.default",
+          "$type": "color",
+          "$description": "Neutral text color"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "@feedback.neutral.border.default",
+          "$type": "color",
+          "$description": "Neutral border color"
+        }
+      }
+    }
+  }
+}

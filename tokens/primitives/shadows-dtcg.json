@@ -1,6 +1,11 @@
 {
   "shadow": {
     "$description": "Elevation shadows for depth perception",
+    "none": {
+      "$value": "none",
+      "$type": "shadow",
+      "$description": "No shadow"
+    },
     "xs": {
       "$value": [
         {

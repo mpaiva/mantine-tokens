@@ -20,6 +20,8 @@ const TOKEN_TYPES = [
   'dimension',
   'fontFamily',
   'fontWeight',
+  'fontSize',      // DTCG standard type
+  'lineHeight',    // DTCG standard type
   'duration',
   'cubicBezier',
   'number',
@@ -40,7 +42,7 @@ function log(message, color = 'reset') {
 }
 
 // Validate token structure
-function validateToken(token, path, allTokens) {
+function validateToken(token, path, allTokens, isContextFile = false) {
   // Check for $value
   if (!token.$value && !token.$type && typeof token === 'object') {
     // Could be a group, check if it has nested tokens
@@ -59,8 +61,8 @@ function validateToken(token, path, allTokens) {
     return;
   }
 
-  // Validate $type
-  if (token.$value !== undefined) {
+  // Validate $type (skip for context mapping files)
+  if (token.$value !== undefined && !isContextFile) {
     if (!token.$type) {
       errors.push(`Token at ${path} has $value but missing $type`);
     } else if (!TOKEN_TYPES.includes(token.$type)) {
@@ -69,22 +71,32 @@ function validateToken(token, path, allTokens) {
   }
 
   // Validate references
-  if (typeof token.$value === 'string' && token.$value.includes('{')) {
-    const referencePattern = /\{([^}]+)\}/g;
-    const references = [...token.$value.matchAll(referencePattern)];
-    
-    references.forEach(([full, ref]) => {
-      const refPath = ref.split('.');
-      let current = allTokens;
+  if (typeof token.$value === 'string') {
+    // Handle standard DTCG references {token.path}
+    if (token.$value.includes('{')) {
+      const referencePattern = /\{([^}]+)\}/g;
+      const references = [...token.$value.matchAll(referencePattern)];
       
-      for (const segment of refPath) {
-        if (!current[segment]) {
-          errors.push(`Token at ${path} references non-existent token: ${ref}`);
-          break;
+      references.forEach(([full, ref]) => {
+        const refPath = ref.split('.');
+        let current = allTokens;
+        
+        for (const segment of refPath) {
+          if (!current[segment]) {
+            errors.push(`Token at ${path} references non-existent token: ${ref}`);
+            break;
+          }
+          current = current[segment];
         }
-        current = current[segment];
-      }
-    });
+      });
+    }
+    // Skip validation for @ references (semantic API tokens)
+    // These are part of the context-aware semantic API pattern and are resolved
+    // at build time through context mappings in tokens/contexts/
+    else if (token.$value.startsWith('@')) {
+      // These will be resolved by build-semantic-resolved.js
+      return;
+    }
   }
 
   // Type-specific validations
@@ -112,6 +124,10 @@ function isValidColor(value) {
   // Skip references
   if (value.includes('{')) return true;
   
+  // Skip @ references (semantic API tokens)
+  // These are resolved at build time through context mappings
+  if (value.startsWith('@')) return true;
+  
   // Hex colors
   if (/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}|[A-Fa-f0-9]{8})$/.test(value)) return true;
   
@@ -131,6 +147,10 @@ function isValidColor(value) {
 function isValidDimension(value) {
   // Skip references
   if (value.includes('{')) return true;
+  
+  // Skip @ references (semantic API tokens)
+  // These are resolved at build time through context mappings
+  if (value.includes('@')) return true;
   
   // Zero
   if (value === '0') return true;
@@ -159,17 +179,17 @@ function isValidFontWeight(value) {
 }
 
 // Recursively walk through token structure
-function walkTokens(obj, path = '', allTokens = obj) {
+function walkTokens(obj, path = '', allTokens = obj, isContextFile = false) {
   for (const [key, value] of Object.entries(obj)) {
     const currentPath = path ? `${path}.${key}` : key;
     
     if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
       // Check if this is a token or a group
       if (value.$value !== undefined || value.$type !== undefined) {
-        validateToken(value, currentPath, allTokens);
+        validateToken(value, currentPath, allTokens, isContextFile);
       } else {
         // It's a group, recurse
-        walkTokens(value, currentPath, allTokens);
+        walkTokens(value, currentPath, allTokens, isContextFile);
       }
     }
   }
@@ -219,8 +239,11 @@ async function validateTokens() {
         continue;
       }
       
+      // Check if this is a context file (in contexts/ directory)
+      const isContextFile = relativePath.includes('contexts/');
+      
       // Walk through and validate tokens with access to all tokens
-      walkTokens(tokens, '', allTokens);
+      walkTokens(tokens, '', allTokens, isContextFile);
     }
 
     // Report results

@@ -1,0 +1,241 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Interactive semantic API tokens - context-aware tokens for interactive elements",
+  "interactive": {
+    "$description": "Interactive tokens define the appearance of clickable and interactive elements",
+    "primary": {
+      "$description": "Primary interactive elements (main CTAs)",
+      "idle": {
+        "background": {
+          "$value": "@interactive.primary.idle.background",
+          "$type": "color",
+          "$description": "Primary button/CTA background"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.idle.foreground",
+          "$type": "color",
+          "$description": "Primary button/CTA text"
+        },
+        "border": {
+          "$value": "@interactive.primary.idle.border",
+          "$type": "color",
+          "$description": "Primary button/CTA border"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@interactive.primary.hover.background",
+          "$type": "color",
+          "$description": "Primary hover background"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.hover.foreground",
+          "$type": "color",
+          "$description": "Primary hover text"
+        },
+        "border": {
+          "$value": "@interactive.primary.hover.border",
+          "$type": "color",
+          "$description": "Primary hover border"
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "@interactive.primary.active.background",
+          "$type": "color",
+          "$description": "Primary active/pressed background"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.active.foreground",
+          "$type": "color",
+          "$description": "Primary active/pressed text"
+        }
+      },
+      "disabled": {
+        "background": {
+          "$value": "@interactive.primary.disabled.background",
+          "$type": "color",
+          "$description": "Primary disabled background"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.disabled.foreground",
+          "$type": "color",
+          "$description": "Primary disabled text"
+        }
+      }
+    },
+    "secondary": {
+      "$description": "Secondary interactive elements",
+      "idle": {
+        "background": {
+          "$value": "@interactive.secondary.idle.background",
+          "$type": "color",
+          "$description": "Secondary button background"
+        },
+        "foreground": {
+          "$value": "@interactive.secondary.idle.foreground",
+          "$type": "color",
+          "$description": "Secondary button text"
+        },
+        "border": {
+          "$value": "@interactive.secondary.idle.border",
+          "$type": "color",
+          "$description": "Secondary button border"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@interactive.secondary.hover.background",
+          "$type": "color",
+          "$description": "Secondary hover background"
+        },
+        "foreground": {
+          "$value": "@interactive.secondary.hover.foreground",
+          "$type": "color",
+          "$description": "Secondary hover text"
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "@interactive.secondary.active.background",
+          "$type": "color",
+          "$description": "Secondary active background"
+        }
+      }
+    },
+    "tertiary": {
+      "$description": "Tertiary interactive elements (ghost buttons)",
+      "idle": {
+        "background": {
+          "$value": "@interactive.tertiary.idle.background",
+          "$type": "color",
+          "$description": "Tertiary button background"
+        },
+        "foreground": {
+          "$value": "@interactive.tertiary.idle.foreground",
+          "$type": "color",
+          "$description": "Tertiary button text"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@interactive.tertiary.hover.background",
+          "$type": "color",
+          "$description": "Tertiary hover background"
+        },
+        "foreground": {
+          "$value": "@interactive.tertiary.hover.foreground",
+          "$type": "color",
+          "$description": "Tertiary hover text"
+        }
+      }
+    },
+    "danger": {
+      "$description": "Danger/destructive interactive elements",
+      "idle": {
+        "background": {
+          "$value": "@interactive.danger.idle.background",
+          "$type": "color",
+          "$description": "Danger button background"
+        },
+        "foreground": {
+          "$value": "@interactive.danger.idle.foreground",
+          "$type": "color",
+          "$description": "Danger button text"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@interactive.danger.hover.background",
+          "$type": "color",
+          "$description": "Danger hover background"
+        }
+      }
+    },
+    "input": {
+      "$description": "Form input interactive states",
+      "idle": {
+        "background": {
+          "$value": "@interactive.input.idle.background",
+          "$type": "color",
+          "$description": "Input background"
+        },
+        "border": {
+          "$value": "@interactive.input.idle.border",
+          "$type": "color",
+          "$description": "Input border"
+        },
+        "placeholder": {
+          "$value": "@interactive.input.idle.placeholder",
+          "$type": "color",
+          "$description": "Input placeholder text"
+        }
+      },
+      "hover": {
+        "border": {
+          "$value": "@interactive.input.hover.border",
+          "$type": "color",
+          "$description": "Input hover border"
+        }
+      },
+      "focus": {
+        "border": {
+          "$value": "@interactive.input.focus.border",
+          "$type": "color",
+          "$description": "Input focus border"
+        },
+        "outline": {
+          "$value": "@interactive.input.focus.outline",
+          "$type": "color",
+          "$description": "Input focus outline/ring"
+        }
+      },
+      "error": {
+        "border": {
+          "$value": "@interactive.input.error.border",
+          "$type": "color",
+          "$description": "Input error border"
+        }
+      },
+      "disabled": {
+        "background": {
+          "$value": "@interactive.input.disabled.background",
+          "$type": "color",
+          "$description": "Input disabled background"
+        },
+        "border": {
+          "$value": "@interactive.input.disabled.border",
+          "$type": "color",
+          "$description": "Input disabled border"
+        }
+      }
+    },
+    "control": {
+      "$description": "Form controls (checkbox, radio, toggle)",
+      "idle": {
+        "background": {
+          "$value": "@interactive.control.idle.background",
+          "$type": "color",
+          "$description": "Control background"
+        },
+        "border": {
+          "$value": "@interactive.control.idle.border",
+          "$type": "color",
+          "$description": "Control border"
+        }
+      },
+      "checked": {
+        "background": {
+          "$value": "@interactive.control.checked.background",
+          "$type": "color",
+          "$description": "Control checked background"
+        },
+        "foreground": {
+          "$value": "@interactive.control.checked.foreground",
+          "$type": "color",
+          "$description": "Control checkmark/indicator"
+        }
+      }
+    }
+  }
+}

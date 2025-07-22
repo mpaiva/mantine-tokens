@@ -1,9 +1,9 @@
 export default {
-  title: 'Design Tokens/Colors',
+  title: 'Global/Primitives/Colors',
   parameters: {
     docs: {
       description: {
-        component: 'Comprehensive color palette with all color scales from 50-900'
+        component: 'Comprehensive color palette with all color scales from 50-900. These are the foundational colors used across all themes and brands.'
       }
     }
   }

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Button component tokens using semantic API - example of proper token usage",
+  "button": {
+    "$description": "Button component design tokens - references ONLY semantic API tokens",
+    "primary": {
+      "idle": {
+        "background": {
+          "$value": "@interactive.primary.idle.background",
+          "$type": "color",
+          "$description": "Primary button background"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.idle.foreground",
+          "$type": "color",
+          "$description": "Primary button text"
+        },
+        "border": {
+          "$value": "@interactive.primary.idle.border",
+          "$type": "color",
+          "$description": "Primary button border"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@interactive.primary.hover.background",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.hover.foreground",
+          "$type": "color"
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "@interactive.primary.active.background",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.active.foreground",
+          "$type": "color"
+        }
+      },
+      "disabled": {
+        "background": {
+          "$value": "@interactive.primary.disabled.background",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "@interactive.primary.disabled.foreground",
+          "$type": "color"
+        }
+      }
+    },
+    "secondary": {
+      "idle": {
+        "background": {
+          "$value": "@interactive.secondary.idle.background",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "@interactive.secondary.idle.foreground",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "@interactive.secondary.idle.border",
+          "$type": "color"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@interactive.secondary.hover.background",
+          "$type": "color"
+        }
+      }
+    },
+    "danger": {
+      "idle": {
+        "background": {
+          "$value": "@interactive.danger.idle.background",
+          "$type": "color"
+        },
+        "foreground": {
+          "$value": "@interactive.danger.idle.foreground",
+          "$type": "color"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "@interactive.danger.hover.background",
+          "$type": "color"
+        }
+      }
+    },
+    "padding": {
+      "xs": {
+        "$value": "@structure.spacing.inset.xs @structure.spacing.inline.sm",
+        "$type": "dimension",
+        "$description": "Extra small button padding"
+      },
+      "sm": {
+        "$value": "@structure.spacing.inset.xs @structure.spacing.inline.md",
+        "$type": "dimension",
+        "$description": "Small button padding"
+      },
+      "md": {
+        "$value": "@structure.spacing.inset.sm @structure.spacing.inline.lg",
+        "$type": "dimension",
+        "$description": "Medium button padding"
+      },
+      "lg": {
+        "$value": "@structure.spacing.inset.md @structure.spacing.inline.xl",
+        "$type": "dimension",
+        "$description": "Large button padding"
+      }
+    },
+    "gap": {
+      "default": {
+        "$value": "@structure.spacing.inline.xs",
+        "$type": "dimension",
+        "$description": "Gap between button icon and text"
+      }
+    },
+    "radius": {
+      "default": {
+        "$value": "@structure.border.radius.md",
+        "$type": "dimension",
+        "$description": "Button border radius"
+      }
+    },
+    "shadow": {
+      "default": {
+        "$value": "@elevation.shadow.none",
+        "$type": "shadow",
+        "$description": "Button shadow"
+      },
+      "hover": {
+        "$value": "@elevation.shadow.raised",
+        "$type": "shadow",
+        "$description": "Button hover shadow"
+      }
+    },
+    "focus": {
+      "ring": {
+        "color": {
+          "$value": "@elevation.focus.ring.color",
+          "$type": "color"
+        },
+        "width": {
+          "$value": "@elevation.focus.ring.width",
+          "$type": "dimension"
+        },
+        "offset": {
+          "$value": "@elevation.focus.ring.offset",
+          "$type": "dimension"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 export default {
-  title: 'Design Tokens/Shadows',
+  title: 'Global/Primitives/Shadows',
   parameters: {
     docs: {
       description: {

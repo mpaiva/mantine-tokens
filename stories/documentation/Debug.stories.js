@@ -1,5 +1,5 @@
 export default {
-  title: 'Debug/CSS Check',
+  title: 'Documentation/Debug Tools',
 };
 
 export const CheckTokens = () => {

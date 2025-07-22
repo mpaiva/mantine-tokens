@@ -1,0 +1,60 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "typography": {
+    "$description": "Firstwatch typography size overrides and extensions",
+    "fontSize": {
+      "display": {
+        "$value": "4rem",
+        "$type": "fontSize",
+        "$description": "Display text size for hero sections"
+      },
+      "hero": {
+        "$value": "5.5rem",
+        "$type": "fontSize",
+        "$description": "Extra large hero text with more impact"
+      },
+      "headline": {
+        "$value": "3rem",
+        "$type": "fontSize",
+        "$description": "Bold headline size"
+      },
+      "subheadline": {
+        "$value": "2rem",
+        "$type": "fontSize",
+        "$description": "Subheadline size"
+      },
+      "caption": {
+        "$value": "0.625rem",
+        "$type": "fontSize",
+        "$description": "Extra small caption text"
+      }
+    },
+    "lineHeight": {
+      "display": {
+        "$value": "1.15",
+        "$type": "lineHeight",
+        "$description": "Tight line height for display text"
+      },
+      "hero": {
+        "$value": "1",
+        "$type": "lineHeight",
+        "$description": "Solid line height for maximum impact"
+      },
+      "headline": {
+        "$value": "1.25",
+        "$type": "lineHeight",
+        "$description": "Tight line height for headlines"
+      },
+      "body": {
+        "$value": "1.65",
+        "$type": "lineHeight",
+        "$description": "Slightly more open reading line height"
+      },
+      "relaxed": {
+        "$value": "1.8",
+        "$type": "lineHeight",
+        "$description": "Relaxed line height for long-form content"
+      }
+    }
+  }
+}

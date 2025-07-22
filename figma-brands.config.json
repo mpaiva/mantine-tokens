@@ -1,0 +1,33 @@
+{
+  "brands": {
+    "clearco": {
+      "name": "clearco",
+      "namespace": "clearco",
+      "files": {
+        "include": [
+          "colors-merged.json",
+          "typography.json"
+        ],
+        "exclude": [
+          "colors.json",
+          "brand-colors.json"
+        ]
+      },
+      "priorities": {},
+      "transforms": []
+    },
+    "firstwatch": {
+      "name": "firstwatch",
+      "namespace": "brand",
+      "files": {
+        "include": [
+          "colors.json",
+          "typography.json"
+        ],
+        "exclude": []
+      },
+      "priorities": {},
+      "transforms": []
+    }
+  }
+}

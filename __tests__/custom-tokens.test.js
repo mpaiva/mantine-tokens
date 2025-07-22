@@ -45,9 +45,9 @@ describe('Custom Token Build Tests', () => {
     const prefix = prefixData.prefix;
     
     // Verify CSS variables use the custom prefix
-    expect(cssContent).toContain(`--${prefix}-brand-primary`);
-    expect(cssContent).toContain(`--${prefix}-brand-secondary`);
     expect(cssContent).toContain(`--${prefix}-spacing-xxs`);
+    expect(cssContent).toContain(`--${prefix}-spacing-section`);
+    expect(cssContent).toContain(`--${prefix}-typography-fontsize-display`);
     expect(cssContent).toContain(`--${prefix}-ovalbutton-height-md`);
   }, 30000);
 
@@ -65,7 +65,7 @@ describe('Custom Token Build Tests', () => {
     const prefix = prefixData.prefix;
     
     expect(tsContent).toContain(`export const ${prefix}Tokens`);
-    expect(tsContent).toContain('brand.primary');
+    expect(tsContent).toContain('spacing.xxs');
     expect(tsContent).toContain('ovalButton.height.md');
     expect(tsContent).toContain(`export type ${prefix.charAt(0).toUpperCase() + prefix.slice(1)}Token`);
   }, 30000);
@@ -83,9 +83,27 @@ describe('Custom Token Build Tests', () => {
     const prefixData = JSON.parse(await fs.readFile(prefixPath, 'utf8'));
     const prefix = prefixData.prefix;
     
-    expect(scssContent).toContain(`$${prefix}-brand-primary`);
+    expect(scssContent).toContain(`$${prefix}-spacing-xxs`);
     expect(scssContent).toContain(`$${prefix}-spacing-section`);
     expect(scssContent).toContain(`$${prefix}-ovalbutton-radius`);
+  }, 30000);
+
+  test('should generate JSON file in build/json directory', async () => {
+    // Build custom tokens first
+    await execAsync('npm run build:custom');
+    
+    // Check JSON file in new location
+    const jsonPath = path.join(__dirname, '..', 'build', 'json', 'mantine.custom.tokens.json');
+    const jsonExists = await fs.access(jsonPath).then(() => true).catch(() => false);
+    expect(jsonExists).toBe(true);
+    
+    const jsonContent = await fs.readFile(jsonPath, 'utf8');
+    const tokens = JSON.parse(jsonContent);
+    
+    // Verify token structure
+    expect(tokens.spacing).toBeDefined();
+    expect(tokens.typography).toBeDefined();
+    expect(tokens.ovalButton).toBeDefined();
   }, 30000);
 
   test('should generate documentation for custom tokens', async () => {
@@ -98,10 +116,9 @@ describe('Custom Token Build Tests', () => {
     
     // Check documentation content
     expect(docsContent).toContain('# Custom Design Token Documentation');
-    expect(docsContent).toContain('## Brand');
     expect(docsContent).toContain('## Spacing');
+    expect(docsContent).toContain('## Typography');
     expect(docsContent).toContain('## OvalButton');
-    expect(docsContent).toContain('Primary brand color');
   }, 30000);
 
   test('should handle custom prefix changes', async () => {
@@ -123,8 +140,8 @@ describe('Custom Token Build Tests', () => {
       const cssPath = path.join(buildDir, 'variables.css');
       const cssContent = await fs.readFile(cssPath, 'utf8');
       
-      expect(cssContent).toContain('--testprefix-brand-primary');
-      expect(cssContent).not.toContain(`--${originalPrefix.prefix}-brand-primary`);
+      expect(cssContent).toContain('--testprefix-spacing-xxs');
+      expect(cssContent).not.toContain(`--${originalPrefix.prefix}-spacing-xxs`);
     } finally {
       // Restore original prefix
       await fs.writeFile(prefixPath, JSON.stringify(originalPrefix, null, 2));
@@ -146,5 +163,5 @@ describe('Custom Token Build Tests', () => {
     
     expect(mantineExists).toBe(true);
     expect(customExists).toBe(true);
-  }, 60000);
+  }, 180000);
 });

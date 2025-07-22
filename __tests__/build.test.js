@@ -54,20 +54,44 @@ describe('Build System', () => {
     expect(content).toContain(`--${prefix}-`);
   }, 30000);
 
-  test('should generate DTCG-compliant JSON', async () => {
+  test('should generate DTCG-compliant JSON files', async () => {
     await execAsync('npm run build');
     const prefix = await getPrefix();
-    const jsonPath = path.join(buildDir, 'json', `${prefix}.tokens.json`);
-    const exists = await fs.access(jsonPath).then(() => true).catch(() => false);
     
-    expect(exists).toBe(true);
+    // Check primitive tokens
+    const primitivePath = path.join(buildDir, 'json', `${prefix}.primitive.tokens.json`);
+    const primitiveExists = await fs.access(primitivePath).then(() => true).catch(() => false);
+    expect(primitiveExists).toBe(true);
     
-    const content = await fs.readFile(jsonPath, 'utf8');
-    const tokens = JSON.parse(content);
+    const primitiveContent = await fs.readFile(primitivePath, 'utf8');
+    const primitiveTokens = JSON.parse(primitiveContent);
+    expect(primitiveTokens.color.white).toHaveProperty('$value');
+    expect(primitiveTokens.color.white).toHaveProperty('$type');
     
-    // Check DTCG format
-    expect(tokens.color.white).toHaveProperty('$value');
-    expect(tokens.color.white).toHaveProperty('$type');
+    // Check component tokens
+    const componentPath = path.join(buildDir, 'json', `${prefix}.component.tokens.json`);
+    const componentExists = await fs.access(componentPath).then(() => true).catch(() => false);
+    expect(componentExists).toBe(true);
+    
+    const componentContent = await fs.readFile(componentPath, 'utf8');
+    const componentTokens = JSON.parse(componentContent);
+    expect(componentTokens.button).toBeDefined();
+    expect(componentTokens.card).toBeDefined();
+    
+    // Check semantic tokens
+    const lightPath = path.join(buildDir, 'json', `${prefix}.semantic.light.tokens.json`);
+    const darkPath = path.join(buildDir, 'json', `${prefix}.semantic.dark.tokens.json`);
+    
+    const lightExists = await fs.access(lightPath).then(() => true).catch(() => false);
+    const darkExists = await fs.access(darkPath).then(() => true).catch(() => false);
+    
+    expect(lightExists).toBe(true);
+    expect(darkExists).toBe(true);
+    
+    const lightContent = await fs.readFile(lightPath, 'utf8');
+    const lightTokens = JSON.parse(lightContent);
+    expect(lightTokens.theme).toBeDefined();
+    expect(lightTokens.theme.color).toBeDefined();
   }, 30000);
 
   test('should generate TypeScript definitions', async () => {

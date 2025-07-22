@@ -1,5 +1,5 @@
 export default {
-  title: 'Design Tokens/Typography',
+  title: 'Global/Primitives/Typography',
   parameters: {
     docs: {
       description: {

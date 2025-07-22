@@ -19,7 +19,7 @@ This system manages all the visual design decisions for our digital products - c
 
 - **DTCG Format Compliance**: Full support for W3C Design Token Community Group specification
 - **Dynamic Prefix System**: Configure token prefix via `_prefix.json` (currently "mantine")
-- **Multi-Format Output**: CSS, SCSS, JavaScript, TypeScript, and JSON
+- **Multi-Format Output**: CSS, SCSS, JavaScript, TypeScript, JSON, and Figma-optimized formats
 - **Theme Support**: Light and dark theme configurations
 - **Multibrand System**: Support for multiple brands with unique identities
 - **Development Tools**: ESLint, Prettier, Jest testing, and watch mode
@@ -47,6 +47,7 @@ npm install
 ```bash
 npm run build           # Build all token formats
 npm run build:verbose   # Build with detailed logging
+npm run build:figma    # Build Figma-optimized tokens
 npm run clean          # Clean build directory
 ```
 
@@ -105,6 +106,7 @@ npm run validate      # Validate token structure
 │   ├── ts/               # TypeScript tokens with types
 │   ├── json/             # DTCG-compliant JSON
 │   ├── docs/             # Generated documentation
+│   ├── figma/            # Figma-optimized token files
 │   ├── custom/           # Custom tokens output
 │   └── brands/           # Brand-specific outputs
 ├── docs/                  # Project documentation
@@ -189,6 +191,7 @@ See `docs/GRAPH_ENGINE.md` for usage instructions.
 - [`CLAUDE.md`](./CLAUDE.md) - Claude AI integration guide
 - [`docs/MCP_SETUP.md`](./docs/MCP_SETUP.md) - MCP configuration
 - [`docs/GRAPH_ENGINE.md`](./docs/GRAPH_ENGINE.md) - Graph engine guide
+- [`docs/FIGMA_TOKENS.md`](./docs/FIGMA_TOKENS.md) - Figma token import guide
 - [`CONTRIBUTING.md`](./CONTRIBUTING.md) - Contribution guidelines
 - `build/docs/tokens.md` - Generated token documentation
 

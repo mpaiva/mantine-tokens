@@ -64,10 +64,19 @@ npm run format:check   # Check formatting
     - SCSS variables: `build/scss/`
     - JavaScript: `build/js/`
     - TypeScript: `build/ts/` (with typed exports)
-    - DTCG JSON: `build/json/`
     - Documentation: `build/docs/`
   - Custom tokens:
-    - All formats in `build/custom/` directory
+    - CSS/SCSS/JS/TS files in `build/custom/` directory
+  - Brand tokens:
+    - CSS/JS/TS files in `build/brands/{brand}/` directory
+  - All JSON tokens consolidated in `build/json/`:
+    - `mantine.primitive.tokens.json` - Primitive tokens only (colors, spacing, typography, etc.)
+    - `mantine.component.tokens.json` - Component tokens only (button, card, input, etc.)
+    - `mantine.semantic.light.tokens.json` - Light theme semantic tokens
+    - `mantine.semantic.dark.tokens.json` - Dark theme semantic tokens
+    - `mantine.custom.tokens.json` - Custom tokens (spacing, typography, components)
+    - `{brand}.light.tokens.json` - Brand-specific light theme tokens
+    - `{brand}.dark.tokens.json` - Brand-specific dark theme tokens
 
 ### Token Categories
 - **Mantine Tokens**:

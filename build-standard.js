@@ -555,10 +555,18 @@ async function build() {
         json: {
           buildPath: 'build/json/',
           transforms: ['name/camel', 'color/hex'],
-          files: [{
-            destination: `${globalPrefix}.tokens.json`,
-            format: 'json/dtcg'
-          }]
+          files: [
+            {
+              destination: `${globalPrefix}.primitive.tokens.json`,
+              format: 'json/dtcg',
+              filter: (token) => token.filePath.includes('primitives/')
+            },
+            {
+              destination: `${globalPrefix}.component.tokens.json`,
+              format: 'json/dtcg',
+              filter: (token) => token.filePath.includes('components/')
+            }
+          ]
         },
         docs: {
           buildPath: 'build/docs/',
@@ -593,6 +601,15 @@ async function build() {
             },
             filter: (token) => token.filePath.includes('semantic/light-theme')
           }]
+        },
+        json: {
+          buildPath: 'build/json/',
+          transforms: ['name/camel', 'color/hex'],
+          files: [{
+            destination: `${globalPrefix}.semantic.light.tokens.json`,
+            format: 'json/dtcg',
+            filter: (token) => token.filePath.includes('semantic/light-theme')
+          }]
         }
       },
       log: {
@@ -617,6 +634,15 @@ async function build() {
               selector: '[data-mantine-color-scheme="dark"]',
               outputReferences: true
             },
+            filter: (token) => token.filePath.includes('semantic/dark-theme')
+          }]
+        },
+        json: {
+          buildPath: 'build/json/',
+          transforms: ['name/camel', 'color/hex'],
+          files: [{
+            destination: `${globalPrefix}.semantic.dark.tokens.json`,
+            format: 'json/dtcg',
             filter: (token) => token.filePath.includes('semantic/dark-theme')
           }]
         }

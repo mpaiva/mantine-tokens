@@ -1,0 +1,27 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "$description": "Mantine brand context overrides - brand-specific token values",
+  "content": {
+    "brand": {
+      "default": { "$value": "{color.blue.700}" },
+      "emphasis": { "$value": "{color.blue.800}" }
+    }
+  },
+  "interactive": {
+    "primary": {
+      "idle": {
+        "background": { "$value": "{color.blue.600}" }
+      },
+      "hover": {
+        "background": { "$value": "{color.blue.700}" }
+      }
+    }
+  },
+  "feedback": {
+    "info": {
+      "background": {
+        "emphasis": { "$value": "{color.blue.600}" }
+      }
+    }
+  }
+}

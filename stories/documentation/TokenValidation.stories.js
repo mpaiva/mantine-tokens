@@ -1,5 +1,5 @@
 export default {
-  title: 'Tests/Token Validation',
+  title: 'Documentation/Token Validation',
   parameters: {
     docs: {
       description: {
