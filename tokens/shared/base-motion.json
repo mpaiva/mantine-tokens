@@ -1,0 +1,110 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "motion": {
+    "$description": "Shared motion and animation tokens",
+    "duration": {
+      "$description": "Animation duration scales",
+      "instant": {
+        "$value": "0ms",
+        "$type": "duration",
+        "$description": "Instant (no animation)"
+      },
+      "fast": {
+        "$value": "100ms",
+        "$type": "duration",
+        "$description": "Fast animations (tooltips, small state changes)"
+      },
+      "normal": {
+        "$value": "200ms",
+        "$type": "duration",
+        "$description": "Normal animations (most interactions)"
+      },
+      "slow": {
+        "$value": "300ms",
+        "$type": "duration",
+        "$description": "Slow animations (modals, page transitions)"
+      },
+      "slower": {
+        "$value": "400ms",
+        "$type": "duration",
+        "$description": "Slower animations (complex transitions)"
+      },
+      "slowest": {
+        "$value": "600ms",
+        "$type": "duration",
+        "$description": "Slowest animations (dramatic effects)"
+      }
+    },
+    "easing": {
+      "$description": "Easing function curves",
+      "linear": {
+        "$value": "linear",
+        "$type": "cubicBezier",
+        "$description": "Linear easing (constant speed)"
+      },
+      "ease-in": {
+        "$value": "cubic-bezier(0.4, 0, 1, 1)",
+        "$type": "cubicBezier",
+        "$description": "Ease in (accelerate from zero)"
+      },
+      "ease-out": {
+        "$value": "cubic-bezier(0, 0, 0.2, 1)",
+        "$type": "cubicBezier",
+        "$description": "Ease out (decelerate to zero)"
+      },
+      "ease-in-out": {
+        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$type": "cubicBezier",
+        "$description": "Ease in-out (accelerate then decelerate)"
+      },
+      "ease-in-back": {
+        "$value": "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+        "$type": "cubicBezier",
+        "$description": "Ease in with overshoot"
+      },
+      "ease-out-back": {
+        "$value": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+        "$type": "cubicBezier",
+        "$description": "Ease out with overshoot"
+      },
+      "ease-in-out-back": {
+        "$value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "$type": "cubicBezier",
+        "$description": "Ease in-out with overshoot"
+      },
+      "bounce": {
+        "$value": "cubic-bezier(0.87, -0.41, 0.19, 1.44)",
+        "$type": "cubicBezier",
+        "$description": "Bounce effect"
+      }
+    },
+    "transition": {
+      "$description": "Common transition presets",
+      "all": {
+        "$value": "{motion.duration.normal}",
+        "$type": "duration",
+        "$description": "Default transition for all properties"
+      },
+      "colors": {
+        "$value": "{motion.duration.normal}",
+        "$type": "duration",
+        "$description": "Color transitions"
+      },
+      "opacity": {
+        "$value": "{motion.duration.normal}",
+        "$type": "duration",
+        "$description": "Opacity transitions"
+      },
+      "transform": {
+        "$value": "{motion.duration.normal}",
+        "$type": "duration",
+        "$description": "Transform transitions"
+      },
+      "shadow": {
+        "$value": "{motion.duration.normal}",
+        "$type": "duration",
+        "$description": "Shadow transitions"
+      }
+    }
+  }
+}

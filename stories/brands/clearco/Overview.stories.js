@@ -3,13 +3,29 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Clearco brand features a professional blue and orange palette with Public Sans and Atkinson Hyperlegible typography.'
+        component: 'Clearco brand features a professional blue and grape palette with Playfair Display and Atkinson Hyperlegible typography.'
       }
+    },
+    // Force Clearco brand when viewing this story
+    globals: {
+      brand: 'clearco'
     }
   }
 };
 
 export const BrandOverview = () => {
+  // Ensure brand CSS is loaded
+  if (typeof document !== 'undefined') {
+    const brandLink = document.getElementById('brand-styles');
+    if (!brandLink || !brandLink.href.includes('clearco')) {
+      const link = document.createElement('link');
+      link.id = 'brand-styles';
+      link.rel = 'stylesheet';
+      link.href = '/brands/clearco/all.css';
+      document.head.appendChild(link);
+    }
+  }
+  
   return `
     <div class="brand-overview" data-brand="clearco">
       <h1>Clearco Design System</h1>
@@ -21,21 +37,21 @@ export const BrandOverview = () => {
           <div class="color-palette">
             <h3>Brand Colors</h3>
             <div class="color-swatches">
-              <div class="color-swatch" style="background: var(--clearco-brand-primary)">
+              <div class="color-swatch" style="background: var(--clearco-brand-primary-500)">
                 <span>Primary</span>
                 <code>#0066cc</code>
               </div>
-              <div class="color-swatch" style="background: var(--clearco-brand-secondary)">
+              <div class="color-swatch" style="background: var(--clearco-brand-secondary-500)">
                 <span>Secondary</span>
-                <code>#ff6b35</code>
+                <code>#cc5de8</code>
               </div>
-              <div class="color-swatch" style="background: var(--clearco-brand-accent)">
+              <div class="color-swatch" style="background: var(--clearco-brand-accent-500)">
                 <span>Accent</span>
                 <code>#4ecdc4</code>
               </div>
               <div class="color-swatch" style="background: var(--clearco-brand-neutral-700); color: white">
                 <span>Neutral</span>
-                <code>#495057</code>
+                <code>var(--clearco-brand-neutral-700)</code>
               </div>
             </div>
           </div>
@@ -44,15 +60,15 @@ export const BrandOverview = () => {
             <h3>Typography</h3>
             <div class="font-examples">
               <div class="font-stack">
-                <p class="font-heading" style="font-family: var(--clearco-typography-fontfamily-heading)">Atkinson Hyperlegible</p>
+                <p class="font-heading" style="font-family: var(--clearco-typography-fontfamily-heading)">Playfair Display</p>
                 <code>Headings & Display</code>
               </div>
               <div class="font-stack">
-                <p class="font-body" style="font-family: var(--clearco-typography-fontfamily-sans)">Public Sans</p>
+                <p class="font-body" style="font-family: var(--clearco-typography-fontfamily-sans)">Atkinson Hyperlegible</p>
                 <code>Body Text</code>
               </div>
               <div class="font-stack">
-                <p class="font-mono" style="font-family: var(--clearco-typography-fontfamily-mono)">JetBrains Mono</p>
+                <p class="font-mono" style="font-family: var(--clearco-typography-fontfamily-mono)">Monospace</p>
                 <code>Code & Data</code>
               </div>
             </div>
@@ -75,7 +91,7 @@ export const BrandOverview = () => {
               <div class="surface" style="background: #0066cc; color: white">
                 Primary Action
               </div>
-              <div class="surface" style="background: #ff6b35; color: white">
+              <div class="surface" style="background: #cc5de8; color: white">
                 Secondary Action
               </div>
             </div>
@@ -252,30 +268,30 @@ export const BrandOverview = () => {
       }
       
       .btn-primary {
-        background: var(--clearco-brand-primary);
+        background: var(--clearco-brand-primary-500);
         color: white;
       }
       
       .btn-primary:hover {
-        background: #0052a3;
+        background: var(--clearco-brand-primary-600);
       }
       
       .btn-secondary {
-        background: var(--clearco-brand-secondary);
+        background: var(--clearco-brand-secondary-500);
         color: white;
       }
       
       .btn-secondary:hover {
-        background: #ff5722;
+        background: var(--clearco-brand-secondary-600);
       }
       
       .btn-accent {
-        background: var(--clearco-brand-accent);
+        background: var(--clearco-brand-accent-500);
         color: white;
       }
       
       .btn-accent:hover {
-        background: #3db8af;
+        background: var(--clearco-brand-accent-600);
       }
       
       .card-example {

@@ -1,0 +1,238 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Brand Token Schema",
+  "description": "Schema for brand token configuration",
+  "type": "object",
+  "required": ["brand", "typography"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "https://design-tokens.github.io/format/tokens.schema.json"
+    },
+    "brand": {
+      "type": "object",
+      "required": ["primary", "secondary", "accent", "neutral"],
+      "properties": {
+        "$description": { "type": "string" },
+        "primary": {
+          "type": "object",
+          "description": "Primary brand color scale",
+          "required": ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900"],
+          "patternProperties": {
+            "^[0-9]{2,3}$": {
+              "type": "object",
+              "required": ["$value", "$type"],
+              "properties": {
+                "$value": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$|^\\{[^}]+\\}$" },
+                "$type": { "const": "color" },
+                "$description": { "type": "string" }
+              }
+            }
+          }
+        },
+        "secondary": {
+          "$ref": "#/properties/brand/properties/primary"
+        },
+        "accent": {
+          "$ref": "#/properties/brand/properties/primary"
+        },
+        "neutral": {
+          "$ref": "#/properties/brand/properties/primary"
+        },
+        "semantic": {
+          "type": "object",
+          "required": ["success", "warning", "error", "info"],
+          "properties": {
+            "$description": { "type": "string" },
+            "success": {
+              "type": "object",
+              "required": ["$value", "$type"],
+              "properties": {
+                "$value": { "type": "string" },
+                "$type": { "const": "color" },
+                "$description": { "type": "string" }
+              }
+            },
+            "warning": { "$ref": "#/properties/brand/properties/semantic/properties/success" },
+            "error": { "$ref": "#/properties/brand/properties/semantic/properties/success" },
+            "info": { "$ref": "#/properties/brand/properties/semantic/properties/success" }
+          }
+        }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "required": ["fontFamily"],
+      "properties": {
+        "$description": { "type": "string" },
+        "fontFamily": {
+          "type": "object",
+          "required": ["sans", "mono"],
+          "properties": {
+            "sans": {
+              "type": "object",
+              "required": ["$value", "$type"],
+              "properties": {
+                "$value": { "type": "string" },
+                "$type": { "const": "fontFamily" },
+                "$description": { "type": "string" }
+              }
+            },
+            "heading": { "$ref": "#/properties/typography/properties/fontFamily/properties/sans" },
+            "body": { "$ref": "#/properties/typography/properties/fontFamily/properties/sans" },
+            "display": { "$ref": "#/properties/typography/properties/fontFamily/properties/sans" },
+            "brand": { "$ref": "#/properties/typography/properties/fontFamily/properties/sans" },
+            "mono": { "$ref": "#/properties/typography/properties/fontFamily/properties/sans" }
+          }
+        }
+      }
+    },
+    "theme": {
+      "type": "object",
+      "description": "Theme-specific tokens",
+      "required": ["surface", "content", "border", "interactive"],
+      "properties": {
+        "$description": { "type": "string" },
+        "surface": {
+          "type": "object",
+          "required": ["primary", "secondary", "tertiary"],
+          "properties": {
+            "$description": { "type": "string" },
+            "primary": { "$ref": "#/definitions/colorToken" },
+            "secondary": { "$ref": "#/definitions/colorToken" },
+            "tertiary": { "$ref": "#/definitions/colorToken" },
+            "inverse": { "$ref": "#/definitions/colorToken" },
+            "brand": { "$ref": "#/definitions/colorToken" }
+          }
+        },
+        "content": {
+          "$ref": "#/properties/theme/properties/surface"
+        },
+        "border": {
+          "type": "object",
+          "required": ["subtle", "default", "strong"],
+          "properties": {
+            "$description": { "type": "string" },
+            "subtle": { "$ref": "#/definitions/colorToken" },
+            "default": { "$ref": "#/definitions/colorToken" },
+            "strong": { "$ref": "#/definitions/colorToken" },
+            "inverse": { "$ref": "#/definitions/colorToken" },
+            "brand": { "$ref": "#/definitions/colorToken" }
+          }
+        },
+        "interactive": {
+          "type": "object",
+          "required": ["primary", "secondary"],
+          "properties": {
+            "$description": { "type": "string" },
+            "primary": { "$ref": "#/definitions/interactiveState" },
+            "secondary": { "$ref": "#/definitions/interactiveState" },
+            "danger": { "$ref": "#/definitions/interactiveState" },
+            "success": { "$ref": "#/definitions/interactiveState" }
+          }
+        },
+        "focus": {
+          "type": "object",
+          "properties": {
+            "$description": { "type": "string" },
+            "ring": { "$ref": "#/definitions/colorToken" },
+            "offset": { "$ref": "#/definitions/colorToken" }
+          }
+        },
+        "overlay": {
+          "type": "object",
+          "properties": {
+            "$description": { "type": "string" },
+            "backdrop": { "$ref": "#/definitions/colorToken" },
+            "scrim": { "$ref": "#/definitions/colorToken" }
+          }
+        }
+      }
+    },
+    "brandConfig": {
+      "type": "object",
+      "description": "Brand configuration metadata",
+      "required": ["meta"],
+      "properties": {
+        "$description": { "type": "string" },
+        "meta": {
+          "type": "object",
+          "required": ["name", "prefix"],
+          "properties": {
+            "name": { "$ref": "#/definitions/stringToken" },
+            "prefix": { "$ref": "#/definitions/stringToken" },
+            "description": { "$ref": "#/definitions/stringToken" }
+          }
+        },
+        "colors": {
+          "type": "object",
+          "properties": {
+            "$description": { "type": "string" },
+            "primary": { "$ref": "#/definitions/colorToken" },
+            "secondary": { "$ref": "#/definitions/colorToken" },
+            "accent": { "$ref": "#/definitions/colorToken" },
+            "neutral": { "$ref": "#/definitions/colorToken" }
+          }
+        },
+        "semantic": {
+          "$ref": "#/properties/brand/properties/semantic"
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "$description": { "type": "string" },
+            "fonts": {
+              "type": "object",
+              "properties": {
+                "heading": { "$ref": "#/definitions/fontFamilyToken" },
+                "body": { "$ref": "#/definitions/fontFamilyToken" },
+                "display": { "$ref": "#/definitions/fontFamilyToken" },
+                "mono": { "$ref": "#/definitions/fontFamilyToken" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "colorToken": {
+      "type": "object",
+      "required": ["$value", "$type"],
+      "properties": {
+        "$value": { "type": "string" },
+        "$type": { "const": "color" },
+        "$description": { "type": "string" }
+      }
+    },
+    "stringToken": {
+      "type": "object",
+      "required": ["$value", "$type"],
+      "properties": {
+        "$value": { "type": "string" },
+        "$type": { "const": "string" },
+        "$description": { "type": "string" }
+      }
+    },
+    "fontFamilyToken": {
+      "type": "object",
+      "required": ["$value", "$type"],
+      "properties": {
+        "$value": { "type": "string" },
+        "$type": { "const": "fontFamily" },
+        "$description": { "type": "string" }
+      }
+    },
+    "interactiveState": {
+      "type": "object",
+      "required": ["default"],
+      "properties": {
+        "$description": { "type": "string" },
+        "default": { "$ref": "#/definitions/colorToken" },
+        "hover": { "$ref": "#/definitions/colorToken" },
+        "active": { "$ref": "#/definitions/colorToken" },
+        "disabled": { "$ref": "#/definitions/colorToken" }
+      }
+    }
+  }
+}

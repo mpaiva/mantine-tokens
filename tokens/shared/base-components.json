@@ -1,0 +1,143 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "components": {
+    "$description": "Shared base component tokens",
+    "card": {
+      "$description": "Card component base tokens",
+      "padding": {
+        "xs": { "$value": "0.75rem", "$type": "dimension", "$description": "Extra small card padding" },
+        "sm": { "$value": "1rem", "$type": "dimension", "$description": "Small card padding" },
+        "md": { "$value": "1.5rem", "$type": "dimension", "$description": "Medium card padding" },
+        "lg": { "$value": "2rem", "$type": "dimension", "$description": "Large card padding" },
+        "xl": { "$value": "2.5rem", "$type": "dimension", "$description": "Extra large card padding" }
+      },
+      "gap": {
+        "xs": { "$value": "0.5rem", "$type": "dimension", "$description": "Extra small gap" },
+        "sm": { "$value": "0.75rem", "$type": "dimension", "$description": "Small gap" },
+        "md": { "$value": "1rem", "$type": "dimension", "$description": "Medium gap" },
+        "lg": { "$value": "1.5rem", "$type": "dimension", "$description": "Large gap" },
+        "xl": { "$value": "2rem", "$type": "dimension", "$description": "Extra large gap" }
+      },
+      "border": {
+        "width": { "$value": "1px", "$type": "dimension", "$description": "Default border width" },
+        "radius": {
+          "none": { "$value": "0", "$type": "dimension" },
+          "sm": { "$value": "0.375rem", "$type": "dimension" },
+          "md": { "$value": "0.5rem", "$type": "dimension" },
+          "lg": { "$value": "0.75rem", "$type": "dimension" },
+          "xl": { "$value": "1rem", "$type": "dimension" },
+          "2xl": { "$value": "1.5rem", "$type": "dimension" }
+        }
+      },
+      "shadow": {
+        "none": { "$value": "none", "$type": "shadow" },
+        "xs": { "$value": "{semantic.elevation.1}", "$type": "shadow" },
+        "sm": { "$value": "{semantic.elevation.2}", "$type": "shadow" },
+        "md": { "$value": "{semantic.elevation.3}", "$type": "shadow" },
+        "lg": { "$value": "{semantic.elevation.4}", "$type": "shadow" }
+      }
+    },
+    "input": {
+      "$description": "Input component base tokens",
+      "height": {
+        "xs": { "$value": "1.75rem", "$type": "dimension", "$description": "Extra small input height" },
+        "sm": { "$value": "2rem", "$type": "dimension", "$description": "Small input height" },
+        "md": { "$value": "2.5rem", "$type": "dimension", "$description": "Medium input height" },
+        "lg": { "$value": "3rem", "$type": "dimension", "$description": "Large input height" },
+        "xl": { "$value": "3.5rem", "$type": "dimension", "$description": "Extra large input height" }
+      },
+      "padding": {
+        "horizontal": {
+          "xs": { "$value": "0.5rem", "$type": "dimension" },
+          "sm": { "$value": "0.75rem", "$type": "dimension" },
+          "md": { "$value": "1rem", "$type": "dimension" },
+          "lg": { "$value": "1.25rem", "$type": "dimension" },
+          "xl": { "$value": "1.5rem", "$type": "dimension" }
+        }
+      },
+      "border": {
+        "width": {
+          "default": { "$value": "1px", "$type": "dimension" },
+          "focus": { "$value": "2px", "$type": "dimension" }
+        },
+        "radius": {
+          "xs": { "$value": "0.125rem", "$type": "dimension" },
+          "sm": { "$value": "0.25rem", "$type": "dimension" },
+          "md": { "$value": "0.375rem", "$type": "dimension" },
+          "lg": { "$value": "0.5rem", "$type": "dimension" },
+          "xl": { "$value": "0.75rem", "$type": "dimension" }
+        }
+      },
+      "font": {
+        "size": {
+          "xs": { "$value": "0.75rem", "$type": "dimension" },
+          "sm": { "$value": "0.875rem", "$type": "dimension" },
+          "md": { "$value": "1rem", "$type": "dimension" },
+          "lg": { "$value": "1.125rem", "$type": "dimension" },
+          "xl": { "$value": "1.25rem", "$type": "dimension" }
+        }
+      },
+      "transition": {
+        "duration": { "$value": "{motion.duration.fast}", "$type": "duration" },
+        "easing": { "$value": "{motion.easing.ease-out}", "$type": "cubicBezier" }
+      }
+    },
+    "button": {
+      "$description": "Button component base tokens",
+      "height": {
+        "xs": { "$value": "{components.input.height.xs}", "$type": "dimension" },
+        "sm": { "$value": "{components.input.height.sm}", "$type": "dimension" },
+        "md": { "$value": "{components.input.height.md}", "$type": "dimension" },
+        "lg": { "$value": "{components.input.height.lg}", "$type": "dimension" },
+        "xl": { "$value": "{components.input.height.xl}", "$type": "dimension" }
+      },
+      "padding": {
+        "horizontal": {
+          "xs": { "$value": "{components.input.padding.horizontal.xs}", "$type": "dimension" },
+          "sm": { "$value": "{components.input.padding.horizontal.sm}", "$type": "dimension" },
+          "md": { "$value": "{components.input.padding.horizontal.md}", "$type": "dimension" },
+          "lg": { "$value": "{components.input.padding.horizontal.lg}", "$type": "dimension" },
+          "xl": { "$value": "{components.input.padding.horizontal.xl}", "$type": "dimension" }
+        }
+      },
+      "border": {
+        "radius": {
+          "xs": { "$value": "{components.input.border.radius.xs}", "$type": "dimension" },
+          "sm": { "$value": "{components.input.border.radius.sm}", "$type": "dimension" },
+          "md": { "$value": "{components.input.border.radius.md}", "$type": "dimension" },
+          "lg": { "$value": "{components.input.border.radius.lg}", "$type": "dimension" },
+          "xl": { "$value": "{components.input.border.radius.xl}", "$type": "dimension" }
+        }
+      },
+      "font": {
+        "size": {
+          "xs": { "$value": "{components.input.font.size.xs}", "$type": "dimension" },
+          "sm": { "$value": "{components.input.font.size.sm}", "$type": "dimension" },
+          "md": { "$value": "{components.input.font.size.md}", "$type": "dimension" },
+          "lg": { "$value": "{components.input.font.size.lg}", "$type": "dimension" },
+          "xl": { "$value": "{components.input.font.size.xl}", "$type": "dimension" }
+        },
+        "weight": { "$value": "500", "$type": "fontWeight" }
+      }
+    },
+    "container": {
+      "$description": "Container and layout tokens",
+      "maxWidth": {
+        "xs": { "$value": "20rem", "$type": "dimension" },
+        "sm": { "$value": "30rem", "$type": "dimension" },
+        "md": { "$value": "48rem", "$type": "dimension" },
+        "lg": { "$value": "64rem", "$type": "dimension" },
+        "xl": { "$value": "80rem", "$type": "dimension" },
+        "2xl": { "$value": "96rem", "$type": "dimension" },
+        "full": { "$value": "100%", "$type": "dimension" }
+      },
+      "padding": {
+        "xs": { "$value": "1rem", "$type": "dimension" },
+        "sm": { "$value": "1.5rem", "$type": "dimension" },
+        "md": { "$value": "2rem", "$type": "dimension" },
+        "lg": { "$value": "3rem", "$type": "dimension" },
+        "xl": { "$value": "4rem", "$type": "dimension" }
+      }
+    }
+  }
+}

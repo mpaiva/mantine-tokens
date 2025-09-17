@@ -1,0 +1,34 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "brandConfig": {
+    "$description": "Clearco brand configuration",
+    "meta": {
+      "name": { "$value": "Clearco", "$type": "string" },
+      "prefix": { "$value": "clearco", "$type": "string" },
+      "description": { "$value": "Design tokens for Clearco brand identity", "$type": "string" }
+    },
+    "colors": {
+      "$description": "Brand color configuration",
+      "primary": { "$value": "{brand.primary.500}", "$type": "color" },
+      "secondary": { "$value": "{brand.secondary.500}", "$type": "color" },
+      "accent": { "$value": "{brand.accent.500}", "$type": "color" },
+      "neutral": { "$value": "{brand.neutral.500}", "$type": "color" }
+    },
+    "semantic": {
+      "$description": "Semantic color overrides",
+      "success": { "$value": "{brandBase.semantic.state.success.default}", "$type": "color" },
+      "warning": { "$value": "{brandBase.semantic.state.warning.default}", "$type": "color" },
+      "error": { "$value": "{brandBase.semantic.state.error.default}", "$type": "color" },
+      "info": { "$value": "{brand.primary.500}", "$type": "color" }
+    },
+    "typography": {
+      "$description": "Typography configuration",
+      "fonts": {
+        "heading": { "$value": "{typography.fontFamily.heading}", "$type": "fontFamily" },
+        "body": { "$value": "{typography.fontFamily.body}", "$type": "fontFamily" },
+        "display": { "$value": "{typography.fontFamily.display}", "$type": "fontFamily" },
+        "mono": { "$value": "{typography.fontFamily.mono}", "$type": "fontFamily" }
+      }
+    }
+  }
+}

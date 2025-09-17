@@ -9,7 +9,7 @@
       "200": { "$value": "#b380ff", "$type": "color", "$description": "Light tint" },
       "300": { "$value": "#944dff", "$type": "color", "$description": "Medium light tint" },
       "400": { "$value": "#751aff", "$type": "color", "$description": "Medium tint" },
-      "500": { "$value": "#6b46c1", "$type": "color", "$description": "Base primary color" },
+      "500": { "$value": "#5b21b6", "$type": "color", "$description": "Base primary color" },
       "600": { "$value": "#56389a", "$type": "color", "$description": "Medium shade" },
       "700": { "$value": "#402a74", "$type": "color", "$description": "Dark shade" },
       "800": { "$value": "#2b1c4d", "$type": "color", "$description": "Very dark shade" },
@@ -57,17 +57,17 @@
     "semantic": {
       "$description": "Semantic colors for Brand B",
       "success": {
-        "$value": "#10b981",
+        "$value": "{brandBase.semantic.state.success.default}",
         "$type": "color",
         "$description": "Success state color"
       },
       "warning": {
-        "$value": "#f59e0b",
+        "$value": "{brandBase.semantic.state.warning.default}",
         "$type": "color",
         "$description": "Warning state color"
       },
       "error": {
-        "$value": "#ef4444",
+        "$value": "{brandBase.semantic.state.error.default}",
         "$type": "color",
         "$description": "Error state color"
       },

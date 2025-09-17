@@ -5,7 +5,7 @@
     "surface": {
       "$description": "Surface colors for light theme",
       "primary": {
-        "$value": "#ffffff",
+        "$value": "{themePatterns.light.surface.elevation.0}",
         "$type": "color",
         "$description": "Primary surface (main background)"
       },
@@ -81,7 +81,7 @@
         "$description": "Strong borders"
       },
       "inverse": {
-        "$value": "rgba(255, 255, 255, 0.2)",
+        "$value": "rgba(255, 255, 255, {brandBase.theme.opacity.default})",
         "$type": "color",
         "$description": "Inverse borders"
       },
@@ -142,30 +142,30 @@
       "danger": {
         "$description": "Danger/destructive interactive colors",
         "default": {
-          "$value": "{brand.semantic.error}",
+          "$value": "{brandBase.semantic.state.error.default}",
           "$type": "color"
         },
         "hover": {
-          "$value": "#c82333",
+          "$value": "{brandBase.semantic.state.error.dark}",
           "$type": "color"
         },
         "active": {
-          "$value": "#bd2130",
+          "$value": "{brandBase.semantic.state.error.dark}",
           "$type": "color"
         }
       },
       "success": {
         "$description": "Success interactive colors",
         "default": {
-          "$value": "{brand.semantic.success}",
+          "$value": "{brandBase.semantic.state.success.default}",
           "$type": "color"
         },
         "hover": {
-          "$value": "#218838",
+          "$value": "{brandBase.semantic.state.success.dark}",
           "$type": "color"
         },
         "active": {
-          "$value": "#1e7e34",
+          "$value": "{brandBase.semantic.state.success.dark}",
           "$type": "color"
         }
       }
@@ -186,12 +186,12 @@
     "overlay": {
       "$description": "Overlay colors",
       "backdrop": {
-        "$value": "rgba(0, 0, 0, 0.5)",
+        "$value": "rgba(0, 0, 0, {brandBase.theme.opacity.overlay})",
         "$type": "color",
         "$description": "Modal backdrop"
       },
       "scrim": {
-        "$value": "rgba(0, 0, 0, 0.8)",
+        "$value": "rgba(0, 0, 0, {brandBase.theme.opacity.backdrop})",
         "$type": "color",
         "$description": "Dark scrim for images"
       }

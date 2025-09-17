@@ -1,0 +1,66 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "themePatterns": {
+    "$description": "Reusable theme patterns for light and dark modes",
+    "light": {
+      "$description": "Light theme base patterns",
+      "surface": {
+        "$description": "Surface hierarchy for light theme",
+        "elevation": {
+          "0": { "$value": "#ffffff", "$type": "color", "$description": "Base surface" },
+          "1": { "$value": "#fafafa", "$type": "color", "$description": "Slightly elevated" },
+          "2": { "$value": "#f5f5f5", "$type": "color", "$description": "Elevated" },
+          "3": { "$value": "#f0f0f0", "$type": "color", "$description": "Floating" },
+          "4": { "$value": "#ebebeb", "$type": "color", "$description": "Modal level" }
+        }
+      },
+      "content": {
+        "$description": "Content hierarchy for light theme",
+        "contrast": {
+          "high": { "$value": "#000000", "$type": "color", "$description": "Maximum contrast" },
+          "medium": { "$value": "#404040", "$type": "color", "$description": "Medium contrast" },
+          "low": { "$value": "#737373", "$type": "color", "$description": "Low contrast" },
+          "disabled": { "$value": "#a3a3a3", "$type": "color", "$description": "Disabled state" }
+        }
+      },
+      "border": {
+        "$description": "Border opacity for light theme",
+        "alpha": {
+          "subtle": { "$value": "rgba(0, 0, 0, {brandBase.theme.opacity.subtle})", "$type": "color" },
+          "default": { "$value": "rgba(0, 0, 0, {brandBase.theme.opacity.default})", "$type": "color" },
+          "strong": { "$value": "rgba(0, 0, 0, {brandBase.theme.opacity.strong})", "$type": "color" }
+        }
+      }
+    },
+    "dark": {
+      "$description": "Dark theme base patterns",
+      "surface": {
+        "$description": "Surface hierarchy for dark theme",
+        "elevation": {
+          "0": { "$value": "#0a0a0a", "$type": "color", "$description": "Base surface" },
+          "1": { "$value": "#141414", "$type": "color", "$description": "Slightly elevated" },
+          "2": { "$value": "#1f1f1f", "$type": "color", "$description": "Elevated" },
+          "3": { "$value": "#292929", "$type": "color", "$description": "Floating" },
+          "4": { "$value": "#333333", "$type": "color", "$description": "Modal level" }
+        }
+      },
+      "content": {
+        "$description": "Content hierarchy for dark theme",
+        "contrast": {
+          "high": { "$value": "#ffffff", "$type": "color", "$description": "Maximum contrast" },
+          "medium": { "$value": "#d4d4d4", "$type": "color", "$description": "Medium contrast" },
+          "low": { "$value": "#a3a3a3", "$type": "color", "$description": "Low contrast" },
+          "disabled": { "$value": "#525252", "$type": "color", "$description": "Disabled state" }
+        }
+      },
+      "border": {
+        "$description": "Border opacity for dark theme",
+        "alpha": {
+          "subtle": { "$value": "rgba(255, 255, 255, {brandBase.theme.opacity.subtle})", "$type": "color" },
+          "default": { "$value": "rgba(255, 255, 255, {brandBase.theme.opacity.default})", "$type": "color" },
+          "strong": { "$value": "rgba(255, 255, 255, {brandBase.theme.opacity.strong})", "$type": "color" }
+        }
+      }
+    }
+  }
+}

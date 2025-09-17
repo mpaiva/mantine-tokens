@@ -5,13 +5,11 @@
       "namespace": "clearco",
       "files": {
         "include": [
-          "colors-merged.json",
+          "colors.json",
+          "brand-colors.json",
           "typography.json"
         ],
-        "exclude": [
-          "colors.json",
-          "brand-colors.json"
-        ]
+        "exclude": []
       },
       "priorities": {},
       "transforms": []

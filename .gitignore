@@ -144,3 +144,9 @@ claude_project_config.json
 
 *storybook.log
 storybook-static
+
+# Temporary/generated files
+.tokensstudio.json
+tokens/tokens.zip
+studio-export/
+scripts/check-collisions.js

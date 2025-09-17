@@ -13,12 +13,15 @@ This is a design token system using Style Dictionary v4.3.3 that generates CSS v
 npm run build           # Build Mantine tokens
 npm run build:verbose   # Build with detailed logging
 npm run build:custom    # Build custom tokens
-npm run build:all      # Build both Mantine and custom tokens
+npm run build:all      # Build both Mantine and custom tokens  
+npm run build:brands    # Build brand-specific tokens
+npm run build:figma     # Build Figma-compatible output
 npm run dev            # Watch mode for Mantine tokens
 npm run dev:custom     # Watch mode for custom tokens
 npm run dev:all        # Watch mode for both token sets
-npm run watch          # Alias for dev mode
+npm run dev:brands     # Watch mode for brand tokens
 npm run validate       # Validate token structure
+npm run check:collisions # Check for token path collisions
 npm run clean          # Clean build directory
 ```
 

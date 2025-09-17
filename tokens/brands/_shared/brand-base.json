@@ -1,0 +1,55 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "brandBase": {
+    "$description": "Shared base tokens for all brands",
+    "theme": {
+      "$description": "Common theme structure patterns",
+      "opacity": {
+        "$description": "Opacity values for theme variations",
+        "subtle": { "$value": "0.1", "$type": "number" },
+        "default": { "$value": "0.2", "$type": "number" },
+        "strong": { "$value": "0.3", "$type": "number" },
+        "overlay": { "$value": "0.5", "$type": "number" },
+        "backdrop": { "$value": "0.8", "$type": "number" },
+        "scrim": { "$value": "0.9", "$type": "number" }
+      },
+      "interactive": {
+        "$description": "Interactive state multipliers",
+        "hover": { "$value": "1.2", "$type": "number", "$description": "Lightness multiplier for hover" },
+        "active": { "$value": "0.8", "$type": "number", "$description": "Lightness multiplier for active" },
+        "disabled": { "$value": "0.4", "$type": "number", "$description": "Opacity for disabled state" }
+      }
+    },
+    "semantic": {
+      "$description": "Base semantic color definitions",
+      "state": {
+        "success": {
+          "$description": "Success state color scale",
+          "light": { "$value": "#10b981", "$type": "color" },
+          "default": { "$value": "#059669", "$type": "color" },
+          "dark": { "$value": "#047857", "$type": "color" }
+        },
+        "warning": {
+          "$description": "Warning state color scale",
+          "light": { "$value": "#fbbf24", "$type": "color" },
+          "default": { "$value": "#f59e0b", "$type": "color" },
+          "dark": { "$value": "#d97706", "$type": "color" }
+        },
+        "error": {
+          "$description": "Error state color scale",
+          "light": { "$value": "#f87171", "$type": "color" },
+          "default": { "$value": "#ef4444", "$type": "color" },
+          "dark": { "$value": "#dc2626", "$type": "color" }
+        }
+      }
+    },
+    "elevation": {
+      "$description": "Elevation levels for surfaces",
+      "0": { "$value": "0", "$type": "number", "$description": "Base level" },
+      "1": { "$value": "1", "$type": "number", "$description": "Raised surface" },
+      "2": { "$value": "2", "$type": "number", "$description": "Elevated surface" },
+      "3": { "$value": "3", "$type": "number", "$description": "Floating surface" },
+      "4": { "$value": "4", "$type": "number", "$description": "Modal/dialog surface" }
+    }
+  }
+}

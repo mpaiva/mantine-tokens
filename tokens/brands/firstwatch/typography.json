@@ -9,7 +9,7 @@
         "$description": "Brand B sans-serif font stack"
       },
       "heading": {
-        "$value": "'Roboto Slab', Georgia, 'Times New Roman', serif",
+        "$value": "'Lobster Two', Georgia, 'Times New Roman', serif",
         "$type": "fontFamily",
         "$description": "Brand B font for headings"
       },

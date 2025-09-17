@@ -1,0 +1,57 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "overrides": {
+    "$description": "Clearco-specific overrides to shared tokens",
+    "motion": {
+      "$description": "Brand-specific motion preferences",
+      "duration": {
+        "normal": {
+          "$value": "150ms",
+          "$type": "duration",
+          "$description": "Clearco prefers slightly faster animations"
+        }
+      }
+    },
+    "components": {
+      "input": {
+        "shadow": {
+          "focus": {
+            "$value": "0 0 0 3px rgba(0, 102, 204, 0.25)",
+            "$type": "shadow",
+            "$description": "Clearco custom focus shadow"
+          }
+        }
+      },
+      "card": {
+        "header": {
+          "padding": {
+            "$value": "1.5rem",
+            "$type": "dimension"
+          },
+          "fontWeight": {
+            "$value": "600",
+            "$type": "fontWeight"
+          }
+        }
+      }
+    },
+    "interactive": {
+      "$description": "Interactive state colors",
+      "primary": {
+        "hover": { "$value": "{brand.primary.600}", "$type": "color" },
+        "active": { "$value": "{brand.primary.700}", "$type": "color" },
+        "disabled": { "$value": "{brand.primary.300}", "$type": "color" }
+      },
+      "secondary": {
+        "hover": { "$value": "{brand.secondary.600}", "$type": "color" },
+        "active": { "$value": "{brand.secondary.700}", "$type": "color" },
+        "disabled": { "$value": "{brand.secondary.300}", "$type": "color" }
+      },
+      "accent": {
+        "hover": { "$value": "{brand.accent.600}", "$type": "color" },
+        "active": { "$value": "{brand.accent.700}", "$type": "color" },
+        "disabled": { "$value": "{brand.accent.300}", "$type": "color" }
+      }
+    }
+  }
+}

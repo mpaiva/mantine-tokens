@@ -1,0 +1,32 @@
+{
+  "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
+  "overrides": {
+    "$description": "Firstwatch-specific overrides to shared tokens",
+    "components": {
+      "card": {
+        "border": {
+          "radius": {
+            "md": {
+              "$value": "0.75rem",
+              "$type": "dimension",
+              "$description": "Firstwatch prefers slightly rounder cards"
+            }
+          }
+        }
+      }
+    },
+    "interactive": {
+      "$description": "Interactive state colors",
+      "primary": {
+        "hover": { "$value": "{brand.primary.600}", "$type": "color" },
+        "active": { "$value": "{brand.primary.700}", "$type": "color" },
+        "disabled": { "$value": "{brand.primary.300}", "$type": "color" }
+      },
+      "secondary": {
+        "hover": { "$value": "{brand.secondary.600}", "$type": "color" },
+        "active": { "$value": "{brand.secondary.700}", "$type": "color" },
+        "disabled": { "$value": "{brand.secondary.300}", "$type": "color" }
+      }
+    }
+  }
+}

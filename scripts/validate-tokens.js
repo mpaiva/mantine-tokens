@@ -279,7 +279,7 @@ async function findTokenFiles(dir, files = []) {
     
     if (entry.isDirectory()) {
       await findTokenFiles(fullPath, files);
-    } else if (entry.name.endsWith('.json') && !entry.name.startsWith('$')) {
+    } else if (entry.name.endsWith('.json') && !entry.name.startsWith('$') && !entry.name.endsWith('.schema.json')) {
       files.push(fullPath);
     }
   }

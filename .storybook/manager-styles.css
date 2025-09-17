@@ -34,32 +34,119 @@
 }
 
 /* Navigation colors using CSS variables for each brand */
+/* Mantine - White text on blue background for selected items */
 [data-brand="mantine"] button[data-selected="true"],
-[data-brand="mantine"] a[data-selected="true"] {
-  color: var(--mantine-color-blue-6, #228BE6) !important;
+[data-brand="mantine"] a[data-selected="true"],
+[data-brand="mantine"] button[data-selected="true"] span,
+[data-brand="mantine"] a[data-selected="true"] span {
+  color: white !important;
+  background-color: var(--mantine-color-blue-6, #228BE6);
+  border-radius: 4px;
 }
 
-[data-brand="mantine"] button:hover,
-[data-brand="mantine"] a:hover {
-  color: var(--mantine-color-blue-6, #228BE6) !important;
+[data-brand="mantine"] button:hover:not([data-selected="true"]),
+[data-brand="mantine"] a:hover:not([data-selected="true"]),
+[data-brand="mantine"] button:hover:not([data-selected="true"]) span,
+[data-brand="mantine"] a:hover:not([data-selected="true"]) span {
+  color: var(--mantine-color-blue-7, #1C7ED6) !important;
+  background-color: var(--mantine-color-gray-0, #F8F9FA);
 }
 
 [data-brand="clearco"] button[data-selected="true"],
-[data-brand="clearco"] a[data-selected="true"] {
-  color: var(--clearco-brand-primary-500, var(--clearco-brand-primary, #0066cc)) !important;
+[data-brand="clearco"] a[data-selected="true"],
+[data-brand="clearco"] button[data-selected="true"] span,
+[data-brand="clearco"] a[data-selected="true"] span {
+  color: white !important;
+  background-color: var(--clearco-brand-primary-500, var(--clearco-brand-primary, #0066cc));
+  border-radius: 4px;
 }
 
-[data-brand="clearco"] button:hover,
-[data-brand="clearco"] a:hover {
+[data-brand="clearco"] button:hover:not([data-selected="true"]),
+[data-brand="clearco"] a:hover:not([data-selected="true"]),
+[data-brand="clearco"] button:hover:not([data-selected="true"]) span,
+[data-brand="clearco"] a:hover:not([data-selected="true"]) span {
   color: var(--clearco-brand-primary-500, var(--clearco-brand-primary, #0066cc)) !important;
+  background-color: var(--clearco-brand-neutral-50, #f8f9fa);
 }
 
 [data-brand="firstwatch"] button[data-selected="true"],
-[data-brand="firstwatch"] a[data-selected="true"] {
-  color: var(--firstwatch-brand-primary-500, var(--firstwatch-brand-primary, #6b46c1)) !important;
+[data-brand="firstwatch"] a[data-selected="true"],
+[data-brand="firstwatch"] button[data-selected="true"] span,
+[data-brand="firstwatch"] a[data-selected="true"] span {
+  color: white !important;
+  background-color: var(--firstwatch-brand-primary-500, var(--firstwatch-brand-primary, #5b21b6));
+  border-radius: 4px;
 }
 
-[data-brand="firstwatch"] button:hover,
-[data-brand="firstwatch"] a:hover {
-  color: var(--firstwatch-brand-primary-500, var(--firstwatch-brand-primary, #6b46c1)) !important;
+[data-brand="firstwatch"] button:hover:not([data-selected="true"]),
+[data-brand="firstwatch"] a:hover:not([data-selected="true"]),
+[data-brand="firstwatch"] button:hover:not([data-selected="true"]) span,
+[data-brand="firstwatch"] a:hover:not([data-selected="true"]) span {
+  color: var(--firstwatch-brand-primary-500, var(--firstwatch-brand-primary, #5b21b6)) !important;
+  background-color: var(--firstwatch-brand-neutral-50, #faf9fb);
+}
+
+/* Additional navigation improvements for all brands */
+[data-brand] button[data-selected="true"],
+[data-brand] a[data-selected="true"] {
+  position: relative;
+  padding: 4px 12px;
+  margin: 2px 0;
+}
+
+/* Add left border indicator for selected items */
+[data-brand] button[data-selected="true"]::before,
+[data-brand] a[data-selected="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+}
+
+[data-brand="mantine"] button[data-selected="true"]::before,
+[data-brand="mantine"] a[data-selected="true"]::before {
+  background-color: var(--mantine-color-blue-8, #1971C2);
+  display: none; /* Remove border when using filled background */
+}
+
+[data-brand="clearco"] button[data-selected="true"]::before,
+[data-brand="clearco"] a[data-selected="true"]::before {
+  background-color: var(--clearco-brand-primary-500, #0066cc);
+  display: none; /* Remove border when using filled background */
+}
+
+[data-brand="firstwatch"] button[data-selected="true"]::before,
+[data-brand="firstwatch"] a[data-selected="true"]::before {
+  background-color: var(--firstwatch-brand-primary-500, #5b21b6);
+  display: none; /* Remove border when using filled background */
+}
+
+/* Ensure focus states meet contrast requirements */
+[data-brand] button:focus-visible,
+[data-brand] a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for better user experience */
+[data-brand] button,
+[data-brand] a {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Force white text on all selected navigation items and their children */
+[data-brand] [data-selected="true"],
+[data-brand] [data-selected="true"] *,
+[data-brand] button[data-selected="true"] *,
+[data-brand] a[data-selected="true"] * {
+  color: white !important;
+}
+
+/* Ensure background only applies to the button/link element */
+[data-brand] button[data-selected="true"] span,
+[data-brand] a[data-selected="true"] span {
+  background-color: transparent !important;
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://design-tokens.github.io/format/tokens.schema.json",
   "semantic": {
-    "$description": "Enhanced semantic colors with full shades",
+    "$description": "Shared semantic color scales",
     "success": {
       "$description": "Success color scale",
       "50": { "$value": "#e8f5e9", "$type": "color", "$description": "Lightest success tint" },
@@ -53,136 +53,57 @@
       "700": { "$value": "#1976d2", "$type": "color", "$description": "Dark info shade" },
       "800": { "$value": "#1565c0", "$type": "color", "$description": "Very dark info shade" },
       "900": { "$value": "#0d47a1", "$type": "color", "$description": "Darkest info shade" }
-    }
-  },
-  "accessibility": {
-    "$description": "Accessibility-focused color tokens",
-    "contrast": {
-      "primary-on-light": {
-        "$value": "#003d7a",
-        "$type": "color",
-        "$description": "Primary color meeting WCAG AA on white background"
-      },
-      "primary-on-dark": {
-        "$value": "#4d94ff",
-        "$type": "color",
-        "$description": "Primary color meeting WCAG AA on dark background"
-      },
-      "secondary-on-light": {
-        "$value": "#994020",
-        "$type": "color",
-        "$description": "Secondary color meeting WCAG AA on white background"
-      },
-      "secondary-on-dark": {
-        "$value": "#ffa682",
-        "$type": "color",
-        "$description": "Secondary color meeting WCAG AA on dark background"
-      },
-      "success-on-light": {
-        "$value": "#388e3c",
-        "$type": "color",
-        "$description": "Success color meeting WCAG AA on white background"
-      },
-      "success-on-dark": {
-        "$value": "#81c784",
-        "$type": "color",
-        "$description": "Success color meeting WCAG AA on dark background"
-      },
-      "warning-on-light": {
-        "$value": "#f9a825",
-        "$type": "color",
-        "$description": "Warning color meeting WCAG AA on white background"
-      },
-      "warning-on-dark": {
-        "$value": "#fff176",
-        "$type": "color",
-        "$description": "Warning color meeting WCAG AA on dark background"
-      },
-      "error-on-light": {
-        "$value": "#d32f2f",
-        "$type": "color",
-        "$description": "Error color meeting WCAG AA on white background"
-      },
-      "error-on-dark": {
-        "$value": "#e57373",
-        "$type": "color",
-        "$description": "Error color meeting WCAG AA on dark background"
-      }
     },
-    "focus": {
-      "ring": {
-        "$value": "#0066cc",
-        "$type": "color",
-        "$description": "Focus ring color"
+    "elevation": {
+      "$description": "Elevation shadow scales",
+      "0": {
+        "$value": "none",
+        "$type": "shadow",
+        "$description": "No elevation"
       },
-      "ring-offset": {
-        "$value": "#ffffff",
-        "$type": "color",
-        "$description": "Focus ring offset color"
+      "1": {
+        "$value": [{
+          "color": "rgba(0, 0, 0, 0.05)",
+          "offsetX": "0",
+          "offsetY": "1px",
+          "blur": "2px",
+          "spread": "0"
+        }],
+        "$type": "shadow",
+        "$description": "Subtle elevation"
       },
-      "ring-dark": {
-        "$value": "#1a75ff",
-        "$type": "color",
-        "$description": "Focus ring color for dark backgrounds"
+      "2": {
+        "$value": [{
+          "color": "rgba(0, 0, 0, 0.1)",
+          "offsetX": "0",
+          "offsetY": "4px",
+          "blur": "8px",
+          "spread": "-2px"
+        }],
+        "$type": "shadow",
+        "$description": "Low elevation"
       },
-      "ring-offset-dark": {
-        "$value": "#000000",
-        "$type": "color",
-        "$description": "Focus ring offset color for dark backgrounds"
-      }
-    }
-  },
-  "interactive": {
-    "$description": "Interactive state colors",
-    "primary": {
-      "hover": {
-        "$value": "#0052a3",
-        "$type": "color",
-        "$description": "Primary hover state"
+      "3": {
+        "$value": [{
+          "color": "rgba(0, 0, 0, 0.1)",
+          "offsetX": "0",
+          "offsetY": "12px",
+          "blur": "16px",
+          "spread": "-4px"
+        }],
+        "$type": "shadow",
+        "$description": "Medium elevation"
       },
-      "active": {
-        "$value": "#003d7a",
-        "$type": "color",
-        "$description": "Primary active/pressed state"
-      },
-      "disabled": {
-        "$value": "#4d94ff",
-        "$type": "color",
-        "$description": "Primary disabled state"
-      }
-    },
-    "secondary": {
-      "hover": {
-        "$value": "#cc562a",
-        "$type": "color",
-        "$description": "Secondary hover state"
-      },
-      "active": {
-        "$value": "#994020",
-        "$type": "color",
-        "$description": "Secondary active/pressed state"
-      },
-      "disabled": {
-        "$value": "#ffa682",
-        "$type": "color",
-        "$description": "Secondary disabled state"
-      }
-    },
-    "accent": {
-      "hover": {
-        "$value": "#3ea49d",
-        "$type": "color",
-        "$description": "Accent hover state"
-      },
-      "active": {
-        "$value": "#2f7b76",
-        "$type": "color",
-        "$description": "Accent active/pressed state"
-      },
-      "disabled": {
-        "$value": "#77e6df",
-        "$type": "color",
-        "$description": "Accent disabled state"
+      "4": {
+        "$value": [{
+          "color": "rgba(0, 0, 0, 0.15)",
+          "offsetX": "0",
+          "offsetY": "20px",
+          "blur": "24px",
+          "spread": "-4px"
+        }],
+        "$type": "shadow",
+        "$description": "High elevation"
       }
     }
   }

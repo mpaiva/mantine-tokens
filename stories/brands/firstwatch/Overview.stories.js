@@ -5,11 +5,27 @@ export default {
       description: {
         component: 'Firstwatch brand features a vibrant purple and green palette with Roboto Condensed and Roboto Slab typography.'
       }
+    },
+    // Force Firstwatch brand when viewing this story
+    globals: {
+      brand: 'firstwatch'
     }
   }
 };
 
 export const BrandOverview = () => {
+  // Ensure brand CSS is loaded
+  if (typeof document !== 'undefined') {
+    const brandLink = document.getElementById('brand-styles');
+    if (!brandLink || !brandLink.href.includes('firstwatch')) {
+      const link = document.createElement('link');
+      link.id = 'brand-styles';
+      link.rel = 'stylesheet';
+      link.href = '/brands/firstwatch/all.css';
+      document.head.appendChild(link);
+    }
+  }
+  
   return `
     <div class="brand-overview" data-brand="firstwatch">
       <h1>Firstwatch Design System</h1>
@@ -23,7 +39,7 @@ export const BrandOverview = () => {
             <div class="color-swatches">
               <div class="color-swatch" style="background: var(--firstwatch-brand-primary-500)">
                 <span>Primary</span>
-                <code>#7c3aed</code>
+                <code>#5b21b6</code>
               </div>
               <div class="color-swatch" style="background: var(--firstwatch-brand-secondary-500)">
                 <span>Secondary</span>
@@ -35,7 +51,7 @@ export const BrandOverview = () => {
               </div>
               <div class="color-swatch" style="background: var(--firstwatch-brand-neutral-700); color: white">
                 <span>Neutral</span>
-                <code>#374151</code>
+                <code>var(--firstwatch-brand-neutral-700)</code>
               </div>
             </div>
           </div>
@@ -44,15 +60,15 @@ export const BrandOverview = () => {
             <h3>Typography</h3>
             <div class="font-examples">
               <div class="font-stack">
-                <p class="font-heading" style="font-family: var(--firstwatch-typography-fontfamily-heading)">Roboto Slab</p>
+                <p class="font-heading" style="font-family: var(--firstwatch-typography-fontfamily-heading)">Lobster Two</p>
                 <code>Headings & Display</code>
               </div>
               <div class="font-stack">
-                <p class="font-body" style="font-family: var(--firstwatch-typography-fontfamily-body)">Roboto Condensed</p>
+                <p class="font-body" style="font-family: var(--firstwatch-typography-fontfamily-body)">Roboto</p>
                 <code>Body Text</code>
               </div>
               <div class="font-stack">
-                <p class="font-mono" style="font-family: var(--firstwatch-typography-fontfamily-mono)">Courier Prime</p>
+                <p class="font-mono" style="font-family: var(--firstwatch-typography-fontfamily-mono)">Monospace</p>
                 <code>Code & Data</code>
               </div>
             </div>
@@ -72,10 +88,10 @@ export const BrandOverview = () => {
               <div class="surface" style="background: #f5f5f5; color: #525252">
                 Surface
               </div>
-              <div class="surface" style="background: #7c3aed; color: white">
+              <div class="surface" style="background: var(--firstwatch-brand-primary-500); color: white">
                 Primary Action
               </div>
-              <div class="surface" style="background: #10b981; color: white">
+              <div class="surface" style="background: var(--firstwatch-brand-secondary-500); color: white">
                 Secondary Action
               </div>
             </div>
@@ -90,10 +106,10 @@ export const BrandOverview = () => {
               <div class="surface" style="background: #1a1a1c; color: #d4d4d8">
                 Surface
               </div>
-              <div class="surface" style="background: #a78bfa; color: white">
+              <div class="surface" style="background: var(--firstwatch-brand-primary-300); color: white">
                 Primary Action
               </div>
-              <div class="surface" style="background: #34d399; color: white">
+              <div class="surface" style="background: var(--firstwatch-brand-secondary-300); color: white">
                 Secondary Action
               </div>
             </div>
@@ -145,7 +161,7 @@ export const BrandOverview = () => {
         <h2>Usage Notes</h2>
         <ul>
           <li>Activate by setting <code>data-brand="firstwatch"</code> on the root element</li>
-          <li>Features Roboto Slab for impactful headings</li>
+          <li>Features Lobster Two for distinctive headings</li>
           <li>Vibrant color palette suitable for modern applications</li>
           <li>Includes comprehensive color scales from 50-900</li>
         </ul>

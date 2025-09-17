@@ -107,26 +107,14 @@ export async function generateBrandConfig(brands) {
       transforms: []
     };
     
-    // Handle color file conflicts
-    if (brandData.files.colors.length > 1) {
-      // Detect which files have conflicts
-      const colorFiles = brandData.files.colors.map(f => f.basename);
-      
-      if (colorFiles.includes('colors-merged.json')) {
-        // Use merged file, exclude others
-        brandConfig.files.include.push('colors-merged.json');
-        brandConfig.files.exclude.push('colors.json', 'brand-colors.json');
-      } else if (colorFiles.includes('colors.json') && colorFiles.includes('brand-colors.json')) {
-        // Need to merge these
-        brandConfig.files.include.push('colors.json');
-        brandConfig.files.exclude.push('brand-colors.json');
-        brandConfig.priorities['colors.json'] = 10;
-        brandConfig.transforms.push({
-          type: 'merge-conflicts',
-          files: ['colors.json', 'brand-colors.json']
-        });
+    // Handle color files - include all color files since they use different namespaces
+    brandData.files.colors.forEach(colorFile => {
+      const filename = colorFile.basename;
+      // Skip colors-merged.json if it exists
+      if (filename !== 'colors-merged.json') {
+        brandConfig.files.include.push(filename);
       }
-    }
+    });
     
     // Include theme files
     brandData.files.themes.forEach(theme => {

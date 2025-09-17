@@ -31,39 +31,63 @@ export const BrandComparison = () => {
         <h2>Brand Colors</h2>
         <div class="color-grid">
           <div class="color-card">
-            <div class="color-swatch primary" style="background: var(--mantine-color-primary)"></div>
+            <div class="color-swatch primary" id="primary-swatch"></div>
             <h3>Primary</h3>
             <p>Main brand color</p>
+            <div class="color-info">
+              <code class="token-name" id="primary-token"></code>
+              <code class="color-value" id="primary-value"></code>
+            </div>
           </div>
           
           <div class="color-card">
-            <div class="color-swatch secondary" style="background: var(--mantine-color-secondary, var(--mantine-color-gray-600))"></div>
+            <div class="color-swatch secondary" id="secondary-swatch"></div>
             <h3>Secondary</h3>
             <p>Supporting color</p>
+            <div class="color-info">
+              <code class="token-name" id="secondary-token"></code>
+              <code class="color-value" id="secondary-value"></code>
+            </div>
           </div>
           
           <div class="color-card">
-            <div class="color-swatch accent" style="background: var(--mantine-color-accent, var(--mantine-color-cyan-600))"></div>
+            <div class="color-swatch accent" id="accent-swatch"></div>
             <h3>Accent</h3>
             <p>Highlight color</p>
+            <div class="color-info">
+              <code class="token-name" id="accent-token"></code>
+              <code class="color-value" id="accent-value"></code>
+            </div>
           </div>
           
           <div class="color-card">
-            <div class="color-swatch success" style="background: var(--mantine-color-success)"></div>
+            <div class="color-swatch success" id="success-swatch"></div>
             <h3>Success</h3>
             <p>Positive state</p>
+            <div class="color-info">
+              <code class="token-name" id="success-token"></code>
+              <code class="color-value" id="success-value"></code>
+            </div>
           </div>
           
           <div class="color-card">
-            <div class="color-swatch warning" style="background: var(--mantine-color-warning)"></div>
+            <div class="color-swatch warning" id="warning-swatch"></div>
             <h3>Warning</h3>
             <p>Caution state</p>
+            <div class="color-info">
+              <code class="token-name" id="warning-token"></code>
+              <code class="color-value" id="warning-value"></code>
+            </div>
           </div>
           
           <div class="color-card">
-            <div class="color-swatch error" style="background: var(--mantine-color-error)"></div>
+            <div class="color-swatch error" id="error-swatch"></div>
             <h3>Error</h3>
             <p>Error state</p>
+            <div class="color-info">
+              <code class="token-name" id="error-token"></code>
+              <code class="color-value" id="error-value"></code>
+            </div>
           </div>
         </div>
       </section>
@@ -204,6 +228,31 @@ const brandColors = {
         color: var(--mantine-color-text-secondary);
       }
       
+      .color-info {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      
+      .token-name, .color-value {
+        font-family: var(--mantine-typography-fontfamily-mono);
+        font-size: 0.75rem;
+        padding: 0.125rem 0.5rem;
+        background: var(--mantine-color-surface);
+        border-radius: var(--mantine-radius-sm);
+        display: inline-block;
+      }
+      
+      .token-name {
+        color: var(--mantine-color-text-tertiary);
+      }
+      
+      .color-value {
+        color: var(--mantine-color-text-primary);
+        font-weight: 600;
+      }
+      
       .type-sample {
         margin: 2rem 0;
         padding: 1.5rem;
@@ -266,6 +315,90 @@ const brandColors = {
         return '';
       }
       
+      // Update color swatches based on current brand
+      function updateColorSwatches() {
+        const computedStyle = getComputedStyle(document.documentElement);
+        const currentBrand = document.body.getAttribute('data-brand') || 'mantine';
+        
+        // Define color variable patterns for each brand
+        const colorMappings = {
+          mantine: {
+            primary: { var: 'var(--mantine-color-primary)', token: '--mantine-color-primary' },
+            secondary: { var: 'var(--mantine-color-secondary, var(--mantine-color-gray-600))', token: '--mantine-color-secondary' },
+            accent: { var: 'var(--mantine-color-accent, var(--mantine-color-cyan-600))', token: '--mantine-color-accent' },
+            success: { var: 'var(--mantine-color-success)', token: '--mantine-color-success' },
+            warning: { var: 'var(--mantine-color-warning)', token: '--mantine-color-warning' },
+            error: { var: 'var(--mantine-color-error)', token: '--mantine-color-error' }
+          },
+          clearco: {
+            primary: { var: 'var(--clearco-brand-primary-500)', token: '--clearco-brand-primary-500' },
+            secondary: { var: 'var(--clearco-brand-secondary-500)', token: '--clearco-brand-secondary-500' },
+            accent: { var: 'var(--clearco-brand-accent-500)', token: '--clearco-brand-accent-500' },
+            success: { var: 'var(--clearco-brand-semantic-success)', token: '--clearco-brand-semantic-success' },
+            warning: { var: 'var(--clearco-brand-semantic-warning)', token: '--clearco-brand-semantic-warning' },
+            error: { var: 'var(--clearco-brand-semantic-error)', token: '--clearco-brand-semantic-error' }
+          },
+          firstwatch: {
+            primary: { var: 'var(--firstwatch-brand-primary-500)', token: '--firstwatch-brand-primary-500' },
+            secondary: { var: 'var(--firstwatch-brand-secondary-500)', token: '--firstwatch-brand-secondary-500' },
+            accent: { var: 'var(--firstwatch-brand-accent-500)', token: '--firstwatch-brand-accent-500' },
+            success: { var: 'var(--firstwatch-brand-semantic-success)', token: '--firstwatch-brand-semantic-success' },
+            warning: { var: 'var(--firstwatch-brand-semantic-warning)', token: '--firstwatch-brand-semantic-warning' },
+            error: { var: 'var(--firstwatch-brand-semantic-error)', token: '--firstwatch-brand-semantic-error' }
+          }
+        };
+        
+        // Update each swatch
+        const colors = colorMappings[currentBrand] || colorMappings.mantine;
+        
+        // Helper function to get computed color value
+        function getColorValue(varName) {
+          // Check if the variable exists
+          const varValue = computedStyle.getPropertyValue(varName.replace('var(', '').replace(')', '').split(',')[0]);
+          if (varValue) {
+            return varValue.trim();
+          }
+          
+          // Fallback: create element to compute the value
+          const tempDiv = document.createElement('div');
+          tempDiv.style.backgroundColor = varName;
+          document.body.appendChild(tempDiv);
+          const color = getComputedStyle(tempDiv).backgroundColor;
+          document.body.removeChild(tempDiv);
+          
+          // Convert rgb to hex if needed
+          const match = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+          if (match) {
+            const r = parseInt(match[1]).toString(16).padStart(2, '0');
+            const g = parseInt(match[2]).toString(16).padStart(2, '0');
+            const b = parseInt(match[3]).toString(16).padStart(2, '0');
+            return '#' + r + g + b;
+          }
+          return color;
+        }
+        
+        // Update swatches and labels
+        Object.entries(colors).forEach(([key, value]) => {
+          const swatch = document.getElementById(key + '-swatch');
+          const tokenEl = document.getElementById(key + '-token');
+          const valueEl = document.getElementById(key + '-value');
+          
+          if (swatch) {
+            swatch.style.background = value.var;
+          }
+          
+          if (tokenEl) {
+            tokenEl.textContent = value.token;
+          }
+          
+          if (valueEl) {
+            // Get the actual computed value
+            const actualValue = getColorValue(value.var);
+            valueEl.textContent = actualValue;
+          }
+        });
+      }
+      
       // Update brand descriptions
       function updateBrandDescriptions() {
         const computedStyle = getComputedStyle(document.documentElement);
@@ -275,7 +408,7 @@ const brandColors = {
         const clearcoBody = extractFontName(computedStyle.getPropertyValue('--clearco-typography-fontfamily-body'));
         const clearcoDesc = document.getElementById('clearco-desc');
         if (clearcoDesc) {
-          clearcoDesc.textContent = \`Deep blue/orange with \${clearcoBody} & \${clearcoHeading}\`;
+          clearcoDesc.textContent = 'Deep blue/grape with ' + clearcoBody + ' & ' + clearcoHeading;
         }
         
         // Update Firstwatch description
@@ -283,7 +416,7 @@ const brandColors = {
         const firstwatchBody = extractFontName(computedStyle.getPropertyValue('--firstwatch-typography-fontfamily-body'));
         const firstwatchDesc = document.getElementById('firstwatch-desc');
         if (firstwatchDesc) {
-          firstwatchDesc.textContent = \`Purple/green with \${firstwatchBody} & \${firstwatchHeading}\`;
+          firstwatchDesc.textContent = 'Purple/green with ' + firstwatchBody + ' & ' + firstwatchHeading;
         }
       }
       
@@ -301,9 +434,9 @@ const brandColors = {
           monoFont = computedStyle.getPropertyValue('--mantine-typography-fontfamily-mono');
         } else {
           // For brands, use brand-specific variables
-          headingFont = computedStyle.getPropertyValue(\`--\${currentBrand}-typography-fontfamily-heading\`);
-          bodyFont = computedStyle.getPropertyValue(\`--\${currentBrand}-typography-fontfamily-body\`);
-          monoFont = computedStyle.getPropertyValue(\`--\${currentBrand}-typography-fontfamily-mono\`);
+          headingFont = computedStyle.getPropertyValue('--' + currentBrand + '-typography-fontfamily-heading');
+          bodyFont = computedStyle.getPropertyValue('--' + currentBrand + '-typography-fontfamily-body');
+          monoFont = computedStyle.getPropertyValue('--' + currentBrand + '-typography-fontfamily-mono');
         }
         
         // Update display
@@ -313,16 +446,24 @@ const brandColors = {
         
         // Update brand descriptions
         updateBrandDescriptions();
+        // Update color swatches
+        updateColorSwatches();
       }
       
       // Update on load and when brand changes
-      setTimeout(updateFontDisplay, 100);
+      setTimeout(() => {
+        updateFontDisplay();
+        updateColorSwatches();
+      }, 100);
       
       // Listen for brand changes
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (mutation.type === 'attributes' && mutation.attributeName === 'data-brand') {
-            setTimeout(updateFontDisplay, 100);
+            setTimeout(() => {
+              updateFontDisplay();
+              updateColorSwatches();
+            }, 100);
           }
         });
       });

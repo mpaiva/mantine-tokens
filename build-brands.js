@@ -63,7 +63,7 @@ function createBrandCSSFormat(brandName) {
         }
         
         // Handle references properly
-        if (options?.outputReferences && typeof token.original?.$value === 'string' && token.original.$value.includes('{')) {
+        if (options?.outputReferences && token.original && typeof token.original.$value === 'string' && token.original.$value.includes('{')) {
           // Extract the reference path and convert to CSS variable
           const refMatch = token.original.$value.match(/\{([^}]+)\}/);
           if (refMatch) {
@@ -229,10 +229,25 @@ async function buildBrand(brandName) {
     .filter(file => file.endsWith('.json') && 
             file !== 'theme-light.json' && 
             file !== 'theme-dark.json' && 
-            file !== 'enhanced-theme.json')  // Exclude enhanced-theme.json from base build
+            file !== 'enhanced-theme.json' &&
+            !file.startsWith('_'))  // Exclude archived files and folders
     .map(file => `tokens/brands/${brandName}/${file}`);
   
   const sources = [
+    // Include primitive tokens for references
+    'tokens/primitives/colors-dtcg.json',
+    'tokens/primitives/typography-dtcg.json',
+    'tokens/primitives/spacing-dtcg.json',
+    'tokens/primitives/shadows-dtcg.json',
+    'tokens/primitives/radius-dtcg.json',
+    // Include shared brand base tokens
+    'tokens/brands/_shared/brand-base.json',
+    'tokens/brands/_shared/theme-patterns.json',
+    // Include shared foundation tokens
+    'tokens/shared/base-motion.json',
+    'tokens/shared/base-semantic.json',
+    'tokens/shared/base-components.json',
+    // Include brand-specific tokens
     ...brandFiles,
     'tokens/semantic/theme-patterns.json'
   ];
@@ -299,6 +314,9 @@ async function buildBrand(brandName) {
   if (hasLightTheme) {
     const lightThemeConfig = {
       source: [
+        // Include shared brand base tokens
+        'tokens/brands/_shared/brand-base.json',
+        'tokens/brands/_shared/theme-patterns.json',
         ...brandFiles,
         `tokens/brands/${brandName}/theme-light.json`,
         ...(hasEnhancedTheme ? [`tokens/brands/${brandName}/enhanced-theme.json`] : [])  // Include enhanced theme if it exists
@@ -339,6 +357,9 @@ async function buildBrand(brandName) {
   if (hasDarkTheme) {
     const darkThemeConfig = {
       source: [
+        // Include shared brand base tokens
+        'tokens/brands/_shared/brand-base.json',
+        'tokens/brands/_shared/theme-patterns.json',
         ...brandFiles,
         `tokens/brands/${brandName}/theme-dark.json`,
         ...(hasEnhancedTheme ? [`tokens/brands/${brandName}/enhanced-theme.json`] : [])  // Include enhanced theme if it exists
@@ -378,6 +399,9 @@ async function buildBrand(brandName) {
   // Build combined file with everything
   const allConfig = {
     source: [
+      // Include shared brand base tokens
+      'tokens/brands/_shared/brand-base.json',
+      'tokens/brands/_shared/theme-patterns.json',
       ...brandFiles,
       'tokens/semantic/theme-patterns.json',
       ...(hasLightTheme ? [`tokens/brands/${brandName}/theme-light.json`] : []),

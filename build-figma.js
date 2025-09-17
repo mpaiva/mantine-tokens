@@ -380,7 +380,7 @@ function routePrimitiveToken(primitives, path, tokenObj) {
 // Route brand-specific tokens
 function routeBrandToken(brand, path, tokenObj, filePath, brandName = '') {
   // Check if it's a brand color definition
-  if (filePath.includes('colors.json') || filePath.includes('brand-colors.json') || filePath.includes('colors-merged.json')) {
+  if (filePath.includes('colors.json') || filePath.includes('brand-colors.json')) {
     const [category, ...rest] = path;
     if (category === 'brand' || category === 'color' || category === 'clearco') {
       // Handle both simple semantic colors and color scales
@@ -1012,17 +1012,20 @@ const unifiedConfig = {
     'tokens/primitives/*-dtcg.json',
     'tokens/semantic/*-dtcg.json',
     'tokens/components/*-dtcg.json',
+    // Shared brand base tokens
+    'tokens/brands/_shared/brand-base.json',
+    'tokens/brands/_shared/theme-patterns.json',
     // Custom tokens except typography (to avoid font weight collisions)
     'tokens/custom/custom-spacing.json',
     'tokens/custom/oval-button.json',
     // Brand tokens - colors and typography first
-    'tokens/brands/clearco/colors-merged.json',
+    'tokens/brands/clearco/brand-config.json',
+    'tokens/brands/clearco/colors.json',
     'tokens/brands/clearco/typography.json',
-    'tokens/brands/clearco/card-container.json',  // Needed for card shadow references
+    'tokens/brands/clearco/overrides.json',
     'tokens/brands/firstwatch/colors.json',
     'tokens/brands/firstwatch/typography.json',
-    // Enhanced theme (references light/dark tokens, so must come after)
-    'tokens/brands/clearco/enhanced-theme.json',
+    'tokens/brands/firstwatch/overrides.json',
     // Theme files - process these last to avoid collisions
     // Process one brand at a time to minimize collisions
     'tokens/brands/clearco/theme-light.json',

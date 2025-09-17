@@ -17,16 +17,16 @@
     },
     "secondary": {
       "$description": "Secondary brand color with tints and shades",
-      "50": { "$value": "#fff2ed", "$type": "color", "$description": "Lightest tint" },
-      "100": { "$value": "#ffd9c9", "$type": "color", "$description": "Very light tint" },
-      "200": { "$value": "#ffbfa6", "$type": "color", "$description": "Light tint" },
-      "300": { "$value": "#ffa682", "$type": "color", "$description": "Medium light tint" },
-      "400": { "$value": "#ff8d5f", "$type": "color", "$description": "Medium tint" },
-      "500": { "$value": "#ff6b35", "$type": "color", "$description": "Base secondary color" },
-      "600": { "$value": "#cc562a", "$type": "color", "$description": "Medium shade" },
-      "700": { "$value": "#994020", "$type": "color", "$description": "Dark shade" },
-      "800": { "$value": "#662b15", "$type": "color", "$description": "Very dark shade" },
-      "900": { "$value": "#33150b", "$type": "color", "$description": "Darkest shade" }
+      "50": { "$value": "#f8f0fc", "$type": "color", "$description": "Lightest tint" },
+      "100": { "$value": "#f3d9fa", "$type": "color", "$description": "Very light tint" },
+      "200": { "$value": "#eebefa", "$type": "color", "$description": "Light tint" },
+      "300": { "$value": "#e599f7", "$type": "color", "$description": "Medium light tint" },
+      "400": { "$value": "#da77f2", "$type": "color", "$description": "Medium tint" },
+      "500": { "$value": "#cc5de8", "$type": "color", "$description": "Base secondary color" },
+      "600": { "$value": "#be4bdb", "$type": "color", "$description": "Medium shade" },
+      "700": { "$value": "#ae3ec9", "$type": "color", "$description": "Dark shade" },
+      "800": { "$value": "#9c36b5", "$type": "color", "$description": "Very dark shade" },
+      "900": { "$value": "#862e9c", "$type": "color", "$description": "Darkest shade" }
     },
     "accent": {
       "$description": "Accent color with tints and shades",
@@ -57,17 +57,17 @@
     "semantic": {
       "$description": "Semantic colors for Clearco brand",
       "success": {
-        "$value": "#28a745",
+        "$value": "{brandBase.semantic.state.success.default}",
         "$type": "color",
         "$description": "Success state color"
       },
       "warning": {
-        "$value": "#ffc107",
+        "$value": "{brandBase.semantic.state.warning.default}",
         "$type": "color",
         "$description": "Warning state color"
       },
       "error": {
-        "$value": "#dc3545",
+        "$value": "{brandBase.semantic.state.error.default}",
         "$type": "color",
         "$description": "Error state color"
       },
